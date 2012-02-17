@@ -23,8 +23,49 @@
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2012 KennettNet Software Limited. All rights reserved.</string>
+	<string>Copyright © 2012 Daniel Kennett. All rights reserved.</string>
 	<key>NSPrincipalClass</key>
 	<string></string>
+	<key>ProPlugDictionaryVersion</key>
+	<string>1.0</string>
+	<key>ProPlugDynamicRegistration</key>
+	<false/>
+	<key>ProPlugPlugInGroupList</key>
+	<array>
+		<dict>
+			<key>groupName</key>
+			<string>Export</string>
+			<key>uuid</key>
+			<string>C1195A48-6A57-477E-BED3-F95A774C358C</string>
+		</dict>
+	</array>
+	<key>ProPlugPlugInList</key>
+	<array>
+		<dict>
+			<key>className</key>
+			<string>FiveHundredPxApertureExporter</string>
+			<key>displayName</key>
+			<string>500px</string>
+			<key>helpURL</key>
+			<string>http://www.apple.com/aperture/</string>
+			<key>protocolNames</key>
+			<array>
+				<string>ApertureExportPlugIn</string>
+			</array>
+			<key>uuid</key>
+			<string>18641BC7-3223-4660-9CA7-C3885A727049</string>
+		</dict>
+	</array>
+	<key>ProPlugProtocolList</key>
+	<array>
+		<dict>
+			<key>protocolName</key>
+			<string>ApertureExportManager</string>
+			<key>versions</key>
+			<array>
+				<integer>1</integer>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>

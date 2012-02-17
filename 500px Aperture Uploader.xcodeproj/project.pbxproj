@@ -9,17 +9,24 @@
 /* Begin PBXBuildFile section */
 		50AAF3A514EEC0F8009F3BFE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50AAF3A414EEC0F8009F3BFE /* Cocoa.framework */; };
 		50AAF3AF14EEC0F8009F3BFE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50AAF3AD14EEC0F8009F3BFE /* InfoPlist.strings */; };
+		50AAF3BE14EEC1B0009F3BFE /* FiveHundredPxApertureExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AAF3BD14EEC1B0009F3BFE /* FiveHundredPxApertureExporter.m */; };
+		50AAF3C014EEC236009F3BFE /* PluginManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50AAF3BF14EEC236009F3BFE /* PluginManager.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		50AAF3A114EEC0F8009F3BFE /* 500px Aperture Uploader.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "500px Aperture Uploader.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		50AAF3A114EEC0F8009F3BFE /* 500px Aperture Uploader.ApertureExport */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "500px Aperture Uploader.ApertureExport"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50AAF3A414EEC0F8009F3BFE /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		50AAF3A714EEC0F8009F3BFE /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		50AAF3A814EEC0F8009F3BFE /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		50AAF3A914EEC0F8009F3BFE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		50AAF3AC14EEC0F8009F3BFE /* 500px Aperture Uploader-Info.plist */ = {isa = PBXFileReference; path = "500px Aperture Uploader-Info.plist"; sourceTree = "<group>"; };
+		50AAF3AC14EEC0F8009F3BFE /* 500px Aperture Uploader-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "500px Aperture Uploader-Info.plist"; sourceTree = "<group>"; };
 		50AAF3AE14EEC0F8009F3BFE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		50AAF3B014EEC0F8009F3BFE /* 500px Aperture Uploader-Prefix.pch */ = {isa = PBXFileReference; path = "500px Aperture Uploader-Prefix.pch"; sourceTree = "<group>"; };
+		50AAF3B014EEC0F8009F3BFE /* 500px Aperture Uploader-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "500px Aperture Uploader-Prefix.pch"; sourceTree = "<group>"; };
+		50AAF3BC14EEC1B0009F3BFE /* FiveHundredPxApertureExporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FiveHundredPxApertureExporter.h; sourceTree = "<group>"; };
+		50AAF3BD14EEC1B0009F3BFE /* FiveHundredPxApertureExporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FiveHundredPxApertureExporter.m; sourceTree = "<group>"; };
+		50AAF3BF14EEC236009F3BFE /* PluginManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PluginManager.framework; path = /Library/Frameworks/PluginManager.framework; sourceTree = "<absolute>"; };
+		50AAF3C214EEC3F1009F3BFE /* ApertureExportManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApertureExportManager.h; sourceTree = "<group>"; };
+		50AAF3C314EEC3F1009F3BFE /* ApertureExportPlugIn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApertureExportPlugIn.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50AAF3C014EEC236009F3BFE /* PluginManager.framework in Frameworks */,
 				50AAF3A514EEC0F8009F3BFE /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -46,7 +54,7 @@
 		50AAF3A214EEC0F8009F3BFE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				50AAF3A114EEC0F8009F3BFE /* 500px Aperture Uploader.bundle */,
+				50AAF3A114EEC0F8009F3BFE /* 500px Aperture Uploader.ApertureExport */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -54,6 +62,7 @@
 		50AAF3A314EEC0F8009F3BFE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				50AAF3BF14EEC236009F3BFE /* PluginManager.framework */,
 				50AAF3A414EEC0F8009F3BFE /* Cocoa.framework */,
 				50AAF3A614EEC0F8009F3BFE /* Other Frameworks */,
 			);
@@ -73,6 +82,10 @@
 		50AAF3AA14EEC0F8009F3BFE /* 500px Aperture Uploader */ = {
 			isa = PBXGroup;
 			children = (
+				50AAF3C214EEC3F1009F3BFE /* ApertureExportManager.h */,
+				50AAF3C314EEC3F1009F3BFE /* ApertureExportPlugIn.h */,
+				50AAF3BC14EEC1B0009F3BFE /* FiveHundredPxApertureExporter.h */,
+				50AAF3BD14EEC1B0009F3BFE /* FiveHundredPxApertureExporter.m */,
 				50AAF3AB14EEC0F8009F3BFE /* Supporting Files */,
 			);
 			path = "500px Aperture Uploader";
@@ -105,7 +118,7 @@
 			);
 			name = "500px Aperture Uploader";
 			productName = "500px Aperture Uploader";
-			productReference = 50AAF3A114EEC0F8009F3BFE /* 500px Aperture Uploader.bundle */;
+			productReference = 50AAF3A114EEC0F8009F3BFE /* 500px Aperture Uploader.ApertureExport */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -115,7 +128,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0430;
-				ORGANIZATIONNAME = "KennettNet Software Limited";
+				ORGANIZATIONNAME = "Daniel Kennett";
 			};
 			buildConfigurationList = 50AAF39B14EEC0F8009F3BFE /* Build configuration list for PBXProject "500px Aperture Uploader" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -150,6 +163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50AAF3BE14EEC1B0009F3BFE /* FiveHundredPxApertureExporter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,7 +236,7 @@
 				INFOPLIST_FILE = "500px Aperture Uploader/500px Aperture Uploader-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = bundle;
+				WRAPPER_EXTENSION = ApertureExport;
 			};
 			name = Debug;
 		};
@@ -234,7 +248,7 @@
 				INFOPLIST_FILE = "500px Aperture Uploader/500px Aperture Uploader-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = bundle;
+				WRAPPER_EXTENSION = ApertureExport;
 			};
 			name = Release;
 		};
