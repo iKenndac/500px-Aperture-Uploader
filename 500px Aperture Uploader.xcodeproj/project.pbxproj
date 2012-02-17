@@ -1,0 +1,264 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		50AAF3A514EEC0F8009F3BFE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50AAF3A414EEC0F8009F3BFE /* Cocoa.framework */; };
+		50AAF3AF14EEC0F8009F3BFE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50AAF3AD14EEC0F8009F3BFE /* InfoPlist.strings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		50AAF3A114EEC0F8009F3BFE /* 500px Aperture Uploader.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "500px Aperture Uploader.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		50AAF3A414EEC0F8009F3BFE /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		50AAF3A714EEC0F8009F3BFE /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		50AAF3A814EEC0F8009F3BFE /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		50AAF3A914EEC0F8009F3BFE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		50AAF3AC14EEC0F8009F3BFE /* 500px Aperture Uploader-Info.plist */ = {isa = PBXFileReference; path = "500px Aperture Uploader-Info.plist"; sourceTree = "<group>"; };
+		50AAF3AE14EEC0F8009F3BFE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		50AAF3B014EEC0F8009F3BFE /* 500px Aperture Uploader-Prefix.pch */ = {isa = PBXFileReference; path = "500px Aperture Uploader-Prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		50AAF39E14EEC0F8009F3BFE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50AAF3A514EEC0F8009F3BFE /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		50AAF39614EEC0F8009F3BFE = {
+			isa = PBXGroup;
+			children = (
+				50AAF3AA14EEC0F8009F3BFE /* 500px Aperture Uploader */,
+				50AAF3A314EEC0F8009F3BFE /* Frameworks */,
+				50AAF3A214EEC0F8009F3BFE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		50AAF3A214EEC0F8009F3BFE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				50AAF3A114EEC0F8009F3BFE /* 500px Aperture Uploader.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		50AAF3A314EEC0F8009F3BFE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				50AAF3A414EEC0F8009F3BFE /* Cocoa.framework */,
+				50AAF3A614EEC0F8009F3BFE /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		50AAF3A614EEC0F8009F3BFE /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				50AAF3A714EEC0F8009F3BFE /* AppKit.framework */,
+				50AAF3A814EEC0F8009F3BFE /* CoreData.framework */,
+				50AAF3A914EEC0F8009F3BFE /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		50AAF3AA14EEC0F8009F3BFE /* 500px Aperture Uploader */ = {
+			isa = PBXGroup;
+			children = (
+				50AAF3AB14EEC0F8009F3BFE /* Supporting Files */,
+			);
+			path = "500px Aperture Uploader";
+			sourceTree = "<group>";
+		};
+		50AAF3AB14EEC0F8009F3BFE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				50AAF3AC14EEC0F8009F3BFE /* 500px Aperture Uploader-Info.plist */,
+				50AAF3AD14EEC0F8009F3BFE /* InfoPlist.strings */,
+				50AAF3B014EEC0F8009F3BFE /* 500px Aperture Uploader-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		50AAF3A014EEC0F8009F3BFE /* 500px Aperture Uploader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50AAF3B314EEC0F8009F3BFE /* Build configuration list for PBXNativeTarget "500px Aperture Uploader" */;
+			buildPhases = (
+				50AAF39D14EEC0F8009F3BFE /* Sources */,
+				50AAF39E14EEC0F8009F3BFE /* Frameworks */,
+				50AAF39F14EEC0F8009F3BFE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "500px Aperture Uploader";
+			productName = "500px Aperture Uploader";
+			productReference = 50AAF3A114EEC0F8009F3BFE /* 500px Aperture Uploader.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		50AAF39814EEC0F8009F3BFE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "KennettNet Software Limited";
+			};
+			buildConfigurationList = 50AAF39B14EEC0F8009F3BFE /* Build configuration list for PBXProject "500px Aperture Uploader" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 50AAF39614EEC0F8009F3BFE;
+			productRefGroup = 50AAF3A214EEC0F8009F3BFE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				50AAF3A014EEC0F8009F3BFE /* 500px Aperture Uploader */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		50AAF39F14EEC0F8009F3BFE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50AAF3AF14EEC0F8009F3BFE /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		50AAF39D14EEC0F8009F3BFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		50AAF3AD14EEC0F8009F3BFE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50AAF3AE14EEC0F8009F3BFE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		50AAF3B114EEC0F8009F3BFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		50AAF3B214EEC0F8009F3BFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		50AAF3B414EEC0F8009F3BFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "500px Aperture Uploader/500px Aperture Uploader-Prefix.pch";
+				INFOPLIST_FILE = "500px Aperture Uploader/500px Aperture Uploader-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		50AAF3B514EEC0F8009F3BFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "500px Aperture Uploader/500px Aperture Uploader-Prefix.pch";
+				INFOPLIST_FILE = "500px Aperture Uploader/500px Aperture Uploader-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		50AAF39B14EEC0F8009F3BFE /* Build configuration list for PBXProject "500px Aperture Uploader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50AAF3B114EEC0F8009F3BFE /* Debug */,
+				50AAF3B214EEC0F8009F3BFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50AAF3B314EEC0F8009F3BFE /* Build configuration list for PBXNativeTarget "500px Aperture Uploader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50AAF3B414EEC0F8009F3BFE /* Debug */,
+				50AAF3B514EEC0F8009F3BFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 50AAF39814EEC0F8009F3BFE /* Project object */;
+}
