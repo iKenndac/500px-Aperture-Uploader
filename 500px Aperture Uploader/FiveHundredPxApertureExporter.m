@@ -178,6 +178,18 @@ extern NSString *k500pxConsumerSecret;
 	// Resizer doesn't need to perform any initialization here.
 	// As an improvement, it could check to make sure the user entered at least one size
     @synchronized(exportManager) {
+		
+		if ([[self.exportManager.selectedExportPresetDictionary valueForKey:@"ImageFormat"] integerValue] != 0) {
+			
+			[[NSAlert alertWithMessageText:@"Unsupported image format in selected Version Preset"
+							 defaultButton:@"OK"
+						   alternateButton:@""
+							   otherButton:@""
+				 informativeTextWithFormat:@"500px.com only supports uploading JPEG images."] runModal];
+			
+			return;
+		}
+		
         [self.exportManager shouldBeginExport];
     }
 }
@@ -208,7 +220,26 @@ extern NSString *k500pxConsumerSecret;
 	exportProgress.currentValue = index + 1;
 	[self unlockProgress];
 	
+	__block BOOL isRunning = YES;
+	
 	// Do something with image...
+	[self.engine uploadPhoto:imageData
+				   withTitle:@"Test"
+				 description:@"Test Desc" 
+		 uploadProgressBlock:^(double progress) { DLog(@"%1.2f", progress); } 
+			 completionBlock:^(NSDictionary *returnValue, NSError *error) {
+				 if (error != nil) {
+					 DLog(@"%@", error);
+				 }
+				 
+				 isRunning = NO;
+			 }
+	 ];
+	
+	while (isRunning)
+		[NSThread sleepForTimeInterval:0.1];
+	
+	DLog(@"Done!");
     
 	// Tell Aperture to write the file out if needed.
 	BOOL shouldAlsoWriteImageFileSomewhere = NO;
@@ -216,6 +247,9 @@ extern NSString *k500pxConsumerSecret;
 }
 
 -(void)exportManagerDidWriteImageDataToRelativePath:(NSString *)relativePath forImageAtIndex:(unsigned)index {
+	
+	
+	
 	
 }
 
