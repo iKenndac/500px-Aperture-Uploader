@@ -1,3 +1,6 @@
 [submodule "TouchJSON"]
 	path = TouchJSON
 	url = git://github.com/TouchCode/TouchJSON.git
+[submodule "RSOAuthEngine"]
+	path = RSOAuthEngine
+	url = git://github.com/iKenndac/RSOAuthEngine.git

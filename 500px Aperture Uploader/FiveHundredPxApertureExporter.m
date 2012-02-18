@@ -7,6 +7,7 @@
 //
 
 #import "FiveHundredPxApertureExporter.h"
+#import "FiveHundredPxOAuthEngine.h"
 
 @implementation FiveHundredPxApertureExporter {
 	ApertureExportProgress exportProgress;
@@ -43,7 +44,7 @@
 }
 
 -(void)awakeFromNib {
-    @synchronized(exportManager) {
+    @synchronized(self.exportManager) {
         //[[self.movieNameField cell] setPlaceholderString:[[self.exportManager propertiesWithoutThumbnailForImageAtIndex:0] valueForKey:kExportKeyProjectName]];
     }
 }
