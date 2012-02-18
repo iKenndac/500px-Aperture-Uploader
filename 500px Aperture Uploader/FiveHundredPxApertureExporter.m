@@ -177,6 +177,7 @@ extern NSString *k500pxConsumerSecret;
 -(void)exportManagerShouldBeginExport {
 	// Resizer doesn't need to perform any initialization here.
 	// As an improvement, it could check to make sure the user entered at least one size
+	
     @synchronized(exportManager) {
 		
 		if ([[self.exportManager.selectedExportPresetDictionary valueForKey:@"ImageFormat"] integerValue] != 0) {
@@ -221,11 +222,13 @@ extern NSString *k500pxConsumerSecret;
 	[self unlockProgress];
 	
 	__block BOOL isRunning = YES;
+
+	NSDictionary *properties = [self.exportManager propertiesWithoutThumbnailForImageAtIndex:index];
 	
 	// Do something with image...
 	[self.engine uploadPhoto:imageData
-				   withTitle:@"Test"
-				 description:@"Test Desc" 
+				   withTitle:[properties valueForKey:kExportKeyVersionName]
+				 description:@"" 
 		 uploadProgressBlock:^(double progress) { DLog(@"%1.2f", progress); } 
 			 completionBlock:^(NSDictionary *returnValue, NSError *error) {
 				 if (error != nil) {

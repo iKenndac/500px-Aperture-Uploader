@@ -316,7 +316,6 @@ static NSString * const k500pxUploadPhotoPath = @"v1/upload";
                                        desc, @"description",
                                        nil];
 
-	
 	[self performAuthenticatedRequestToPath:k500pxPostPhotoPath
 								 parameters:postParams
 									 method:@"POST"
