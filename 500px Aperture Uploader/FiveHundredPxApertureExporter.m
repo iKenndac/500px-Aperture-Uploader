@@ -241,6 +241,19 @@ extern NSString *k500pxConsumerSecret;
 			return;
 		}
 		
+		if (!self.engine.isAuthenticated) {
+			
+			[[NSAlert alertWithMessageText:@"Not logged in!"
+							 defaultButton:@"OK"
+						   alternateButton:@""
+							   otherButton:@""
+				 informativeTextWithFormat:@"Please log in to 500px using the Log In button at the top of this window."] runModal];
+			
+			return;
+		}
+		
+		
+		
         [self.exportManager shouldBeginExport];
     }
 }
