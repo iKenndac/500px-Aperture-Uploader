@@ -15,7 +15,7 @@ typedef void (^FiveHundredPxCompletionWithValueBlock)(NSDictionary *returnValue,
 
 @interface FiveHundredPxOAuthEngine : RSOAuthEngine
 
-@property (weak, nonatomic, readwrite) id <FiveHundredPxEngineDelegate> delegate;
+@property (assign, nonatomic, readwrite) __unsafe_unretained id <FiveHundredPxEngineDelegate> delegate;
 @property (strong, readonly, nonatomic) NSString *screenName;
 @property (readonly, nonatomic, strong) MKNetworkEngine *fileUploadEngine;
 

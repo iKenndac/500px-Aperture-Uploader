@@ -180,7 +180,6 @@ static NSString * const k500pxUploadPhotoPath = @"v1/upload";
 		 [self fillTokenWithResponseBody:completedOperation.responseString type:RSOAuthAccessToken];	 
 		 
 		 // Now, request PW
-		 
 		 MKNetworkOperation *op = [self operationWithPath:k500pxGetAccessTokenPath
 												   params:postParams
 											   httpMethod:@"POST"
@@ -203,6 +202,10 @@ static NSString * const k500pxUploadPhotoPath = @"v1/upload";
 		  } 
 				  onError:^(NSError *error)
 		  {
+			  if (error.code != NSURLErrorNotConnectedToInternet && error.code != NSURLErrorNetworkConnectionLost) {
+				  [self resetOAuthToken];
+				  self.screenName = nil;
+			  }
 			  if (self.completionBlock) self.completionBlock(error);
 			  self.completionBlock = nil;
 		  }];
@@ -213,6 +216,10 @@ static NSString * const k500pxUploadPhotoPath = @"v1/upload";
 	 } 
 		onError:^(NSError *error)
 	 {
+		 if (error.code != NSURLErrorNotConnectedToInternet && error.code != NSURLErrorNetworkConnectionLost) {
+			 [self resetOAuthToken];
+			 self.screenName = nil;
+		 }
 		 if (self.completionBlock) self.completionBlock(error);
 		 self.completionBlock = nil;
 	 }];

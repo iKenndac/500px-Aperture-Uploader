@@ -11,10 +11,10 @@
 @implementation FiveHundredPxApertureExporter {
 	ApertureExportProgress exportProgress;
 }
+
 @synthesize loginSheetUsernameField;
 @synthesize loginSheetPasswordField;
 @synthesize loginSheet;
-
 
 //---------------------------------------------------------
 // initWithAPIManager:
@@ -27,9 +27,16 @@
 // Returning nil means that a plug-in chooses not to be accessible.
 //---------------------------------------------------------
 
+extern NSString *k500pxConsumerKey;
+extern NSString *k500pxConsumerSecret;
+
 -(id)initWithAPIManager:(id <PROAPIAccessing>)anApiManager {
 	
-    if ((self = [super initWithNibName:@"TimeLapseApertureExporter" bundle:[NSBundle bundleForClass:[self class]]])) {
+	k500pxConsumerKey = @"fPTFgAZIkXjfFh07LtlpzQD93mFgVySScU8eSxuC";
+	k500pxConsumerSecret = @"S6vCU1Gier181ayHi4wSTP54f1ZRG3yeSmub15Up";
+	
+    if ((self = [super initWithNibName:@"FiveHundredPxApertureExporter" bundle:[NSBundle bundleForClass:[self class]]])) {
+		
 		self.apiManager	= anApiManager;
 		self.exportManager = [self.apiManager apiForProtocol:@protocol(ApertureExportManager)];
         
@@ -37,10 +44,9 @@
 			return nil;
 		
 		self.progressLock = [[NSLock alloc] init];
+		self.engine = [[FiveHundredPxOAuthEngine alloc] initWithDelegate:self];
 		
 		memset(&exportProgress, 0, sizeof(exportProgress));
-        
-		self.engine = [[FiveHundredPxOAuthEngine alloc] initWithDelegate:self];
 	}
 	
 	return self;
@@ -58,18 +64,43 @@
 @synthesize exportManager;
 @synthesize progressLock;
 @synthesize engine;
-@synthesize loggedInUserName;
 
 @synthesize working;
-@synthesize logInOutButtonTitle;
-@synthesize loginStatusText;
+
++(NSSet *)keyPathsForValuesAffectingLoginStatusText {
+	return [NSSet setWithObjects:@"working", @"engine.isAuthenticated", nil];
+}
+
+-(NSString *)loginStatusText {
+	
+	if (self.isWorking) {
+		return @"Authorizing…";
+	} else {
+		return self.engine.isAuthenticated ? [NSString stringWithFormat:@"Logged in as %@.", self.loggedInUserName] : @"Not Logged In.";
+	}
+}
+
++(NSSet *)keyPathsForValuesAffectingLoggedInUserName {
+	return [NSSet setWithObject:@"engine.screenName"];
+}
+
+-(NSString *)loggedInUserName {
+	return self.engine.screenName;
+}
+
++(NSSet *)keyPathsForValuesAffectingLogInOutButtonTitle {
+	return [NSSet setWithObject:@"engine.isAuthenticated"];
+}
+
+-(NSString *)logInOutButtonTitle {
+	return self.engine.isAuthenticated ? @"Log Out" : @"Log In…";
+}
 
 #pragma mark -
 #pragma mark 500px Interaction
 
 -(void)verifyLoginDetails {
 	
-	self.loginStatusText = @"Logging in…";
 	self.working = YES;
 	
 	[self.engine getDetailsForLoggedInUser:^(NSDictionary *returnValue, NSError *error) {
@@ -77,15 +108,8 @@
 		self.working = NO;
 		
 		if (error != nil) {
-			self.loginStatusText = @"Not logged in.";
-			self.logInOutButtonTitle = @"Log In…";
 			[self presentError:error];
-		} else {
-			self.logInOutButtonTitle = @"Log Out";
-			self.loginStatusText = [NSString stringWithFormat:@"Logged in as %@.",
-									[[returnValue valueForKey:@"user"] valueForKey:@"username"]];
-		}
-		
+		} 
 	}];
 }
 
@@ -98,11 +122,8 @@
 }
 
 -(void)willBeActivated {
-	
 	if (self.engine.isAuthenticated)
-		self.loggedInUserName = self.engine.screenName;
-	else
-		[self.engine authenticateWithCompletionBlock:^(NSError *error) {}];
+		[self verifyLoginDetails];
 }
 
 -(void)willBeDeactivated {
@@ -231,8 +252,9 @@
 #pragma mark -
 #pragma mark OAuth Delegtes
 
-- (void)fiveHundredPxNeedsAuthentication:(FiveHundredPxOAuthEngine *)engine {
-	
+- (void)fiveHundredPxNeedsAuthentication:(FiveHundredPxOAuthEngine *)eng {
+	[eng authenticateWithUsername:self.loginSheetUsernameField.stringValue
+						 password:self.loginSheetPasswordField.stringValue];
 }
 
 - (void)fiveHundredPx:(FiveHundredPxOAuthEngine *)engine statusUpdate:(NSString *)message {
@@ -241,11 +263,46 @@
 
 
 - (IBAction)logInOut:(id)sender {
+	
+	if (self.engine.isAuthenticated) {
+		[self.engine forgetStoredToken];
+	} else {
+		[NSApp beginSheet:self.loginSheet
+		   modalForWindow:self.view.window
+			modalDelegate:nil
+		   didEndSelector:nil
+			  contextInfo:nil];
+	}
+	
 }
 
 - (IBAction)cancelLogInSheet:(id)sender {
+	[NSApp endSheet:self.loginSheet];
+	[self.loginSheet close];
 }
 
 - (IBAction)confirmLogInSheet:(id)sender {
+	
+	if (self.loginSheetPasswordField.stringValue.length == 0) {
+		NSBeep();
+		[self.loginSheetPasswordField becomeFirstResponder];
+		return;
+	}
+	
+	if (self.loginSheetUsernameField.stringValue.length == 0) {
+		NSBeep();
+		[self.loginSheetUsernameField becomeFirstResponder];
+		return;
+	}
+	
+	[self cancelLogInSheet:sender];
+	self.working = YES;
+	
+	[self.engine authenticateWithCompletionBlock:^(NSError *error) {
+		if (error != nil)
+			[self presentError:error];
+		self.working = NO;
+	}];
 }
+
 @end

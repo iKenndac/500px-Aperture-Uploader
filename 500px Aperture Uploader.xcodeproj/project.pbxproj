@@ -231,8 +231,6 @@
 		50AAF39614EEC0F8009F3BFE = {
 			isa = PBXGroup;
 			children = (
-				5044FEDF14EFD4970015F359 /* SystemConfiguration.framework */,
-				5044FEDD14EFD4910015F359 /* Security.framework */,
 				50AAF3AA14EEC0F8009F3BFE /* 500px Aperture Uploader */,
 				50AAF3A314EEC0F8009F3BFE /* Frameworks */,
 				50AAF3A214EEC0F8009F3BFE /* Products */,
@@ -250,6 +248,8 @@
 		50AAF3A314EEC0F8009F3BFE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5044FEDF14EFD4970015F359 /* SystemConfiguration.framework */,
+				5044FEDD14EFD4910015F359 /* Security.framework */,
 				50AAF3BF14EEC236009F3BFE /* PluginManager.framework */,
 				50AAF3A414EEC0F8009F3BFE /* Cocoa.framework */,
 				50AAF3A614EEC0F8009F3BFE /* Other Frameworks */,
@@ -453,7 +453,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "500px Aperture Uploader/500px Aperture Uploader-Prefix.pch";
 				INFOPLIST_FILE = "500px Aperture Uploader/500px Aperture Uploader-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = ApertureExport;
 			};
@@ -465,7 +464,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "500px Aperture Uploader/500px Aperture Uploader-Prefix.pch";
 				INFOPLIST_FILE = "500px Aperture Uploader/500px Aperture Uploader-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = ApertureExport;
 			};
