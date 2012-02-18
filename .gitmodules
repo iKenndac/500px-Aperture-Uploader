@@ -1,0 +1,3 @@
+[submodule "TouchJSON"]
+	path = TouchJSON
+	url = git://github.com/TouchCode/TouchJSON.git
