@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		501EC00B14F0555F0046D0A9 /* Categories.plist in Resources */ = {isa = PBXBuildFile; fileRef = 501EC00914F0555F0046D0A9 /* Categories.plist */; };
+		501EC00F14F0572D0046D0A9 /* FiveHundredPxExtraMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 501EC00E14F0572D0046D0A9 /* FiveHundredPxExtraMetadata.m */; };
 		5044FE7414EFD0080015F359 /* FiveHundredPxApertureExporter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5044FE7214EFD0080015F359 /* FiveHundredPxApertureExporter.xib */; };
 		5044FE8E14EFD1380015F359 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 5044FE7914EFD1380015F359 /* CDataScanner.m */; };
 		5044FE8F14EFD1380015F359 /* CFilteringJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5044FE7C14EFD1380015F359 /* CFilteringJSONSerializer.m */; };
@@ -37,6 +39,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		501EC00A14F0555F0046D0A9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/Categories.plist; sourceTree = "<group>"; };
+		501EC00D14F0572D0046D0A9 /* FiveHundredPxExtraMetadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FiveHundredPxExtraMetadata.h; sourceTree = "<group>"; };
+		501EC00E14F0572D0046D0A9 /* FiveHundredPxExtraMetadata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FiveHundredPxExtraMetadata.m; sourceTree = "<group>"; };
 		5044FE7314EFD0080015F359 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FiveHundredPxApertureExporter.xib; sourceTree = "<group>"; };
 		5044FE7814EFD1380015F359 /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner.h; sourceTree = "<group>"; };
 		5044FE7914EFD1380015F359 /* CDataScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner.m; sourceTree = "<group>"; };
@@ -275,6 +280,8 @@
 				5044FE7214EFD0080015F359 /* FiveHundredPxApertureExporter.xib */,
 				5044FEE114EFD6D30015F359 /* FiveHundredPxOAuthEngine.h */,
 				5044FEE214EFD6D30015F359 /* FiveHundredPxOAuthEngine.m */,
+				501EC00D14F0572D0046D0A9 /* FiveHundredPxExtraMetadata.h */,
+				501EC00E14F0572D0046D0A9 /* FiveHundredPxExtraMetadata.m */,
 				5044FE7614EFD12B0015F359 /* External */,
 				50AAF3AB14EEC0F8009F3BFE /* Supporting Files */,
 			);
@@ -287,6 +294,7 @@
 				50AAF3AC14EEC0F8009F3BFE /* 500px Aperture Uploader-Info.plist */,
 				50AAF3AD14EEC0F8009F3BFE /* InfoPlist.strings */,
 				50AAF3B014EEC0F8009F3BFE /* 500px Aperture Uploader-Prefix.pch */,
+				501EC00914F0555F0046D0A9 /* Categories.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -344,6 +352,7 @@
 			files = (
 				50AAF3AF14EEC0F8009F3BFE /* InfoPlist.strings in Resources */,
 				5044FE7414EFD0080015F359 /* FiveHundredPxApertureExporter.xib in Resources */,
+				501EC00B14F0555F0046D0A9 /* Categories.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,12 +384,21 @@
 				5044FEDB14EFD3C60015F359 /* MKNetworkOperation.m in Sources */,
 				5044FEDC14EFD3C60015F359 /* Reachability.m in Sources */,
 				5044FEE314EFD6D30015F359 /* FiveHundredPxOAuthEngine.m in Sources */,
+				501EC00F14F0572D0046D0A9 /* FiveHundredPxExtraMetadata.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		501EC00914F0555F0046D0A9 /* Categories.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				501EC00A14F0555F0046D0A9 /* en */,
+			);
+			name = Categories.plist;
+			sourceTree = "<group>";
+		};
 		5044FE7214EFD0080015F359 /* FiveHundredPxApertureExporter.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

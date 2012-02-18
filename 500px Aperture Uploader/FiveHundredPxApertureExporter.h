@@ -34,6 +34,7 @@
 @property (weak) IBOutlet NSTextField *loginSheetUsernameField;
 @property (weak) IBOutlet NSSecureTextField *loginSheetPasswordField;
 @property (strong) IBOutlet NSWindow *loginSheet;
+@property (weak) IBOutlet NSPopUpButton *categoriesMenu;
 
 @property (nonatomic, readonly, strong) NSString *loginStatusText;
 @property (nonatomic, readonly, strong) NSString *logInOutButtonTitle;

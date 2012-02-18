@@ -15,6 +15,7 @@
 @synthesize loginSheetUsernameField;
 @synthesize loginSheetPasswordField;
 @synthesize loginSheet;
+@synthesize categoriesMenu;
 
 //---------------------------------------------------------
 // initWithAPIManager:
@@ -56,6 +57,26 @@ extern NSString *k500pxConsumerSecret;
     @synchronized(self.exportManager) {
         //[[self.movieNameField cell] setPlaceholderString:[[self.exportManager propertiesWithoutThumbnailForImageAtIndex:0] valueForKey:kExportKeyProjectName]];
     }
+	
+	NSString *path = [[NSBundle bundleForClass:[self class]] pathForResource:@"Categories"
+																	  ofType:@"plist"];
+	
+	if (![[NSFileManager defaultManager] fileExistsAtPath:path])
+		return;
+	
+	NSDictionary *plist = [NSPropertyListSerialization propertyListWithData:[NSData dataWithContentsOfFile:path]
+																	options:0
+																	 format:NULL
+																	  error:nil];
+	
+	for (NSDictionary *category in [plist valueForKey:@"Categories"]) {
+		
+		NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:[category valueForKey:@"name"]
+													  action:nil
+											   keyEquivalent:@""];
+		[item setTag:[[category valueForKey:@"id"] integerValue]];
+		[[categoriesMenu menu] addItem:item];
+	}
 }
 
 @synthesize firstView;
