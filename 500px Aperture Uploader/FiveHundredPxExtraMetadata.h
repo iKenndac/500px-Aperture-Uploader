@@ -3,7 +3,7 @@
 //  500px Aperture Uploader
 //
 //  Created by Daniel Kennett on 18/02/2012.
-//  Copyright (c) 2012 Daniel Kennett. All rights reserved.
+//  For license information, see LICENSE.markdown
 //
 
 #import <Cocoa/Cocoa.h>

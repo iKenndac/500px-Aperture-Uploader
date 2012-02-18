@@ -3,7 +3,7 @@
 //  Demo
 //
 //  Created by Daniel Kennett on 17/02/2012.
-//  Copyright (c) 2012 KennettNet Software Limited. All rights reserved.
+//  For license information, see LICENSE.markdown
 //
 
 #import "RSOAuthEngine.h"
