@@ -32,6 +32,7 @@
 - (IBAction)logInOut:(id)sender;
 - (IBAction)cancelLogInSheet:(id)sender;
 - (IBAction)confirmLogInSheet:(id)sender;
+- (IBAction)visitWebsite:(id)sender;
 
 @property (weak) IBOutlet NSTextField *loginSheetUsernameField;
 @property (weak) IBOutlet NSSecureTextField *loginSheetPasswordField;

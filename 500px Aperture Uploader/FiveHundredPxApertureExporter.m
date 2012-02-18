@@ -390,4 +390,8 @@ extern NSString *k500pxConsumerSecret;
 	}];
 }
 
+- (IBAction)visitWebsite:(id)sender {
+	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/iKenndac/500px-Aperture-Uploader"]];
+}
+
 @end
