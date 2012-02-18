@@ -49,8 +49,6 @@ static NSString * const k500pxUploadPhotoPath = @"v1/upload";
                     consumerSecret:k500pxConsumerSecret
 					   callbackURL:@"http://authLocal/auth"];
     
-	
-	
     if (self) {
         self.delegate = delegate;
 		self.fileUploadEngine = [[MKNetworkEngine alloc] initWithHostName:k500pxHostname

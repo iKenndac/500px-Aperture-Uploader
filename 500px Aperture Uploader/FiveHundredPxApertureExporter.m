@@ -7,11 +7,13 @@
 //
 
 #import "FiveHundredPxApertureExporter.h"
-#import "FiveHundredPxOAuthEngine.h"
 
 @implementation FiveHundredPxApertureExporter {
 	ApertureExportProgress exportProgress;
 }
+@synthesize loginSheetUsernameField;
+@synthesize loginSheetPasswordField;
+@synthesize loginSheet;
 
 
 //---------------------------------------------------------
@@ -38,6 +40,7 @@
 		
 		memset(&exportProgress, 0, sizeof(exportProgress));
         
+		self.engine = [[FiveHundredPxOAuthEngine alloc] initWithDelegate:self];
 	}
 	
 	return self;
@@ -54,6 +57,37 @@
 @synthesize apiManager;
 @synthesize exportManager;
 @synthesize progressLock;
+@synthesize engine;
+@synthesize loggedInUserName;
+
+@synthesize working;
+@synthesize logInOutButtonTitle;
+@synthesize loginStatusText;
+
+#pragma mark -
+#pragma mark 500px Interaction
+
+-(void)verifyLoginDetails {
+	
+	self.loginStatusText = @"Logging in…";
+	self.working = YES;
+	
+	[self.engine getDetailsForLoggedInUser:^(NSDictionary *returnValue, NSError *error) {
+		
+		self.working = NO;
+		
+		if (error != nil) {
+			self.loginStatusText = @"Not logged in.";
+			self.logInOutButtonTitle = @"Log In…";
+			[self presentError:error];
+		} else {
+			self.logInOutButtonTitle = @"Log Out";
+			self.loginStatusText = [NSString stringWithFormat:@"Logged in as %@.",
+									[[returnValue valueForKey:@"user"] valueForKey:@"username"]];
+		}
+		
+	}];
+}
 
 #pragma mark -
 // UI Methods
@@ -64,7 +98,11 @@
 }
 
 -(void)willBeActivated {
-	// Nothing needed here
+	
+	if (self.engine.isAuthenticated)
+		self.loggedInUserName = self.engine.screenName;
+	else
+		[self.engine authenticateWithCompletionBlock:^(NSError *error) {}];
 }
 
 -(void)willBeDeactivated {
@@ -190,4 +228,24 @@
 	[self.progressLock unlock];
 }
 
+#pragma mark -
+#pragma mark OAuth Delegtes
+
+- (void)fiveHundredPxNeedsAuthentication:(FiveHundredPxOAuthEngine *)engine {
+	
+}
+
+- (void)fiveHundredPx:(FiveHundredPxOAuthEngine *)engine statusUpdate:(NSString *)message {
+	DLog(@"%@", message);
+}
+
+
+- (IBAction)logInOut:(id)sender {
+}
+
+- (IBAction)cancelLogInSheet:(id)sender {
+}
+
+- (IBAction)confirmLogInSheet:(id)sender {
+}
 @end
