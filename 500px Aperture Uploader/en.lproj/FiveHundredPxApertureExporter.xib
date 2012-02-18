@@ -21,23 +21,26 @@
 		</object>
 		<object class="NSArray" key="IBDocument.IntegratedClassDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<string>NSPopUpButtonCell</string>
-			<string>NSPopUpButton</string>
-			<string>NSButton</string>
 			<string>NSMenu</string>
-			<string>NSButtonCell</string>
-			<string>NSSecureTextFieldCell</string>
-			<string>NSTextFieldCell</string>
-			<string>NSBox</string>
-			<string>NSProgressIndicator</string>
-			<string>IKImageBrowserView</string>
-			<string>NSMenuItem</string>
+			<string>NSButton</string>
 			<string>NSCustomObject</string>
-			<string>NSSecureTextField</string>
-			<string>NSView</string>
-			<string>NSWindowTemplate</string>
-			<string>NSTextField</string>
+			<string>NSArrayController</string>
+			<string>IKImageBrowserView</string>
 			<string>NSCustomView</string>
+			<string>NSTextField</string>
+			<string>NSWindowTemplate</string>
+			<string>NSTextFieldCell</string>
+			<string>NSButtonCell</string>
+			<string>NSSecureTextField</string>
+			<string>NSSecureTextFieldCell</string>
+			<string>NSBox</string>
+			<string>NSPopUpButtonCell</string>
+			<string>NSView</string>
+			<string>NSScrollView</string>
+			<string>NSProgressIndicator</string>
+			<string>NSPopUpButton</string>
+			<string>NSMenuItem</string>
+			<string>NSScroller</string>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -64,16 +67,266 @@
 				<int key="NSvFlags">274</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
-					<object class="NSTextField" id="558828389">
+					<object class="NSScrollView" id="962511361">
+						<reference key="NSNextResponder" ref="1005"/>
+						<int key="NSvFlags">4372</int>
+						<object class="NSMutableArray" key="NSSubviews">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="NSClipView" id="858141399">
+								<reference key="NSNextResponder" ref="962511361"/>
+								<int key="NSvFlags">2304</int>
+								<object class="NSMutableArray" key="NSSubviews">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<object class="IKImageBrowserView" id="960280031">
+										<reference key="NSNextResponder" ref="858141399"/>
+										<int key="NSvFlags">18</int>
+										<object class="NSMutableSet" key="NSDragTypes">
+											<bool key="EncodedWithXMLCoder">YES</bool>
+											<object class="NSArray" key="set.sortedObjects">
+												<bool key="EncodedWithXMLCoder">YES</bool>
+												<string>Apple PDF pasteboard type</string>
+												<string>Apple PICT pasteboard type</string>
+												<string>Apple PNG pasteboard type</string>
+												<string>Apple URL pasteboard type</string>
+												<string>NSFilenamesPboardType</string>
+												<string>NSTypedFilenamesPboardType:'.SGI'</string>
+												<string>NSTypedFilenamesPboardType:'8BPS'</string>
+												<string>NSTypedFilenamesPboardType:'BMP '</string>
+												<string>NSTypedFilenamesPboardType:'BMPf'</string>
+												<string>NSTypedFilenamesPboardType:'EPSF'</string>
+												<string>NSTypedFilenamesPboardType:'FPix'</string>
+												<string>NSTypedFilenamesPboardType:'GIFf'</string>
+												<string>NSTypedFilenamesPboardType:'ICO '</string>
+												<string>NSTypedFilenamesPboardType:'JPEG'</string>
+												<string>NSTypedFilenamesPboardType:'PDF '</string>
+												<string>NSTypedFilenamesPboardType:'PICT'</string>
+												<string>NSTypedFilenamesPboardType:'PNGf'</string>
+												<string>NSTypedFilenamesPboardType:'PNTG'</string>
+												<string>NSTypedFilenamesPboardType:'TIFF'</string>
+												<string>NSTypedFilenamesPboardType:'TPIC'</string>
+												<string>NSTypedFilenamesPboardType:'icns'</string>
+												<string>NSTypedFilenamesPboardType:'jp2 '</string>
+												<string>NSTypedFilenamesPboardType:'qtif'</string>
+												<string>NSTypedFilenamesPboardType:3FR</string>
+												<string>NSTypedFilenamesPboardType:3fr</string>
+												<string>NSTypedFilenamesPboardType:ARW</string>
+												<string>NSTypedFilenamesPboardType:BMP</string>
+												<string>NSTypedFilenamesPboardType:CR2</string>
+												<string>NSTypedFilenamesPboardType:CRW</string>
+												<string>NSTypedFilenamesPboardType:CUR</string>
+												<string>NSTypedFilenamesPboardType:DCR</string>
+												<string>NSTypedFilenamesPboardType:DNG</string>
+												<string>NSTypedFilenamesPboardType:EFX</string>
+												<string>NSTypedFilenamesPboardType:EPI</string>
+												<string>NSTypedFilenamesPboardType:EPS</string>
+												<string>NSTypedFilenamesPboardType:EPSF</string>
+												<string>NSTypedFilenamesPboardType:EPSI</string>
+												<string>NSTypedFilenamesPboardType:ERF</string>
+												<string>NSTypedFilenamesPboardType:EXR</string>
+												<string>NSTypedFilenamesPboardType:FAX</string>
+												<string>NSTypedFilenamesPboardType:FFF</string>
+												<string>NSTypedFilenamesPboardType:FPIX</string>
+												<string>NSTypedFilenamesPboardType:FPX</string>
+												<string>NSTypedFilenamesPboardType:G3</string>
+												<string>NSTypedFilenamesPboardType:GIF</string>
+												<string>NSTypedFilenamesPboardType:HDR</string>
+												<string>NSTypedFilenamesPboardType:ICNS</string>
+												<string>NSTypedFilenamesPboardType:ICO</string>
+												<string>NSTypedFilenamesPboardType:JFAX</string>
+												<string>NSTypedFilenamesPboardType:JFIF</string>
+												<string>NSTypedFilenamesPboardType:JFX</string>
+												<string>NSTypedFilenamesPboardType:JP2</string>
+												<string>NSTypedFilenamesPboardType:JPE</string>
+												<string>NSTypedFilenamesPboardType:JPEG</string>
+												<string>NSTypedFilenamesPboardType:JPF</string>
+												<string>NSTypedFilenamesPboardType:JPG</string>
+												<string>NSTypedFilenamesPboardType:MAC</string>
+												<string>NSTypedFilenamesPboardType:MOS</string>
+												<string>NSTypedFilenamesPboardType:MPO</string>
+												<string>NSTypedFilenamesPboardType:MRW</string>
+												<string>NSTypedFilenamesPboardType:NEF</string>
+												<string>NSTypedFilenamesPboardType:NRW</string>
+												<string>NSTypedFilenamesPboardType:ORF</string>
+												<string>NSTypedFilenamesPboardType:PCT</string>
+												<string>NSTypedFilenamesPboardType:PDF</string>
+												<string>NSTypedFilenamesPboardType:PEF</string>
+												<string>NSTypedFilenamesPboardType:PIC</string>
+												<string>NSTypedFilenamesPboardType:PICT</string>
+												<string>NSTypedFilenamesPboardType:PNG</string>
+												<string>NSTypedFilenamesPboardType:PNT</string>
+												<string>NSTypedFilenamesPboardType:PNTG</string>
+												<string>NSTypedFilenamesPboardType:PS</string>
+												<string>NSTypedFilenamesPboardType:PSD</string>
+												<string>NSTypedFilenamesPboardType:QTI</string>
+												<string>NSTypedFilenamesPboardType:QTIF</string>
+												<string>NSTypedFilenamesPboardType:RAF</string>
+												<string>NSTypedFilenamesPboardType:RAW</string>
+												<string>NSTypedFilenamesPboardType:RGB</string>
+												<string>NSTypedFilenamesPboardType:RW2</string>
+												<string>NSTypedFilenamesPboardType:RWL</string>
+												<string>NSTypedFilenamesPboardType:SGI</string>
+												<string>NSTypedFilenamesPboardType:SR2</string>
+												<string>NSTypedFilenamesPboardType:SRF</string>
+												<string>NSTypedFilenamesPboardType:SRW</string>
+												<string>NSTypedFilenamesPboardType:TARGA</string>
+												<string>NSTypedFilenamesPboardType:TGA</string>
+												<string>NSTypedFilenamesPboardType:TIF</string>
+												<string>NSTypedFilenamesPboardType:TIFF</string>
+												<string>NSTypedFilenamesPboardType:XBM</string>
+												<string>NSTypedFilenamesPboardType:arw</string>
+												<string>NSTypedFilenamesPboardType:bmp</string>
+												<string>NSTypedFilenamesPboardType:cr2</string>
+												<string>NSTypedFilenamesPboardType:crw</string>
+												<string>NSTypedFilenamesPboardType:cur</string>
+												<string>NSTypedFilenamesPboardType:dcr</string>
+												<string>NSTypedFilenamesPboardType:dng</string>
+												<string>NSTypedFilenamesPboardType:efx</string>
+												<string>NSTypedFilenamesPboardType:epi</string>
+												<string>NSTypedFilenamesPboardType:eps</string>
+												<string>NSTypedFilenamesPboardType:epsf</string>
+												<string>NSTypedFilenamesPboardType:epsi</string>
+												<string>NSTypedFilenamesPboardType:erf</string>
+												<string>NSTypedFilenamesPboardType:exr</string>
+												<string>NSTypedFilenamesPboardType:fax</string>
+												<string>NSTypedFilenamesPboardType:fff</string>
+												<string>NSTypedFilenamesPboardType:fpix</string>
+												<string>NSTypedFilenamesPboardType:fpx</string>
+												<string>NSTypedFilenamesPboardType:g3</string>
+												<string>NSTypedFilenamesPboardType:gif</string>
+												<string>NSTypedFilenamesPboardType:hdr</string>
+												<string>NSTypedFilenamesPboardType:icns</string>
+												<string>NSTypedFilenamesPboardType:ico</string>
+												<string>NSTypedFilenamesPboardType:jfax</string>
+												<string>NSTypedFilenamesPboardType:jfif</string>
+												<string>NSTypedFilenamesPboardType:jfx</string>
+												<string>NSTypedFilenamesPboardType:jp2</string>
+												<string>NSTypedFilenamesPboardType:jpe</string>
+												<string>NSTypedFilenamesPboardType:jpeg</string>
+												<string>NSTypedFilenamesPboardType:jpf</string>
+												<string>NSTypedFilenamesPboardType:jpg</string>
+												<string>NSTypedFilenamesPboardType:mac</string>
+												<string>NSTypedFilenamesPboardType:mos</string>
+												<string>NSTypedFilenamesPboardType:mpo</string>
+												<string>NSTypedFilenamesPboardType:mrw</string>
+												<string>NSTypedFilenamesPboardType:nef</string>
+												<string>NSTypedFilenamesPboardType:nrw</string>
+												<string>NSTypedFilenamesPboardType:orf</string>
+												<string>NSTypedFilenamesPboardType:pct</string>
+												<string>NSTypedFilenamesPboardType:pdf</string>
+												<string>NSTypedFilenamesPboardType:pef</string>
+												<string>NSTypedFilenamesPboardType:pic</string>
+												<string>NSTypedFilenamesPboardType:pict</string>
+												<string>NSTypedFilenamesPboardType:png</string>
+												<string>NSTypedFilenamesPboardType:pnt</string>
+												<string>NSTypedFilenamesPboardType:pntg</string>
+												<string>NSTypedFilenamesPboardType:ps</string>
+												<string>NSTypedFilenamesPboardType:psd</string>
+												<string>NSTypedFilenamesPboardType:qti</string>
+												<string>NSTypedFilenamesPboardType:qtif</string>
+												<string>NSTypedFilenamesPboardType:raf</string>
+												<string>NSTypedFilenamesPboardType:raw</string>
+												<string>NSTypedFilenamesPboardType:rgb</string>
+												<string>NSTypedFilenamesPboardType:rw2</string>
+												<string>NSTypedFilenamesPboardType:rwl</string>
+												<string>NSTypedFilenamesPboardType:sgi</string>
+												<string>NSTypedFilenamesPboardType:sr2</string>
+												<string>NSTypedFilenamesPboardType:srf</string>
+												<string>NSTypedFilenamesPboardType:srw</string>
+												<string>NSTypedFilenamesPboardType:targa</string>
+												<string>NSTypedFilenamesPboardType:tga</string>
+												<string>NSTypedFilenamesPboardType:tif</string>
+												<string>NSTypedFilenamesPboardType:tiff</string>
+												<string>NSTypedFilenamesPboardType:xbm</string>
+												<string>NeXT Encapsulated PostScript v1.2 pasteboard type</string>
+												<string>NeXT TIFF v4.0 pasteboard type</string>
+											</object>
+										</object>
+										<string key="NSFrameSize">{125, 299}</string>
+										<reference key="NSSuperview" ref="858141399"/>
+										<reference key="NSWindow"/>
+										<reference key="NSNextKeyView" ref="162904495"/>
+										<bool key="NSViewWantsBestResolutionOpenGLSurface">YES</bool>
+										<string key="NSReuseIdentifierKey">_NS:23</string>
+										<bool key="constrainsToOriginalSize">NO</bool>
+										<bool key="cellsHaveSubtitle">NO</bool>
+										<bool key="cellsHaveTitle">NO</bool>
+										<bool key="outlinesCells">YES</bool>
+										<bool key="shadowsCells">YES</bool>
+										<bool key="animates">NO</bool>
+										<bool key="allowsReordering">NO</bool>
+										<bool key="allowsMultipleSelection">YES</bool>
+										<bool key="allowsEmptySelection">NO</bool>
+										<float key="cellWidth">99</float>
+										<float key="cellHeight">99</float>
+										<reference key="dataSource"/>
+										<reference key="delegate"/>
+									</object>
+								</object>
+								<string key="NSFrame">{{1, 1}, {125, 299}}</string>
+								<reference key="NSSuperview" ref="962511361"/>
+								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="960280031"/>
+								<string key="NSReuseIdentifierKey">_NS:11</string>
+								<reference key="NSDocView" ref="960280031"/>
+								<object class="NSColor" key="NSBGColor">
+									<int key="NSColorSpace">6</int>
+									<string key="NSCatalogName">System</string>
+									<string key="NSColorName">controlBackgroundColor</string>
+									<object class="NSColor" key="NSColor" id="937482813">
+										<int key="NSColorSpace">3</int>
+										<bytes key="NSWhite">MC42NjY2NjY2NjY3AA</bytes>
+									</object>
+								</object>
+								<int key="NScvFlags">6</int>
+							</object>
+							<object class="NSScroller" id="943876585">
+								<reference key="NSNextResponder" ref="962511361"/>
+								<int key="NSvFlags">-2147483392</int>
+								<string key="NSFrame">{{111, 1}, {15, 299}}</string>
+								<reference key="NSSuperview" ref="962511361"/>
+								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="86046208"/>
+								<string key="NSReuseIdentifierKey">_NS:26</string>
+								<reference key="NSTarget" ref="962511361"/>
+								<string key="NSAction">_doScroller:</string>
+								<double key="NSCurValue">1</double>
+								<double key="NSPercent">0.96363627910614014</double>
+							</object>
+							<object class="NSScroller" id="162904495">
+								<reference key="NSNextResponder" ref="962511361"/>
+								<int key="NSvFlags">-2147483392</int>
+								<string key="NSFrame">{{-100, -100}, {119, 15}}</string>
+								<reference key="NSSuperview" ref="962511361"/>
+								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="943876585"/>
+								<string key="NSReuseIdentifierKey">_NS:30</string>
+								<int key="NSsFlags">1</int>
+								<reference key="NSTarget" ref="962511361"/>
+								<string key="NSAction">_doScroller:</string>
+								<double key="NSPercent">0.50602412223815918</double>
+							</object>
+						</object>
+						<string key="NSFrame">{{20, 20}, {127, 301}}</string>
+						<reference key="NSSuperview" ref="1005"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="858141399"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<int key="NSsFlags">133650</int>
+						<reference key="NSVScroller" ref="943876585"/>
+						<reference key="NSHScroller" ref="162904495"/>
+						<reference key="NSContentView" ref="858141399"/>
+						<bytes key="NSScrollAmts">QSAAAEEgAABC/pJJQu4AAA</bytes>
+					</object>
+					<object class="NSTextField" id="246100753">
 						<reference key="NSNextResponder" ref="1005"/>
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{162, 257}, {66, 17}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="377890392"/>
+						<reference key="NSNextKeyView" ref="81997488"/>
 						<string key="NSReuseIdentifierKey">_NS:3944</string>
 						<bool key="NSEnabled">YES</bool>
-						<object class="NSTextFieldCell" key="NSCell" id="580526390">
+						<object class="NSTextFieldCell" key="NSCell" id="677933697">
 							<int key="NSCellFlags">68288064</int>
 							<int key="NSCellFlags2">71304192</int>
 							<string key="NSContents">Privacy:</string>
@@ -83,15 +336,12 @@
 								<int key="NSfFlags">1044</int>
 							</object>
 							<string key="NSCellIdentifier">_NS:3944</string>
-							<reference key="NSControlView" ref="558828389"/>
+							<reference key="NSControlView" ref="246100753"/>
 							<object class="NSColor" key="NSBackgroundColor" id="259010543">
 								<int key="NSColorSpace">6</int>
 								<string key="NSCatalogName">System</string>
 								<string key="NSColorName">controlColor</string>
-								<object class="NSColor" key="NSColor">
-									<int key="NSColorSpace">3</int>
-									<bytes key="NSWhite">MC42NjY2NjY2NjY3AA</bytes>
-								</object>
+								<reference key="NSColor" ref="937482813"/>
 							</object>
 							<object class="NSColor" key="NSTextColor" id="660382645">
 								<int key="NSColorSpace">6</int>
@@ -104,7 +354,7 @@
 							</object>
 						</object>
 					</object>
-					<object class="NSTextField" id="1010307562">
+					<object class="NSTextField" id="295774513">
 						<reference key="NSNextResponder" ref="1005"/>
 						<int key="NSvFlags">266</int>
 						<string key="NSFrame">{{250, 208}, {193, 42}}</string>
@@ -114,7 +364,7 @@
 						<string key="NSReuseIdentifierKey">_NS:360</string>
 						<string key="NSAntiCompressionPriority">{250, 750}</string>
 						<bool key="NSEnabled">YES</bool>
-						<object class="NSTextFieldCell" key="NSCell" id="492191166">
+						<object class="NSTextFieldCell" key="NSCell" id="1021356576">
 							<int key="NSCellFlags">67239424</int>
 							<int key="NSCellFlags2">272760832</int>
 							<string key="NSContents">Private photos are only visible in collections and portfolios they are added to.</string>
@@ -124,27 +374,27 @@
 								<int key="NSfFlags">3100</int>
 							</object>
 							<string key="NSCellIdentifier">_NS:360</string>
-							<reference key="NSControlView" ref="1010307562"/>
+							<reference key="NSControlView" ref="295774513"/>
 							<reference key="NSBackgroundColor" ref="259010543"/>
 							<reference key="NSTextColor" ref="660382645"/>
 						</object>
 					</object>
-					<object class="NSButton" id="377890392">
+					<object class="NSButton" id="81997488">
 						<reference key="NSNextResponder" ref="1005"/>
 						<int key="NSvFlags">266</int>
 						<string key="NSFrame">{{231, 256}, {211, 18}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="1010307562"/>
+						<reference key="NSNextKeyView" ref="295774513"/>
 						<string key="NSReuseIdentifierKey">_NS:771</string>
 						<bool key="NSEnabled">YES</bool>
-						<object class="NSButtonCell" key="NSCell" id="684487522">
+						<object class="NSButtonCell" key="NSCell" id="111843114">
 							<int key="NSCellFlags">-2080244224</int>
 							<int key="NSCellFlags2">0</int>
 							<string key="NSContents">Photo is private</string>
 							<reference key="NSSupport" ref="582281230"/>
 							<string key="NSCellIdentifier">_NS:771</string>
-							<reference key="NSControlView" ref="377890392"/>
+							<reference key="NSControlView" ref="81997488"/>
 							<int key="NSButtonFlags">1211912703</int>
 							<int key="NSButtonFlags2">2</int>
 							<object class="NSCustomResource" key="NSNormalImage">
@@ -160,63 +410,63 @@
 							<int key="NSPeriodicInterval">25</int>
 						</object>
 					</object>
-					<object class="NSPopUpButton" id="102621990">
+					<object class="NSPopUpButton" id="1030185469">
 						<reference key="NSNextResponder" ref="1005"/>
 						<int key="NSvFlags">266</int>
 						<string key="NSFrame">{{230, 288}, {213, 26}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="558828389"/>
+						<reference key="NSNextKeyView" ref="246100753"/>
 						<string key="NSReuseIdentifierKey">_NS:868</string>
 						<bool key="NSEnabled">YES</bool>
-						<object class="NSPopUpButtonCell" key="NSCell" id="667180705">
+						<object class="NSPopUpButtonCell" key="NSCell" id="779168564">
 							<int key="NSCellFlags">-2076049856</int>
 							<int key="NSCellFlags2">2048</int>
 							<reference key="NSSupport" ref="582281230"/>
 							<string key="NSCellIdentifier">_NS:868</string>
-							<reference key="NSControlView" ref="102621990"/>
+							<reference key="NSControlView" ref="1030185469"/>
 							<int key="NSButtonFlags">109199615</int>
 							<int key="NSButtonFlags2">129</int>
 							<string key="NSAlternateContents"/>
 							<string key="NSKeyEquivalent"/>
 							<int key="NSPeriodicDelay">400</int>
 							<int key="NSPeriodicInterval">75</int>
-							<object class="NSMenuItem" key="NSMenuItem" id="623278910">
-								<reference key="NSMenu" ref="557850515"/>
+							<object class="NSMenuItem" key="NSMenuItem" id="191202960">
+								<reference key="NSMenu" ref="279392539"/>
 								<string key="NSTitle">None</string>
 								<string key="NSKeyEquiv"/>
 								<int key="NSKeyEquivModMask">1048576</int>
 								<int key="NSMnemonicLoc">2147483647</int>
 								<int key="NSState">1</int>
-								<object class="NSCustomResource" key="NSOnImage" id="836768313">
+								<object class="NSCustomResource" key="NSOnImage" id="284578390">
 									<string key="NSClassName">NSImage</string>
 									<string key="NSResourceName">NSMenuCheckmark</string>
 								</object>
-								<object class="NSCustomResource" key="NSMixedImage" id="724670474">
+								<object class="NSCustomResource" key="NSMixedImage" id="406419126">
 									<string key="NSClassName">NSImage</string>
 									<string key="NSResourceName">NSMenuMixedState</string>
 								</object>
 								<string key="NSAction">_popUpItemAction:</string>
-								<reference key="NSTarget" ref="667180705"/>
+								<reference key="NSTarget" ref="779168564"/>
 							</object>
 							<bool key="NSMenuItemRespectAlignment">YES</bool>
-							<object class="NSMenu" key="NSMenu" id="557850515">
+							<object class="NSMenu" key="NSMenu" id="279392539">
 								<string key="NSTitle">OtherViews</string>
 								<object class="NSMutableArray" key="NSMenuItems">
 									<bool key="EncodedWithXMLCoder">YES</bool>
-									<reference ref="623278910"/>
-									<object class="NSMenuItem" id="205614465">
-										<reference key="NSMenu" ref="557850515"/>
+									<reference ref="191202960"/>
+									<object class="NSMenuItem" id="94695102">
+										<reference key="NSMenu" ref="279392539"/>
 										<bool key="NSIsDisabled">YES</bool>
 										<bool key="NSIsSeparator">YES</bool>
 										<string key="NSTitle"/>
 										<string key="NSKeyEquiv"/>
 										<int key="NSMnemonicLoc">2147483647</int>
-										<reference key="NSOnImage" ref="836768313"/>
-										<reference key="NSMixedImage" ref="724670474"/>
+										<reference key="NSOnImage" ref="284578390"/>
+										<reference key="NSMixedImage" ref="406419126"/>
 										<string key="NSAction">_popUpItemAction:</string>
 										<int key="NSTag">-1</int>
-										<reference key="NSTarget" ref="667180705"/>
+										<reference key="NSTarget" ref="779168564"/>
 									</object>
 								</object>
 								<reference key="NSMenuFont" ref="582281230"/>
@@ -227,209 +477,25 @@
 							<int key="NSArrowPosition">2</int>
 						</object>
 					</object>
-					<object class="NSTextField" id="849717217">
+					<object class="NSTextField" id="86046208">
 						<reference key="NSNextResponder" ref="1005"/>
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{150, 294}, {78, 17}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="102621990"/>
+						<reference key="NSNextKeyView" ref="1030185469"/>
 						<string key="NSReuseIdentifierKey">_NS:3944</string>
 						<bool key="NSEnabled">YES</bool>
-						<object class="NSTextFieldCell" key="NSCell" id="808998796">
+						<object class="NSTextFieldCell" key="NSCell" id="612476073">
 							<int key="NSCellFlags">68288064</int>
 							<int key="NSCellFlags2">71304192</int>
 							<string key="NSContents">Category:</string>
 							<reference key="NSSupport" ref="582281230"/>
 							<string key="NSCellIdentifier">_NS:3944</string>
-							<reference key="NSControlView" ref="849717217"/>
+							<reference key="NSControlView" ref="86046208"/>
 							<reference key="NSBackgroundColor" ref="259010543"/>
 							<reference key="NSTextColor" ref="660382645"/>
 						</object>
-					</object>
-					<object class="IKImageBrowserView" id="730417857">
-						<reference key="NSNextResponder" ref="1005"/>
-						<int key="NSvFlags">18</int>
-						<object class="NSMutableSet" key="NSDragTypes">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="NSArray" key="set.sortedObjects">
-								<bool key="EncodedWithXMLCoder">YES</bool>
-								<string>Apple PDF pasteboard type</string>
-								<string>Apple PICT pasteboard type</string>
-								<string>Apple PNG pasteboard type</string>
-								<string>Apple URL pasteboard type</string>
-								<string>NSFilenamesPboardType</string>
-								<string>NSTypedFilenamesPboardType:'.SGI'</string>
-								<string>NSTypedFilenamesPboardType:'8BPS'</string>
-								<string>NSTypedFilenamesPboardType:'BMP '</string>
-								<string>NSTypedFilenamesPboardType:'BMPf'</string>
-								<string>NSTypedFilenamesPboardType:'EPSF'</string>
-								<string>NSTypedFilenamesPboardType:'FPix'</string>
-								<string>NSTypedFilenamesPboardType:'GIFf'</string>
-								<string>NSTypedFilenamesPboardType:'ICO '</string>
-								<string>NSTypedFilenamesPboardType:'JPEG'</string>
-								<string>NSTypedFilenamesPboardType:'PDF '</string>
-								<string>NSTypedFilenamesPboardType:'PICT'</string>
-								<string>NSTypedFilenamesPboardType:'PNGf'</string>
-								<string>NSTypedFilenamesPboardType:'PNTG'</string>
-								<string>NSTypedFilenamesPboardType:'TIFF'</string>
-								<string>NSTypedFilenamesPboardType:'TPIC'</string>
-								<string>NSTypedFilenamesPboardType:'icns'</string>
-								<string>NSTypedFilenamesPboardType:'jp2 '</string>
-								<string>NSTypedFilenamesPboardType:'qtif'</string>
-								<string>NSTypedFilenamesPboardType:3FR</string>
-								<string>NSTypedFilenamesPboardType:3fr</string>
-								<string>NSTypedFilenamesPboardType:ARW</string>
-								<string>NSTypedFilenamesPboardType:BMP</string>
-								<string>NSTypedFilenamesPboardType:CR2</string>
-								<string>NSTypedFilenamesPboardType:CRW</string>
-								<string>NSTypedFilenamesPboardType:CUR</string>
-								<string>NSTypedFilenamesPboardType:DCR</string>
-								<string>NSTypedFilenamesPboardType:DNG</string>
-								<string>NSTypedFilenamesPboardType:EFX</string>
-								<string>NSTypedFilenamesPboardType:EPI</string>
-								<string>NSTypedFilenamesPboardType:EPS</string>
-								<string>NSTypedFilenamesPboardType:EPSF</string>
-								<string>NSTypedFilenamesPboardType:EPSI</string>
-								<string>NSTypedFilenamesPboardType:ERF</string>
-								<string>NSTypedFilenamesPboardType:EXR</string>
-								<string>NSTypedFilenamesPboardType:FAX</string>
-								<string>NSTypedFilenamesPboardType:FFF</string>
-								<string>NSTypedFilenamesPboardType:FPIX</string>
-								<string>NSTypedFilenamesPboardType:FPX</string>
-								<string>NSTypedFilenamesPboardType:G3</string>
-								<string>NSTypedFilenamesPboardType:GIF</string>
-								<string>NSTypedFilenamesPboardType:HDR</string>
-								<string>NSTypedFilenamesPboardType:ICNS</string>
-								<string>NSTypedFilenamesPboardType:ICO</string>
-								<string>NSTypedFilenamesPboardType:JFAX</string>
-								<string>NSTypedFilenamesPboardType:JFIF</string>
-								<string>NSTypedFilenamesPboardType:JFX</string>
-								<string>NSTypedFilenamesPboardType:JP2</string>
-								<string>NSTypedFilenamesPboardType:JPE</string>
-								<string>NSTypedFilenamesPboardType:JPEG</string>
-								<string>NSTypedFilenamesPboardType:JPF</string>
-								<string>NSTypedFilenamesPboardType:JPG</string>
-								<string>NSTypedFilenamesPboardType:MAC</string>
-								<string>NSTypedFilenamesPboardType:MOS</string>
-								<string>NSTypedFilenamesPboardType:MPO</string>
-								<string>NSTypedFilenamesPboardType:MRW</string>
-								<string>NSTypedFilenamesPboardType:NEF</string>
-								<string>NSTypedFilenamesPboardType:NRW</string>
-								<string>NSTypedFilenamesPboardType:ORF</string>
-								<string>NSTypedFilenamesPboardType:PCT</string>
-								<string>NSTypedFilenamesPboardType:PDF</string>
-								<string>NSTypedFilenamesPboardType:PEF</string>
-								<string>NSTypedFilenamesPboardType:PIC</string>
-								<string>NSTypedFilenamesPboardType:PICT</string>
-								<string>NSTypedFilenamesPboardType:PNG</string>
-								<string>NSTypedFilenamesPboardType:PNT</string>
-								<string>NSTypedFilenamesPboardType:PNTG</string>
-								<string>NSTypedFilenamesPboardType:PS</string>
-								<string>NSTypedFilenamesPboardType:PSD</string>
-								<string>NSTypedFilenamesPboardType:QTI</string>
-								<string>NSTypedFilenamesPboardType:QTIF</string>
-								<string>NSTypedFilenamesPboardType:RAF</string>
-								<string>NSTypedFilenamesPboardType:RAW</string>
-								<string>NSTypedFilenamesPboardType:RGB</string>
-								<string>NSTypedFilenamesPboardType:RW2</string>
-								<string>NSTypedFilenamesPboardType:RWL</string>
-								<string>NSTypedFilenamesPboardType:SGI</string>
-								<string>NSTypedFilenamesPboardType:SR2</string>
-								<string>NSTypedFilenamesPboardType:SRF</string>
-								<string>NSTypedFilenamesPboardType:SRW</string>
-								<string>NSTypedFilenamesPboardType:TARGA</string>
-								<string>NSTypedFilenamesPboardType:TGA</string>
-								<string>NSTypedFilenamesPboardType:TIF</string>
-								<string>NSTypedFilenamesPboardType:TIFF</string>
-								<string>NSTypedFilenamesPboardType:XBM</string>
-								<string>NSTypedFilenamesPboardType:arw</string>
-								<string>NSTypedFilenamesPboardType:bmp</string>
-								<string>NSTypedFilenamesPboardType:cr2</string>
-								<string>NSTypedFilenamesPboardType:crw</string>
-								<string>NSTypedFilenamesPboardType:cur</string>
-								<string>NSTypedFilenamesPboardType:dcr</string>
-								<string>NSTypedFilenamesPboardType:dng</string>
-								<string>NSTypedFilenamesPboardType:efx</string>
-								<string>NSTypedFilenamesPboardType:epi</string>
-								<string>NSTypedFilenamesPboardType:eps</string>
-								<string>NSTypedFilenamesPboardType:epsf</string>
-								<string>NSTypedFilenamesPboardType:epsi</string>
-								<string>NSTypedFilenamesPboardType:erf</string>
-								<string>NSTypedFilenamesPboardType:exr</string>
-								<string>NSTypedFilenamesPboardType:fax</string>
-								<string>NSTypedFilenamesPboardType:fff</string>
-								<string>NSTypedFilenamesPboardType:fpix</string>
-								<string>NSTypedFilenamesPboardType:fpx</string>
-								<string>NSTypedFilenamesPboardType:g3</string>
-								<string>NSTypedFilenamesPboardType:gif</string>
-								<string>NSTypedFilenamesPboardType:hdr</string>
-								<string>NSTypedFilenamesPboardType:icns</string>
-								<string>NSTypedFilenamesPboardType:ico</string>
-								<string>NSTypedFilenamesPboardType:jfax</string>
-								<string>NSTypedFilenamesPboardType:jfif</string>
-								<string>NSTypedFilenamesPboardType:jfx</string>
-								<string>NSTypedFilenamesPboardType:jp2</string>
-								<string>NSTypedFilenamesPboardType:jpe</string>
-								<string>NSTypedFilenamesPboardType:jpeg</string>
-								<string>NSTypedFilenamesPboardType:jpf</string>
-								<string>NSTypedFilenamesPboardType:jpg</string>
-								<string>NSTypedFilenamesPboardType:mac</string>
-								<string>NSTypedFilenamesPboardType:mos</string>
-								<string>NSTypedFilenamesPboardType:mpo</string>
-								<string>NSTypedFilenamesPboardType:mrw</string>
-								<string>NSTypedFilenamesPboardType:nef</string>
-								<string>NSTypedFilenamesPboardType:nrw</string>
-								<string>NSTypedFilenamesPboardType:orf</string>
-								<string>NSTypedFilenamesPboardType:pct</string>
-								<string>NSTypedFilenamesPboardType:pdf</string>
-								<string>NSTypedFilenamesPboardType:pef</string>
-								<string>NSTypedFilenamesPboardType:pic</string>
-								<string>NSTypedFilenamesPboardType:pict</string>
-								<string>NSTypedFilenamesPboardType:png</string>
-								<string>NSTypedFilenamesPboardType:pnt</string>
-								<string>NSTypedFilenamesPboardType:pntg</string>
-								<string>NSTypedFilenamesPboardType:ps</string>
-								<string>NSTypedFilenamesPboardType:psd</string>
-								<string>NSTypedFilenamesPboardType:qti</string>
-								<string>NSTypedFilenamesPboardType:qtif</string>
-								<string>NSTypedFilenamesPboardType:raf</string>
-								<string>NSTypedFilenamesPboardType:raw</string>
-								<string>NSTypedFilenamesPboardType:rgb</string>
-								<string>NSTypedFilenamesPboardType:rw2</string>
-								<string>NSTypedFilenamesPboardType:rwl</string>
-								<string>NSTypedFilenamesPboardType:sgi</string>
-								<string>NSTypedFilenamesPboardType:sr2</string>
-								<string>NSTypedFilenamesPboardType:srf</string>
-								<string>NSTypedFilenamesPboardType:srw</string>
-								<string>NSTypedFilenamesPboardType:targa</string>
-								<string>NSTypedFilenamesPboardType:tga</string>
-								<string>NSTypedFilenamesPboardType:tif</string>
-								<string>NSTypedFilenamesPboardType:tiff</string>
-								<string>NSTypedFilenamesPboardType:xbm</string>
-								<string>NeXT Encapsulated PostScript v1.2 pasteboard type</string>
-								<string>NeXT TIFF v4.0 pasteboard type</string>
-							</object>
-						</object>
-						<string key="NSFrame">{{20, 20}, {125, 301}}</string>
-						<reference key="NSSuperview" ref="1005"/>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="849717217"/>
-						<bool key="NSViewWantsBestResolutionOpenGLSurface">YES</bool>
-						<string key="NSReuseIdentifierKey">_NS:23</string>
-						<bool key="constrainsToOriginalSize">NO</bool>
-						<bool key="cellsHaveSubtitle">NO</bool>
-						<bool key="cellsHaveTitle">NO</bool>
-						<bool key="outlinesCells">YES</bool>
-						<bool key="shadowsCells">YES</bool>
-						<bool key="animates">NO</bool>
-						<bool key="allowsReordering">NO</bool>
-						<bool key="allowsMultipleSelection">YES</bool>
-						<bool key="allowsEmptySelection">NO</bool>
-						<float key="cellWidth">99</float>
-						<float key="cellHeight">99</float>
-						<reference key="dataSource"/>
-						<reference key="delegate"/>
 					</object>
 					<object class="NSBox" id="999669663">
 						<reference key="NSNextResponder" ref="1005"/>
@@ -437,7 +503,7 @@
 						<string key="NSFrame">{{20, 339}, {420, 5}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="730417857"/>
+						<reference key="NSNextKeyView" ref="962511361"/>
 						<string key="NSReuseIdentifierKey">_NS:2411</string>
 						<string key="NSOffsets">{0, 0}</string>
 						<object class="NSTextFieldCell" key="NSTitleCell">
@@ -749,6 +815,21 @@
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
+			<object class="NSArrayController" id="871838476">
+				<object class="NSMutableArray" key="NSDeclaredKeys">
+					<bool key="EncodedWithXMLCoder">YES</bool>
+					<string>categoryId</string>
+					<string>privacy</string>
+				</object>
+				<string key="NSObjectClassName">FiveHundredPxExtraMetadata</string>
+				<bool key="NSEditable">YES</bool>
+				<object class="_NSManagedProxy" key="_NSManagedProxy"/>
+				<bool key="NSAvoidsEmptySelection">YES</bool>
+				<bool key="NSPreservesSelection">YES</bool>
+				<bool key="NSSelectsInsertedObjects">YES</bool>
+				<bool key="NSFilterRestrictsInsertion">YES</bool>
+				<bool key="NSClearsFilterPredicateOnInsertion">YES</bool>
+			</object>
 		</object>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
 			<object class="NSMutableArray" key="connectionRecords">
@@ -813,9 +894,25 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">categoriesMenu</string>
 						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="102621990"/>
+						<reference key="destination" ref="1030185469"/>
 					</object>
 					<int key="connectionID">55</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">metadataArrayController</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="871838476"/>
+					</object>
+					<int key="connectionID">61</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">imageBrowser</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="960280031"/>
+					</object>
+					<int key="connectionID">66</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -885,6 +982,86 @@
 					</object>
 					<int key="connectionID">38</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">dataSource</string>
+						<reference key="source" ref="960280031"/>
+						<reference key="destination" ref="1001"/>
+					</object>
+					<int key="connectionID">62</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="960280031"/>
+						<reference key="destination" ref="1001"/>
+					</object>
+					<int key="connectionID">63</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">_delegate</string>
+						<reference key="source" ref="960280031"/>
+						<reference key="destination" ref="1001"/>
+					</object>
+					<int key="connectionID">64</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">_dataSource</string>
+						<reference key="source" ref="960280031"/>
+						<reference key="destination" ref="1001"/>
+					</object>
+					<int key="connectionID">65</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">selectedTag: selection.categoryId</string>
+						<reference key="source" ref="1030185469"/>
+						<reference key="destination" ref="871838476"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="1030185469"/>
+							<reference key="NSDestination" ref="871838476"/>
+							<string key="NSLabel">selectedTag: selection.categoryId</string>
+							<string key="NSBinding">selectedTag</string>
+							<string key="NSKeyPath">selection.categoryId</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">57</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: selection.privacy</string>
+						<reference key="source" ref="81997488"/>
+						<reference key="destination" ref="871838476"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="81997488"/>
+							<reference key="NSDestination" ref="871838476"/>
+							<string key="NSLabel">value: selection.privacy</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">selection.privacy</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">58</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">contentArray: metadataContainers</string>
+						<reference key="source" ref="871838476"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="871838476"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">contentArray: metadataContainers</string>
+							<string key="NSBinding">contentArray</string>
+							<string key="NSKeyPath">metadataContainers</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">59</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -924,12 +1101,12 @@
 							<reference ref="344883020"/>
 							<reference ref="999669663"/>
 							<reference ref="369035306"/>
-							<reference ref="730417857"/>
-							<reference ref="849717217"/>
-							<reference ref="102621990"/>
-							<reference ref="377890392"/>
-							<reference ref="1010307562"/>
-							<reference ref="558828389"/>
+							<reference ref="86046208"/>
+							<reference ref="1030185469"/>
+							<reference ref="81997488"/>
+							<reference ref="295774513"/>
+							<reference ref="246100753"/>
+							<reference ref="962511361"/>
 						</object>
 						<reference key="parent" ref="1002"/>
 					</object>
@@ -1115,103 +1292,130 @@
 						<reference key="parent" ref="1005"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">39</int>
-						<reference key="object" ref="730417857"/>
-						<reference key="parent" ref="1005"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">40</int>
-						<reference key="object" ref="849717217"/>
+						<reference key="object" ref="86046208"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="808998796"/>
+							<reference ref="612476073"/>
 						</object>
 						<reference key="parent" ref="1005"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">41</int>
-						<reference key="object" ref="808998796"/>
-						<reference key="parent" ref="849717217"/>
+						<reference key="object" ref="612476073"/>
+						<reference key="parent" ref="86046208"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">42</int>
-						<reference key="object" ref="102621990"/>
+						<reference key="object" ref="1030185469"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="667180705"/>
+							<reference ref="779168564"/>
 						</object>
 						<reference key="parent" ref="1005"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">43</int>
-						<reference key="object" ref="667180705"/>
+						<reference key="object" ref="779168564"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="557850515"/>
+							<reference ref="279392539"/>
 						</object>
-						<reference key="parent" ref="102621990"/>
+						<reference key="parent" ref="1030185469"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">44</int>
-						<reference key="object" ref="557850515"/>
+						<reference key="object" ref="279392539"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="623278910"/>
-							<reference ref="205614465"/>
+							<reference ref="191202960"/>
+							<reference ref="94695102"/>
 						</object>
-						<reference key="parent" ref="667180705"/>
+						<reference key="parent" ref="779168564"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">45</int>
-						<reference key="object" ref="623278910"/>
-						<reference key="parent" ref="557850515"/>
+						<reference key="object" ref="191202960"/>
+						<reference key="parent" ref="279392539"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">48</int>
-						<reference key="object" ref="205614465"/>
-						<reference key="parent" ref="557850515"/>
+						<reference key="object" ref="94695102"/>
+						<reference key="parent" ref="279392539"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">49</int>
-						<reference key="object" ref="377890392"/>
+						<reference key="object" ref="81997488"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="684487522"/>
+							<reference ref="111843114"/>
 						</object>
 						<reference key="parent" ref="1005"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">50</int>
-						<reference key="object" ref="684487522"/>
-						<reference key="parent" ref="377890392"/>
+						<reference key="object" ref="111843114"/>
+						<reference key="parent" ref="81997488"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">51</int>
-						<reference key="object" ref="1010307562"/>
+						<reference key="object" ref="295774513"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="492191166"/>
+							<reference ref="1021356576"/>
 						</object>
 						<reference key="parent" ref="1005"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">52</int>
-						<reference key="object" ref="492191166"/>
-						<reference key="parent" ref="1010307562"/>
+						<reference key="object" ref="1021356576"/>
+						<reference key="parent" ref="295774513"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">53</int>
-						<reference key="object" ref="558828389"/>
+						<reference key="object" ref="246100753"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="580526390"/>
+							<reference ref="677933697"/>
 						</object>
 						<reference key="parent" ref="1005"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">54</int>
-						<reference key="object" ref="580526390"/>
-						<reference key="parent" ref="558828389"/>
+						<reference key="object" ref="677933697"/>
+						<reference key="parent" ref="246100753"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">56</int>
+						<reference key="object" ref="871838476"/>
+						<reference key="parent" ref="1002"/>
+						<string key="objectName">Metadata Array Controller</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">67</int>
+						<reference key="object" ref="962511361"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="162904495"/>
+							<reference ref="943876585"/>
+							<reference ref="960280031"/>
+						</object>
+						<reference key="parent" ref="1005"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">69</int>
+						<reference key="object" ref="162904495"/>
+						<reference key="parent" ref="962511361"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">70</int>
+						<reference key="object" ref="943876585"/>
+						<reference key="parent" ref="962511361"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">39</int>
+						<reference key="object" ref="960280031"/>
+						<reference key="parent" ref="962511361"/>
 					</object>
 				</object>
 			</object>
@@ -1259,8 +1463,12 @@
 					<string>52.IBPluginDependency</string>
 					<string>53.IBPluginDependency</string>
 					<string>54.IBPluginDependency</string>
+					<string>56.IBPluginDependency</string>
 					<string>6.IBPluginDependency</string>
+					<string>67.IBPluginDependency</string>
+					<string>69.IBPluginDependency</string>
 					<string>7.IBPluginDependency</string>
+					<string>70.IBPluginDependency</string>
 					<string>8.IBPluginDependency</string>
 					<string>9.IBPluginDependency</string>
 				</object>
@@ -1310,6 +1518,10 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="unlocalizedProperties">
@@ -1324,7 +1536,7 @@
 				<reference key="dict.values" ref="1002"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">55</int>
+			<int key="maxID">70</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1375,36 +1587,53 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>categoriesMenu</string>
 							<string>firstView</string>
+							<string>imageBrowser</string>
 							<string>lastView</string>
 							<string>loginSheet</string>
 							<string>loginSheetPasswordField</string>
 							<string>loginSheetUsernameField</string>
+							<string>metadataArrayController</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>NSPopUpButton</string>
 							<string>NSView</string>
+							<string>IKImageBrowserView</string>
 							<string>NSView</string>
 							<string>NSWindow</string>
 							<string>NSSecureTextField</string>
 							<string>NSTextField</string>
+							<string>NSArrayController</string>
 						</object>
 					</object>
 					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>categoriesMenu</string>
 							<string>firstView</string>
+							<string>imageBrowser</string>
 							<string>lastView</string>
 							<string>loginSheet</string>
 							<string>loginSheetPasswordField</string>
 							<string>loginSheetUsernameField</string>
+							<string>metadataArrayController</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBToOneOutletInfo">
+								<string key="name">categoriesMenu</string>
+								<string key="candidateClassName">NSPopUpButton</string>
+							</object>
+							<object class="IBToOneOutletInfo">
 								<string key="name">firstView</string>
 								<string key="candidateClassName">NSView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">imageBrowser</string>
+								<string key="candidateClassName">IKImageBrowserView</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">lastView</string>
@@ -1422,11 +1651,75 @@
 								<string key="name">loginSheetUsernameField</string>
 								<string key="candidateClassName">NSTextField</string>
 							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">metadataArrayController</string>
+								<string key="candidateClassName">NSArrayController</string>
+							</object>
 						</object>
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/FiveHundredPxApertureExporter.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">IKImageBrowserView</string>
+					<object class="NSMutableDictionary" key="outlets">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>_dataSource</string>
+							<string>_delegate</string>
+							<string>_dragDestinationDelegate</string>
+							<string>_horizontalScroller</string>
+							<string>_verticalScroller</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>NSScroller</string>
+							<string>NSScroller</string>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>_dataSource</string>
+							<string>_delegate</string>
+							<string>_dragDestinationDelegate</string>
+							<string>_horizontalScroller</string>
+							<string>_verticalScroller</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBToOneOutletInfo">
+								<string key="name">_dataSource</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">_delegate</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">_dragDestinationDelegate</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">_horizontalScroller</string>
+								<string key="candidateClassName">NSScroller</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">_verticalScroller</string>
+								<string key="candidateClassName">NSScroller</string>
+							</object>
+						</object>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/IKImageBrowserView.h</string>
 					</object>
 				</object>
 			</object>

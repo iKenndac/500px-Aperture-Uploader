@@ -7,6 +7,7 @@
 //
 
 #import "FiveHundredPxApertureExporter.h"
+#import "FiveHundredPxExtraMetadata.h"
 
 @implementation FiveHundredPxApertureExporter {
 	ApertureExportProgress exportProgress;
@@ -16,6 +17,8 @@
 @synthesize loginSheetPasswordField;
 @synthesize loginSheet;
 @synthesize categoriesMenu;
+@synthesize metadataArrayController;
+@synthesize imageBrowser;
 
 //---------------------------------------------------------
 // initWithAPIManager:
@@ -85,6 +88,7 @@ extern NSString *k500pxConsumerSecret;
 @synthesize exportManager;
 @synthesize progressLock;
 @synthesize engine;
+@synthesize metadataContainers;
 
 @synthesize working;
 
@@ -145,13 +149,38 @@ extern NSString *k500pxConsumerSecret;
 -(void)willBeActivated {
 	if (self.engine.isAuthenticated)
 		[self verifyLoginDetails];
+	
+	NSMutableArray *newContainers = [NSMutableArray arrayWithCapacity:[self.exportManager imageCount]];
+	for (unsigned int i = 0; i < [self.exportManager imageCount]; i++) {
+		[newContainers addObject:[[FiveHundredPxExtraMetadata alloc] initWithImageProperties:[self.exportManager propertiesForImageAtIndex:i]]];
+	}
+	
+	self.metadataContainers = [NSArray arrayWithArray:newContainers];
+	[self.imageBrowser reloadData];
+	[self.imageBrowser setSelectionIndexes:[NSIndexSet indexSetWithIndex:0] byExtendingSelection:NO];
+	[self.metadataArrayController setSelectionIndex:0];
 }
 
 -(void)willBeDeactivated {
 	// Nothing needed here
 }
 
-#pragma mark
+#pragma mark -
+#pragma mark Image Browser
+
+-(NSUInteger)numberOfItemsInImageBrowser:(IKImageBrowserView *)aBrowser {
+	return [self.metadataArrayController.arrangedObjects count];
+}
+
+-(id)imageBrowser:(IKImageBrowserView *)aBrowser itemAtIndex:(NSUInteger)index {
+	return [self.metadataArrayController.arrangedObjects objectAtIndex:index];
+}
+
+-(void)imageBrowserSelectionDidChange:(IKImageBrowserView *)aBrowser {
+	self.metadataArrayController.selectionIndexes = aBrowser.selectionIndexes;
+}
+
+#pragma mark -
 // Aperture UI Controls
 #pragma mark Aperture UI Controls
 
@@ -243,13 +272,15 @@ extern NSString *k500pxConsumerSecret;
 	[self unlockProgress];
 	
 	__block BOOL isRunning = YES;
-
 	NSDictionary *properties = [self.exportManager propertiesWithoutThumbnailForImageAtIndex:index];
+	
+	NSMutableDictionary *metadata = [[[self.metadataContainers objectAtIndex:index] dictionaryValue] mutableCopy];
+	[metadata setValue:[properties valueForKey:kExportKeyVersionName]
+				forKey:@"name"];
 	
 	// Do something with image...
 	[self.engine uploadPhoto:imageData
-				   withTitle:[properties valueForKey:kExportKeyVersionName]
-				 description:@"" 
+				withMetaData:metadata 
 		 uploadProgressBlock:^(double progress) { DLog(@"%1.2f", progress); } 
 			 completionBlock:^(NSDictionary *returnValue, NSError *error) {
 				 if (error != nil) {
@@ -271,10 +302,6 @@ extern NSString *k500pxConsumerSecret;
 }
 
 -(void)exportManagerDidWriteImageDataToRelativePath:(NSString *)relativePath forImageAtIndex:(unsigned)index {
-	
-	
-	
-	
 }
 
 -(void)exportManagerDidFinishExport {

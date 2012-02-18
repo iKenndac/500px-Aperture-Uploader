@@ -27,7 +27,7 @@ typedef void (^FiveHundredPxCompletionWithValueBlock)(NSDictionary *returnValue,
 
 -(void)getPhotosForLoggedInUser:(FiveHundredPxCompletionWithValueBlock)block;
 -(void)getDetailsForLoggedInUser:(FiveHundredPxCompletionWithValueBlock)block;
--(void)uploadPhoto:(NSData *)jpgData withTitle:(NSString *)title description:(NSString *)desc uploadProgressBlock:(MKNKProgressBlock)progressBlock completionBlock:(FiveHundredPxCompletionWithValueBlock)block;
+-(void)uploadPhoto:(NSData *)jpgData withMetaData:(NSDictionary *)metaData uploadProgressBlock:(MKNKProgressBlock)progressBlock completionBlock:(FiveHundredPxCompletionWithValueBlock)block;
 @end
 
 @protocol FiveHundredPxEngineDelegate <NSObject>

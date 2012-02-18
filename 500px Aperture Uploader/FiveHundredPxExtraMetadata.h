@@ -6,11 +6,16 @@
 //  Copyright (c) 2012 Daniel Kennett. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <Cocoa/Cocoa.h>
 
 @interface FiveHundredPxExtraMetadata : NSObject
 
+-(id)initWithImageProperties:(NSDictionary *)props;
+
 @property (readwrite, nonatomic) NSInteger categoryId;
 @property (readwrite, nonatomic, getter = hasPrivacy) BOOL privacy;
+@property (readwrite, nonatomic, strong) NSDictionary *imageProperties;
+
+-(NSDictionary *)dictionaryValue;
 
 @end

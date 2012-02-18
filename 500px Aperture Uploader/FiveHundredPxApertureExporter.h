@@ -10,6 +10,7 @@
 #import "ApertureExportManager.h"
 #import "ApertureExportPlugIn.h"
 #import "FiveHundredPxOAuthEngine.h"
+#import <Quartz/Quartz.h>
 
 @interface FiveHundredPxApertureExporter : NSViewController <ApertureExportPlugIn, FiveHundredPxEngineDelegate>
 
@@ -24,6 +25,7 @@
 // --
 
 @property (nonatomic, readonly, copy) NSString *loggedInUserName;
+@property (readwrite, strong) NSArray *metadataContainers;
 
 // -- UI
 
@@ -35,6 +37,9 @@
 @property (weak) IBOutlet NSSecureTextField *loginSheetPasswordField;
 @property (strong) IBOutlet NSWindow *loginSheet;
 @property (weak) IBOutlet NSPopUpButton *categoriesMenu;
+@property (strong) IBOutlet NSArrayController *metadataArrayController;
+@property (weak) IBOutlet IKImageBrowserView *imageBrowser;
+
 
 @property (nonatomic, readonly, strong) NSString *loginStatusText;
 @property (nonatomic, readonly, strong) NSString *logInOutButtonTitle;
