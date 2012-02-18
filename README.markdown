@@ -8,6 +8,10 @@ You can see a screenshot of the plugin [here](http://cloud.github.com/downloads/
 
 This plugin is something I threw together in less than 48 hours one weekend, so it isn't packed with features and it may be buggy. If you have any feature requests or encounter any bugs, please report them in the [Issues tab](https://github.com/iKenndac/500px-Aperture-Uploader/issues) on the project's home on GitHub.
 
+## Donations ##
+
+If you love this plugin, feel free to give me the [gift of awesome](https://500px.com/gift) - it'd be very much appreciated! *Especially* if you work at 500px and you're coming here wondering where all your new customers came from! 
+
 ## Requirements ##
 
 This plugin requires Aperture 3.x and a Mac running Mac OS X 10.7 (Lion) or later.
