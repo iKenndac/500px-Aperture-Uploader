@@ -47,13 +47,13 @@
 			<key>displayName</key>
 			<string>500px</string>
 			<key>helpURL</key>
-			<string>http://www.apple.com/aperture/</string>
+			<string>https://github.com/iKenndac/500px-Aperture-Uploader</string>
 			<key>protocolNames</key>
 			<array>
 				<string>ApertureExportPlugIn</string>
 			</array>
 			<key>uuid</key>
-			<string>18641BC7-3223-4660-9CA7-C3885A727049</string>
+			<string>18641BC7-3223-4640-9CA7-D3885A727045</string>
 		</dict>
 	</array>
 	<key>ProPlugProtocolList</key>
