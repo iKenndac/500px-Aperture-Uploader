@@ -14,6 +14,10 @@
 
 @property (readwrite, nonatomic) NSInteger categoryId;
 @property (readwrite, nonatomic, getter = hasPrivacy) BOOL privacy;
+@property (readwrite, nonatomic, copy) NSString *title;
+@property (readwrite, nonatomic, copy) NSString *imageDescription;
+@property (readwrite, nonatomic, copy) NSString *lens;
+
 @property (readwrite, nonatomic, strong) NSDictionary *imageProperties;
 
 -(NSDictionary *)dictionaryValue;

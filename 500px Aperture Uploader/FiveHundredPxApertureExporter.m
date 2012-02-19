@@ -286,11 +286,7 @@ extern NSString *k500pxConsumerSecret;
 	[self unlockProgress];
 	
 	__block BOOL isRunning = YES;
-	NSDictionary *properties = [self.exportManager propertiesWithoutThumbnailForImageAtIndex:index];
-	
-	NSMutableDictionary *metadata = [[[self.metadataContainers objectAtIndex:index] dictionaryValue] mutableCopy];
-	[metadata setValue:[properties valueForKey:kExportKeyVersionName]
-				forKey:@"name"];
+	NSDictionary *metadata = [[self.metadataContainers objectAtIndex:index] dictionaryValue];
 	
 	// Do something with image...
 	[self.engine uploadPhoto:imageData
