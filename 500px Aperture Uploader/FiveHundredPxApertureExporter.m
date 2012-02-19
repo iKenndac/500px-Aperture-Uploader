@@ -36,8 +36,9 @@ extern NSString *k500pxConsumerSecret;
 
 -(id)initWithAPIManager:(id <PROAPIAccessing>)anApiManager {
 	
-	k500pxConsumerKey = @"fPTFgAZIkXjfFh07LtlpzQD93mFgVySScU8eSxuC";
-	k500pxConsumerSecret = @"S6vCU1Gier181ayHi4wSTP54f1ZRG3yeSmub15Up";
+	#import "../OAuthKeys.c"
+	k500pxConsumerKey = [NSString stringWithUTF8String:IveGotTheKey];
+	k500pxConsumerSecret = [NSString stringWithUTF8String:IveGotTheSecret];
 	
     if ((self = [super initWithNibName:@"FiveHundredPxApertureExporter" bundle:[NSBundle bundleForClass:[self class]]])) {
 		

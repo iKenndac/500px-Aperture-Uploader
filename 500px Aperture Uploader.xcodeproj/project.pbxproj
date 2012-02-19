@@ -37,6 +37,7 @@
 		50AAF3AF14EEC0F8009F3BFE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50AAF3AD14EEC0F8009F3BFE /* InfoPlist.strings */; };
 		50AAF3BE14EEC1B0009F3BFE /* FiveHundredPxApertureExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AAF3BD14EEC1B0009F3BFE /* FiveHundredPxApertureExporter.m */; };
 		50AAF3C014EEC236009F3BFE /* PluginManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50AAF3BF14EEC236009F3BFE /* PluginManager.framework */; };
+		50CD016714F0733B004C2B5B /* OAuthKeys.c in Sources */ = {isa = PBXBuildFile; fileRef = 50CD016614F0733B004C2B5B /* OAuthKeys.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +103,7 @@
 		50AAF3BF14EEC236009F3BFE /* PluginManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PluginManager.framework; path = /Library/Frameworks/PluginManager.framework; sourceTree = "<absolute>"; };
 		50AAF3C214EEC3F1009F3BFE /* ApertureExportManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApertureExportManager.h; sourceTree = "<group>"; };
 		50AAF3C314EEC3F1009F3BFE /* ApertureExportPlugIn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApertureExportPlugIn.h; sourceTree = "<group>"; };
+		50CD016614F0733B004C2B5B /* OAuthKeys.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = OAuthKeys.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +241,7 @@
 		50AAF39614EEC0F8009F3BFE = {
 			isa = PBXGroup;
 			children = (
+				50CD016614F0733B004C2B5B /* OAuthKeys.c */,
 				50AAF3AA14EEC0F8009F3BFE /* 500px Aperture Uploader */,
 				50AAF3A314EEC0F8009F3BFE /* Frameworks */,
 				50AAF3A214EEC0F8009F3BFE /* Products */,
@@ -389,6 +392,7 @@
 				5044FEDC14EFD3C60015F359 /* Reachability.m in Sources */,
 				5044FEE314EFD6D30015F359 /* FiveHundredPxOAuthEngine.m in Sources */,
 				501EC00F14F0572D0046D0A9 /* FiveHundredPxExtraMetadata.m in Sources */,
+				50CD016714F0733B004C2B5B /* OAuthKeys.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

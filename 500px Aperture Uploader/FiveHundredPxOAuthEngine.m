@@ -40,7 +40,7 @@ static NSString * const k500pxUploadPhotoPath = @"v1/upload";
 
 #pragma mark - Initialization
 
-- (id)initWithDelegate:(id <FiveHundredPxEngineDelegate>)delegate
+- (id)initWithDelegate:(id <FiveHundredPxEngineDelegate>)del
 {
     self = [super initWithHostName:k500pxHostname
                 customHeaderFields:nil
@@ -50,7 +50,7 @@ static NSString * const k500pxUploadPhotoPath = @"v1/upload";
 					   callbackURL:@"http://authLocal/auth"];
     
     if (self) {
-        self.delegate = delegate;
+        self.delegate = del;
 		self.fileUploadEngine = [[MKNetworkEngine alloc] initWithHostName:k500pxHostname
 													   customHeaderFields:nil];
         
