@@ -1,0 +1,14 @@
+.DS_Store
+obf-*.cpp
+obf-*.h
+*.swp
+*.Po
+*.orig
+*~
+*.pyc
+Thumbs.db
+/build/
+xcuserdata
+*.xcworkspace
+*.mode1v3
+*.pbxuser
