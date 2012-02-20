@@ -9,6 +9,8 @@
 #import "FiveHundredPxApertureExporter.h"
 #import "FiveHundredPxExtraMetadata.h"
 
+#define kGrowlNotificationNameUploadComplete @"upload"
+
 @implementation FiveHundredPxApertureExporter {
 	ApertureExportProgress exportProgress;
 }
@@ -35,6 +37,7 @@ extern NSString *k500pxConsumerKey;
 extern NSString *k500pxConsumerSecret;
 
 -(id)initWithAPIManager:(id <PROAPIAccessing>)anApiManager {
+    [GrowlApplicationBridge setGrowlDelegate:self];
 	
 	#import "../OAuthKeys.c"
 	k500pxConsumerKey = [NSString stringWithUTF8String:IveGotTheKey];
@@ -318,6 +321,16 @@ extern NSString *k500pxConsumerSecret;
     
     @synchronized(exportManager) {
         [self.exportManager shouldFinishExport];
+        
+        
+        
+        [GrowlApplicationBridge notifyWithTitle:NSLocalizedString(@"Finished uploading photos", @"Growl Notification for upload compelete title")
+                                    description:NSLocalizedString(@"Photos have been queued for conversion", @"Growl Notification for upload complete description")
+                               notificationName:kGrowlNotificationNameUploadComplete 
+                                       iconData:nil
+                                       priority:0 
+                                       isSticky:NO 
+                                   clickContext:[NSString stringWithFormat:@"http://500px.com/%@"]];
     }
 }
 
@@ -402,6 +415,29 @@ extern NSString *k500pxConsumerSecret;
 
 - (IBAction)visitWebsite:(id)sender {
 	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/iKenndac/500px-Aperture-Uploader"]];
+}
+
+#pragma mark - GrowlApplicationBridgeDelegate Methods
+
+- (NSDictionary *) registrationDictionaryForGrowl
+{
+    return [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[NSArray arrayWithObject:kGrowlNotificationNameUploadComplete], [NSArray arrayWithObject:kGrowlNotificationNameUploadComplete], nil]
+                                       forKeys:[NSArray arrayWithObjects:GROWL_NOTIFICATIONS_ALL, GROWL_NOTIFICATIONS_DEFAULT, nil ]];
+}
+
+- (NSString *) applicationNameForGrowl
+{
+    return @"500px Aperture Uploader";
+}
+
+- (void) growlNotificationWasClicked:(id)clickContext
+{
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:clickContext]];
+}
+
+- (void) growlIsReady
+{
+    NSLog(@"Growl is ready");
 }
 
 @end

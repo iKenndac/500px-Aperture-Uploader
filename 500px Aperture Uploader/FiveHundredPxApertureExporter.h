@@ -11,8 +11,9 @@
 #import "ApertureExportPlugIn.h"
 #import "FiveHundredPxOAuthEngine.h"
 #import <Quartz/Quartz.h>
+#import <Growl/Growl.h>
 
-@interface FiveHundredPxApertureExporter : NSViewController <ApertureExportPlugIn, FiveHundredPxEngineDelegate>
+@interface FiveHundredPxApertureExporter : NSViewController <ApertureExportPlugIn, FiveHundredPxEngineDelegate, GrowlApplicationBridgeDelegate>
 
 @property (assign) IBOutlet NSView *firstView;
 @property (assign) IBOutlet NSView *lastView;
