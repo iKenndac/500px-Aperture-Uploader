@@ -330,7 +330,7 @@ extern NSString *k500pxConsumerSecret;
                                        iconData:nil
                                        priority:0 
                                        isSticky:NO 
-                                   clickContext:@"http://500px.com"];
+                                   clickContext:[NSString stringWithFormat:@"http://500px.com/%@", self.engine.screenName]];
     }
 }
 
