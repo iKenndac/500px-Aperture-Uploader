@@ -26,7 +26,8 @@ To install the plugin, place it in `~/Library/Application Support/Aperture/Plug-
 
 1. Clone using `git clone --recursive git://github.com/iKenndac/500px-Aperture-Uploader.git` to make sure you get all the submodules too.
 2. If you got excited and cloned the repo before reading this, run `git submodule update --init` in the project's root directory to grab the submodules. If I get tickets about it not building and you haven't got the submodules checked out, you lose 5 internet points!
-3. Build away!
+3. You'll need Apple's [Aperture SDK](http://connect.apple.com/cgi-bin/WebObjects/MemberSite.woa/wa/getSoftware?bundleID=20044).
+4. Build away!
 
 ## Contact ##
 
