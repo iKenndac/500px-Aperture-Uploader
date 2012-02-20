@@ -38,18 +38,18 @@
 		50AAF3BE14EEC1B0009F3BFE /* FiveHundredPxApertureExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AAF3BD14EEC1B0009F3BFE /* FiveHundredPxApertureExporter.m */; };
 		50AAF3C014EEC236009F3BFE /* PluginManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50AAF3BF14EEC236009F3BFE /* PluginManager.framework */; };
 		50CD016714F0733B004C2B5B /* OAuthKeys.c in Sources */ = {isa = PBXBuildFile; fileRef = 50CD016614F0733B004C2B5B /* OAuthKeys.c */; };
-		5E434B4A14F1C18400F2B5D8 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E434B4914F1C18400F2B5D8 /* Growl.framework */; };
-		5E434B4C14F1C1A800F2B5D8 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5E434B4914F1C18400F2B5D8 /* Growl.framework */; };
+		5EDED56414F1CCAB0066D555 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EDED56314F1CCAB0066D555 /* Growl.framework */; };
+		5EDED56614F1CCBA0066D555 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5EDED56314F1CCAB0066D555 /* Growl.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		5E434B4B14F1C19000F2B5D8 /* CopyFiles */ = {
+		5EDED56514F1CCB30066D555 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 12;
+			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5E434B4C14F1C1A800F2B5D8 /* Growl.framework in CopyFiles */,
+				5EDED56614F1CCBA0066D555 /* Growl.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,7 +119,7 @@
 		50AAF3C214EEC3F1009F3BFE /* ApertureExportManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApertureExportManager.h; sourceTree = "<group>"; };
 		50AAF3C314EEC3F1009F3BFE /* ApertureExportPlugIn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApertureExportPlugIn.h; sourceTree = "<group>"; };
 		50CD016614F0733B004C2B5B /* OAuthKeys.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = OAuthKeys.c; sourceTree = "<group>"; };
-		5E434B4914F1C18400F2B5D8 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
+		5EDED56314F1CCAB0066D555 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +132,7 @@
 				5044FEE014EFD4970015F359 /* SystemConfiguration.framework in Frameworks */,
 				5044FEDE14EFD4910015F359 /* Security.framework in Frameworks */,
 				50AAF3A514EEC0F8009F3BFE /* Cocoa.framework in Frameworks */,
-				5E434B4A14F1C18400F2B5D8 /* Growl.framework in Frameworks */,
+				5EDED56414F1CCAB0066D555 /* Growl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +276,7 @@
 		50AAF3A314EEC0F8009F3BFE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5E434B4914F1C18400F2B5D8 /* Growl.framework */,
+				5EDED56314F1CCAB0066D555 /* Growl.framework */,
 				501EC01014F05E7F0046D0A9 /* Quartz.framework */,
 				5044FEDF14EFD4970015F359 /* SystemConfiguration.framework */,
 				5044FEDD14EFD4910015F359 /* Security.framework */,
@@ -331,10 +331,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50AAF3B314EEC0F8009F3BFE /* Build configuration list for PBXNativeTarget "500px Aperture Uploader" */;
 			buildPhases = (
+				50AAF39F14EEC0F8009F3BFE /* Resources */,
+				5EDED56514F1CCB30066D555 /* CopyFiles */,
 				50AAF39D14EEC0F8009F3BFE /* Sources */,
 				50AAF39E14EEC0F8009F3BFE /* Frameworks */,
-				50AAF39F14EEC0F8009F3BFE /* Resources */,
-				5E434B4B14F1C19000F2B5D8 /* CopyFiles */,
+				5EDED56F14F1D8CA0066D555 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -383,6 +384,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5EDED56F14F1D8CA0066D555 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "install_name_tool -change \"@executable_path/../Frameworks/Growl.framework/Versions/A/Growl\" \"@loader_path/../Frameworks/Growl.framework/Versions/A/Growl\" \"$BUILT_PRODUCTS_DIR/$EXECUTABLE_PATH\"\n\ninstall_name_tool -id \"@loader_path/../Frameworks/Growl.framework/Versions/A/Growl\" \"$BUILT_PRODUCTS_DIR/$FULL_PRODUCT_NAME/Contents/Frameworks/Growl.framework/Growl\"";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		50AAF39D14EEC0F8009F3BFE /* Sources */ = {
@@ -502,7 +520,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "500px Aperture Uploader/500px Aperture Uploader-Prefix.pch";
 				INFOPLIST_FILE = "500px Aperture Uploader/500px Aperture Uploader-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Growl,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = ApertureExport;
 			};
@@ -518,7 +539,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "500px Aperture Uploader/500px Aperture Uploader-Prefix.pch";
 				INFOPLIST_FILE = "500px Aperture Uploader/500px Aperture Uploader-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Growl,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = ApertureExport;
 			};
