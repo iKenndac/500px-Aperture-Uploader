@@ -324,13 +324,13 @@ extern NSString *k500pxConsumerSecret;
         
         
         
-        [GrowlApplicationBridge notifyWithTitle:NSLocalizedString(@"Finished uploading photos", @"Growl Notification for upload compelete title")
+        [GrowlApplicationBridge notifyWithTitle:NSLocalizedString(@"Finished 500px Upload", @"Growl Notification for upload compelete title")
                                     description:NSLocalizedString(@"Photos have been queued for conversion", @"Growl Notification for upload complete description")
                                notificationName:kGrowlNotificationNameUploadComplete 
                                        iconData:nil
                                        priority:0 
                                        isSticky:NO 
-                                   clickContext:[NSString stringWithFormat:@"http://500px.com/%@"]];
+                                   clickContext:@"http://500px.com"];
     }
 }
 
