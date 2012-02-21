@@ -326,6 +326,19 @@ extern NSString *k500pxConsumerSecret;
 			 completionBlock:^(NSDictionary *returnValue, NSError *error) {
 				 if (error != nil) {
 					 DLog(@"%@", error);
+				 } else {
+					 // Write the id back to the image.
+					 NSString *photoId = [[[returnValue valueForKey:@"photo"] valueForKey:@"id"] stringValue];
+					 NSString *photoUrlString = [NSString stringWithFormat:@"http://500px.com/photo/%@", photoId];
+					 if (photoId.length > 0) {
+						 // Only write back if we got a valid id
+						 @synchronized(exportManager) {
+							 NSDictionary *metadata = [NSDictionary dictionaryWithObject:photoUrlString forKey:k500pxURLMetadataKey];
+							 [self.exportManager addCustomMetadataKeyValues:metadata
+															 toImageAtIndex:index];
+							 DLog(@"Setting 500px URL in metadata: %@", photoUrlString);
+						 }
+					 }
 				 }
 				 
 				 isRunning = NO;
@@ -469,6 +482,15 @@ extern NSString *k500pxConsumerSecret;
 
 - (IBAction)checkForUpdates:(id)sender {
 	[self.updater checkForUpdates:YES];
+}
+
+- (IBAction)viewSelectedPhotoOn500px:(id)sender {
+	
+	FiveHundredPxExtraMetadata *metadata = [self.metadataContainers objectAtIndex:self.metadataArrayController.selectionIndex];
+	if (metadata.existing500pxURL != nil)
+		[[NSWorkspace sharedWorkspace] openURL:metadata.existing500pxURL];
+	else
+		NSBeep();
 }
 
 #pragma mark - GrowlApplicationBridgeDelegate Methods

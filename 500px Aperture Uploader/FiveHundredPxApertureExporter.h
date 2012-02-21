@@ -18,6 +18,8 @@ static NSString * const kAutoCheckForUpdatesUserDefaultsKey = @"CheckForUpdates"
 static NSString * const kLastAutoCheckDateUserDefaultsKey = @"LastUpdateCheck";
 static NSTimeInterval const kAutoCheckMinimumInterval = 60 * 60 * 60; // Only auto-check for updates once per hour.
 
+static NSString * const k500pxURLMetadataKey = @"500px URL";
+
 @interface FiveHundredPxApertureExporter : NSViewController <ApertureExportPlugIn, FiveHundredPxEngineDelegate, GrowlApplicationBridgeDelegate>
 
 @property (assign) IBOutlet NSView *firstView;
@@ -44,6 +46,7 @@ static NSTimeInterval const kAutoCheckMinimumInterval = 60 * 60 * 60; // Only au
 - (IBAction)showPreferencesSheet:(id)sender;
 - (IBAction)closePreferencesSheet:(id)sender;
 - (IBAction)checkForUpdates:(id)sender;
+- (IBAction)viewSelectedPhotoOn500px:(id)sender;
 
 @property (weak) IBOutlet NSTextField *loginSheetUsernameField;
 @property (weak) IBOutlet NSSecureTextField *loginSheetPasswordField;

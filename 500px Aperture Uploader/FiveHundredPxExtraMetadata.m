@@ -6,6 +6,7 @@
 //  For license information, see LICENSE.markdown
 //
 
+#import "FiveHundredPxApertureExporter.h"
 #import "FiveHundredPxExtraMetadata.h"
 #import "ApertureExportPlugIn.h"
 #import <Quartz/Quartz.h>
@@ -23,7 +24,11 @@
 			self.title = [self.imageProperties valueForKey:kExportKeyVersionName];
 		self.imageDescription = [[self.imageProperties valueForKey:kExportKeyIPTCProperties] valueForKey:@"Caption/Abstract"];
 		self.lens = [[self.imageProperties valueForKey:kExportKeyEXIFProperties] valueForKey:@"LensModel"];
-	
+		
+		NSString *existingUrlString = [[self.imageProperties valueForKey:kExportKeyCustomProperties] valueForKey:k500pxURLMetadataKey];
+		if (existingUrlString.length > 0)
+			self.existing500pxURL = [NSURL URLWithString:existingUrlString];
+		
 		#if DEBUG
 		NSLog(@"%@", self.imageProperties);
 		#endif
@@ -36,7 +41,16 @@
 @synthesize title;
 @synthesize imageDescription;
 @synthesize lens;
+@synthesize existing500pxURL;
 @synthesize imageProperties;
+
++(NSSet *)keyPathsForValuesAffectingExistsOn500px {
+	return [NSSet setWithObject:@"existing500pxURL"];
+}
+
+-(BOOL)existsOn500px {
+	return self.existing500pxURL != nil;
+}
 
 -(NSDictionary *)dictionaryValue {
 	

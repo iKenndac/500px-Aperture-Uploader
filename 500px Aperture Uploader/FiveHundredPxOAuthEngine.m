@@ -336,9 +336,8 @@ static NSString * const k500pxUploadPhotoPath = @"v1/upload";
 										   forKey:@"file"];
 									  
 									  [op onCompletion:^(MKNetworkOperation *completedOperation) {
-										  NSDictionary *dict = [[CJSONDeserializer deserializer] deserializeAsDictionary:completedOperation.responseData
-																												   error:nil];
-										  block(dict, nil);
+										  // The response from the upload call is actually pretty useless - give back from the first call instead
+										  block(returnValue, nil);
 									  } onError:^(NSError *error) {
 										  block(nil, error);
 									  }];
