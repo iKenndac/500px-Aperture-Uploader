@@ -39,6 +39,7 @@
 		50AAF3C014EEC236009F3BFE /* PluginManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50AAF3BF14EEC236009F3BFE /* PluginManager.framework */; };
 		50CD016714F0733B004C2B5B /* OAuthKeys.c in Sources */ = {isa = PBXBuildFile; fileRef = 50CD016614F0733B004C2B5B /* OAuthKeys.c */; };
 		50E7F9BB14F414DF00E666D8 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 50E7F9B914F414DF00E666D8 /* Credits.rtf */; };
+		50E7FA3814F42E0700E666D8 /* DKBasicUpdateChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E7FA3714F42E0700E666D8 /* DKBasicUpdateChecker.m */; };
 		5EDED56414F1CCAB0066D555 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EDED56314F1CCAB0066D555 /* Growl.framework */; };
 		5EDED56614F1CCBA0066D555 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5EDED56314F1CCAB0066D555 /* Growl.framework */; };
 /* End PBXBuildFile section */
@@ -121,6 +122,8 @@
 		50AAF3C314EEC3F1009F3BFE /* ApertureExportPlugIn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApertureExportPlugIn.h; sourceTree = "<group>"; };
 		50CD016614F0733B004C2B5B /* OAuthKeys.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = OAuthKeys.c; sourceTree = "<group>"; };
 		50E7F9BA14F414DF00E666D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		50E7FA3614F42E0700E666D8 /* DKBasicUpdateChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKBasicUpdateChecker.h; sourceTree = "<group>"; };
+		50E7FA3714F42E0700E666D8 /* DKBasicUpdateChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKBasicUpdateChecker.m; sourceTree = "<group>"; };
 		5EDED56314F1CCAB0066D555 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -309,6 +312,7 @@
 				5044FEE214EFD6D30015F359 /* FiveHundredPxOAuthEngine.m */,
 				501EC00D14F0572D0046D0A9 /* FiveHundredPxExtraMetadata.h */,
 				501EC00E14F0572D0046D0A9 /* FiveHundredPxExtraMetadata.m */,
+				50E7FA3414F42D9F00E666D8 /* Updater */,
 				5044FE7614EFD12B0015F359 /* External */,
 				50AAF3AB14EEC0F8009F3BFE /* Supporting Files */,
 			);
@@ -325,6 +329,15 @@
 				50E7F9B914F414DF00E666D8 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		50E7FA3414F42D9F00E666D8 /* Updater */ = {
+			isa = PBXGroup;
+			children = (
+				50E7FA3614F42E0700E666D8 /* DKBasicUpdateChecker.h */,
+				50E7FA3714F42E0700E666D8 /* DKBasicUpdateChecker.m */,
+			);
+			name = Updater;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -450,6 +463,7 @@
 				5044FEE314EFD6D30015F359 /* FiveHundredPxOAuthEngine.m in Sources */,
 				501EC00F14F0572D0046D0A9 /* FiveHundredPxExtraMetadata.m in Sources */,
 				50CD016714F0733B004C2B5B /* OAuthKeys.c in Sources */,
+				50E7FA3814F42E0700E666D8 /* DKBasicUpdateChecker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

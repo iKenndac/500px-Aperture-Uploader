@@ -12,6 +12,9 @@
 #import "FiveHundredPxOAuthEngine.h"
 #import <Quartz/Quartz.h>
 #import <Growl/Growl.h>
+#import "DKBasicUpdateChecker.h"
+
+static NSString * const kAutoCheckForUpdatesUserDefaultsKey = @"CheckForUpdates";
 
 @interface FiveHundredPxApertureExporter : NSViewController <ApertureExportPlugIn, FiveHundredPxEngineDelegate, GrowlApplicationBridgeDelegate>
 
@@ -22,6 +25,7 @@
 @property (nonatomic, readwrite, strong) NSObject <ApertureExportManager, PROAPIObject> *exportManager;
 @property (nonatomic, readwrite, strong) NSLock *progressLock;
 @property (nonatomic, readwrite, strong) FiveHundredPxOAuthEngine *engine;
+@property (nonatomic, readwrite, strong) DKBasicUpdateChecker *updater;
 
 // --
 
@@ -35,6 +39,9 @@
 - (IBAction)confirmLogInSheet:(id)sender;
 - (IBAction)showAboutSheet:(id)sender;
 - (IBAction)closeAboutSheet:(id)sender;
+- (IBAction)showPreferencesSheet:(id)sender;
+- (IBAction)closePreferencesSheet:(id)sender;
+- (IBAction)checkForUpdates:(id)sender;
 
 @property (weak) IBOutlet NSTextField *loginSheetUsernameField;
 @property (weak) IBOutlet NSSecureTextField *loginSheetPasswordField;
@@ -46,6 +53,7 @@
 @property (weak) IBOutlet NSImageView *aboutIconImageView;
 @property (unsafe_unretained) IBOutlet NSTextView *aboutCreditsView;
 @property (weak) IBOutlet NSTextField *aboutVersionView;
+@property (strong) IBOutlet NSWindow *preferencesWindow;
 
 
 @property (nonatomic, readonly, strong) NSString *loginStatusText;

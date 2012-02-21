@@ -26,6 +26,8 @@
 	<string>Copyright © 2012 Daniel Kennett. All rights reserved.</string>
 	<key>NSPrincipalClass</key>
 	<string></string>
+	<key>DKBUCUpdateFileUrl</key>
+	<string>http://ikennd.ac/misc/500pxApertureUploaderUpdates.plist</string>
 	<key>ProPlugDictionaryVersion</key>
 	<string>1.0</string>
 	<key>ProPlugDynamicRegistration</key>

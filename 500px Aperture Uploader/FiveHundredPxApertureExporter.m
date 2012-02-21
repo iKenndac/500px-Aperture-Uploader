@@ -25,6 +25,17 @@
 @synthesize aboutIconImageView;
 @synthesize aboutCreditsView;
 @synthesize aboutVersionView;
+@synthesize preferencesWindow;
+@synthesize firstView;
+@synthesize lastView;
+@synthesize apiManager;
+@synthesize exportManager;
+@synthesize progressLock;
+@synthesize engine;
+@synthesize metadataContainers;
+@synthesize updater;
+
+@synthesize working;
 
 //---------------------------------------------------------
 // initWithAPIManager:
@@ -57,6 +68,14 @@ extern NSString *k500pxConsumerSecret;
 		
 		self.progressLock = [[NSLock alloc] init];
 		self.engine = [[FiveHundredPxOAuthEngine alloc] initWithDelegate:self];
+		self.updater = [[DKBasicUpdateChecker alloc] init];
+		
+		[[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:
+																 [NSNumber numberWithBool:YES], kAutoCheckForUpdatesUserDefaultsKey,
+																 nil]];
+		
+		if ([[NSUserDefaults standardUserDefaults] boolForKey:kAutoCheckForUpdatesUserDefaultsKey])
+			[self.updater checkForUpdates:NO];
 		
 		memset(&exportProgress, 0, sizeof(exportProgress));
 	}
@@ -98,16 +117,6 @@ extern NSString *k500pxConsumerSecret;
 		[[categoriesMenu menu] addItem:item];
 	}
 }
-
-@synthesize firstView;
-@synthesize lastView;
-@synthesize apiManager;
-@synthesize exportManager;
-@synthesize progressLock;
-@synthesize engine;
-@synthesize metadataContainers;
-
-@synthesize working;
 
 +(NSSet *)keyPathsForValuesAffectingLoginStatusText {
 	return [NSSet setWithObjects:@"working", @"engine.isAuthenticated", nil];
@@ -437,6 +446,23 @@ extern NSString *k500pxConsumerSecret;
 - (IBAction)closeAboutSheet:(id)sender {
 	[NSApp endSheet:self.aboutWindow];
 	[self.aboutWindow close];
+}
+
+- (IBAction)showPreferencesSheet:(id)sender {
+	[NSApp beginSheet:self.preferencesWindow
+	   modalForWindow:self.view.window
+		modalDelegate:nil
+	   didEndSelector:nil
+		  contextInfo:nil];
+}
+
+- (IBAction)closePreferencesSheet:(id)sender {
+	[NSApp endSheet:self.preferencesWindow];
+	[self.preferencesWindow close];
+}
+
+- (IBAction)checkForUpdates:(id)sender {
+	[self.updater checkForUpdates:YES];
 }
 
 #pragma mark - GrowlApplicationBridgeDelegate Methods
