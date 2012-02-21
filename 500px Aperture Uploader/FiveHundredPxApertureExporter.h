@@ -16,7 +16,7 @@
 
 static NSString * const kAutoCheckForUpdatesUserDefaultsKey = @"CheckForUpdates";
 static NSString * const kLastAutoCheckDateUserDefaultsKey = @"LastUpdateCheck";
-static NSTimeInterval const kAutoCheckMinimumInterval = 60 * 60 * 60; // Only auto-check for updates once per hour.
+static NSTimeInterval const kAutoCheckMinimumInterval = 60 * 60; // Only auto-check for updates once per hour.
 
 static NSString * const k500pxURLMetadataKey = @"500px URL";
 
