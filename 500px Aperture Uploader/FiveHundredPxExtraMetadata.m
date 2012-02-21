@@ -17,9 +17,16 @@
 	
 	if (self) {
 		self.imageProperties = props;
-		self.title = [self.imageProperties valueForKey:kExportKeyVersionName];
+		
+		self.title = [[self.imageProperties valueForKey:kExportKeyIPTCProperties] valueForKey:@"ObjectName"];
+		if (self.title.length == 0) // No title, fall back to version name.
+			self.title = [self.imageProperties valueForKey:kExportKeyVersionName];
 		self.imageDescription = [[self.imageProperties valueForKey:kExportKeyIPTCProperties] valueForKey:@"Caption/Abstract"];
 		self.lens = [[self.imageProperties valueForKey:kExportKeyEXIFProperties] valueForKey:@"LensModel"];
+	
+		#if DEBUG
+		NSLog(@"%@", self.imageProperties);
+		#endif
 	}
 	return self;
 }
