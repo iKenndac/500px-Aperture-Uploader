@@ -29,9 +29,7 @@
 		if (existingUrlString.length > 0)
 			self.existing500pxURL = [NSURL URLWithString:existingUrlString];
 		
-		#if DEBUG
-		NSLog(@"%@", self.imageProperties);
-		#endif
+		DLog(@"%@", self.imageProperties);
 	}
 	return self;
 }

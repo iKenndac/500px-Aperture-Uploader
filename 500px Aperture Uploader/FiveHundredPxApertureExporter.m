@@ -513,7 +513,7 @@ extern NSString *k500pxConsumerSecret;
 
 - (void) growlIsReady
 {
-    NSLog(@"Growl is ready");
+    DLog(@"Growl is ready");
 }
 
 @end
