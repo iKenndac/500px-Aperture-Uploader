@@ -21,6 +21,10 @@
 @synthesize categoriesMenu;
 @synthesize metadataArrayController;
 @synthesize imageBrowser;
+@synthesize aboutWindow;
+@synthesize aboutIconImageView;
+@synthesize aboutCreditsView;
+@synthesize aboutVersionView;
 
 //---------------------------------------------------------
 // initWithAPIManager:
@@ -61,17 +65,26 @@ extern NSString *k500pxConsumerSecret;
 }
 
 -(void)awakeFromNib {
-    @synchronized(self.exportManager) {
-        //[[self.movieNameField cell] setPlaceholderString:[[self.exportManager propertiesWithoutThumbnailForImageAtIndex:0] valueForKey:kExportKeyProjectName]];
-    }
+
+	NSBundle *myBundle = [NSBundle bundleForClass:[self class]];
 	
-	NSString *path = [[NSBundle bundleForClass:[self class]] pathForResource:@"Categories"
-																	  ofType:@"plist"];
+	self.aboutIconImageView.image = [[NSWorkspace sharedWorkspace] iconForFile:myBundle.bundlePath];
 	
-	if (![[NSFileManager defaultManager] fileExistsAtPath:path])
+	[self.aboutCreditsView setEditable:NO];
+	[self.aboutCreditsView readRTFDFromFile:[myBundle pathForResource:@"Credits"
+															   ofType:@"rtf"]];
+	
+	self.aboutVersionView.stringValue = [NSString stringWithFormat:@"Version %@ (%@)",
+										 [myBundle.infoDictionary valueForKey:@"CFBundleShortVersionString"],
+										 [myBundle.infoDictionary valueForKey:@"CFBundleVersion"]];
+	
+	NSString *categoriesPath = [myBundle pathForResource:@"Categories"
+												  ofType:@"plist"];
+	
+	if (![[NSFileManager defaultManager] fileExistsAtPath:categoriesPath])
 		return;
 	
-	NSDictionary *plist = [NSPropertyListSerialization propertyListWithData:[NSData dataWithContentsOfFile:path]
+	NSDictionary *plist = [NSPropertyListSerialization propertyListWithData:[NSData dataWithContentsOfFile:categoriesPath]
 																	options:0
 																	 format:NULL
 																	  error:nil];
@@ -413,8 +426,17 @@ extern NSString *k500pxConsumerSecret;
 	}];
 }
 
-- (IBAction)visitWebsite:(id)sender {
-	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/iKenndac/500px-Aperture-Uploader"]];
+- (IBAction)showAboutSheet:(id)sender {
+	[NSApp beginSheet:self.aboutWindow
+	   modalForWindow:self.view.window
+		modalDelegate:nil
+	   didEndSelector:nil
+		  contextInfo:nil];
+}
+
+- (IBAction)closeAboutSheet:(id)sender {
+	[NSApp endSheet:self.aboutWindow];
+	[self.aboutWindow close];
 }
 
 #pragma mark - GrowlApplicationBridgeDelegate Methods

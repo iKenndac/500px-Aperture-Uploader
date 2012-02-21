@@ -33,7 +33,8 @@
 - (IBAction)logInOut:(id)sender;
 - (IBAction)cancelLogInSheet:(id)sender;
 - (IBAction)confirmLogInSheet:(id)sender;
-- (IBAction)visitWebsite:(id)sender;
+- (IBAction)showAboutSheet:(id)sender;
+- (IBAction)closeAboutSheet:(id)sender;
 
 @property (weak) IBOutlet NSTextField *loginSheetUsernameField;
 @property (weak) IBOutlet NSSecureTextField *loginSheetPasswordField;
@@ -41,6 +42,10 @@
 @property (weak) IBOutlet NSPopUpButton *categoriesMenu;
 @property (strong) IBOutlet NSArrayController *metadataArrayController;
 @property (weak) IBOutlet IKImageBrowserView *imageBrowser;
+@property (strong) IBOutlet NSWindow *aboutWindow;
+@property (weak) IBOutlet NSImageView *aboutIconImageView;
+@property (unsafe_unretained) IBOutlet NSTextView *aboutCreditsView;
+@property (weak) IBOutlet NSTextField *aboutVersionView;
 
 
 @property (nonatomic, readonly, strong) NSString *loginStatusText;

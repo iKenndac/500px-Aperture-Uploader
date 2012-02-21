@@ -38,6 +38,7 @@
 		50AAF3BE14EEC1B0009F3BFE /* FiveHundredPxApertureExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AAF3BD14EEC1B0009F3BFE /* FiveHundredPxApertureExporter.m */; };
 		50AAF3C014EEC236009F3BFE /* PluginManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50AAF3BF14EEC236009F3BFE /* PluginManager.framework */; };
 		50CD016714F0733B004C2B5B /* OAuthKeys.c in Sources */ = {isa = PBXBuildFile; fileRef = 50CD016614F0733B004C2B5B /* OAuthKeys.c */; };
+		50E7F9BB14F414DF00E666D8 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 50E7F9B914F414DF00E666D8 /* Credits.rtf */; };
 		5EDED56414F1CCAB0066D555 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EDED56314F1CCAB0066D555 /* Growl.framework */; };
 		5EDED56614F1CCBA0066D555 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5EDED56314F1CCAB0066D555 /* Growl.framework */; };
 /* End PBXBuildFile section */
@@ -119,6 +120,7 @@
 		50AAF3C214EEC3F1009F3BFE /* ApertureExportManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApertureExportManager.h; sourceTree = "<group>"; };
 		50AAF3C314EEC3F1009F3BFE /* ApertureExportPlugIn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApertureExportPlugIn.h; sourceTree = "<group>"; };
 		50CD016614F0733B004C2B5B /* OAuthKeys.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = OAuthKeys.c; sourceTree = "<group>"; };
+		50E7F9BA14F414DF00E666D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		5EDED56314F1CCAB0066D555 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -320,6 +322,7 @@
 				50AAF3AD14EEC0F8009F3BFE /* InfoPlist.strings */,
 				50AAF3B014EEC0F8009F3BFE /* 500px Aperture Uploader-Prefix.pch */,
 				501EC00914F0555F0046D0A9 /* Categories.plist */,
+				50E7F9B914F414DF00E666D8 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -335,7 +338,8 @@
 				5EDED56514F1CCB30066D555 /* CopyFiles */,
 				50AAF39D14EEC0F8009F3BFE /* Sources */,
 				50AAF39E14EEC0F8009F3BFE /* Frameworks */,
-				5EDED56F14F1D8CA0066D555 /* ShellScript */,
+				5EDED56F14F1D8CA0066D555 /* Run Script (Correct Growl install_name) */,
+				50E7F9DD14F41F0000E666D8 /* Run Script (Generate CFBundleVersion) */,
 			);
 			buildRules = (
 			);
@@ -380,19 +384,35 @@
 				50AAF3AF14EEC0F8009F3BFE /* InfoPlist.strings in Resources */,
 				5044FE7414EFD0080015F359 /* FiveHundredPxApertureExporter.xib in Resources */,
 				501EC00B14F0555F0046D0A9 /* Categories.plist in Resources */,
+				50E7F9BB14F414DF00E666D8 /* Credits.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5EDED56F14F1D8CA0066D555 /* ShellScript */ = {
+		50E7F9DD14F41F0000E666D8 /* Run Script (Generate CFBundleVersion) */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Run Script (Generate CFBundleVersion)";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /usr/bin/perl;
+			shellScript = "#Check if we're versioned under hg\nmy $revno = `git log --pretty=format:'' | wc -l`;\n\nif ($revno && $revno !~ m/fatal/i) {\n    \n    #get the revno minus the new line\n    $revno =~ tr/+//d;\n    substr($revno, -1, 1, \"\");\n\t$revno =~ s/^\\s+//;\n\t$revno =~ s/\\s+$//;\n    \n\tprint(\"Revision number is \" . $revno);\n    \n    #open the info plist\n    open(my $input,  \"<\",  \"$ENV{BUILT_PRODUCTS_DIR}/$ENV{INFOPLIST_PATH}\")  or die \"Can't open Info.plist: $!\";\n    my $outputstring = \"\";\n    \n    #loop through each line until we find CFBundleVersion, then substitute the next line\n    while (+<$input>) {\n        $outputstring .= \"$_\";\n        if (/[\\t ]+<key>CFBundleVersion<\\/key>\\n/) {\n            my $line = +<$input>;\n            $line =~ s/([\\t ]+<string>)(.*?)(<\\/string>)/$1.($revno).$3/eg;\n            $outputstring .= $line;\n        }\n    }\n    \n    #write back out to Info.plist\n    open(my $output,  \">\",  \"$ENV{BUILT_PRODUCTS_DIR}/$ENV{INFOPLIST_PATH}\")  or die \"Can't open Info.plist: $!\";\n    print $output $outputstring;\n} else {\n    print \"This project is not versioned\";\n}";
+		};
+		5EDED56F14F1D8CA0066D555 /* Run Script (Correct Growl install_name) */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script (Correct Growl install_name)";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -458,6 +478,14 @@
 				50AAF3AE14EEC0F8009F3BFE /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		50E7F9B914F414DF00E666D8 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50E7F9BA14F414DF00E666D8 /* en */,
+			);
+			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
