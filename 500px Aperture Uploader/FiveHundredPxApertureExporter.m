@@ -74,9 +74,15 @@ extern NSString *k500pxConsumerSecret;
 																 [NSNumber numberWithBool:YES], kAutoCheckForUpdatesUserDefaultsKey,
 																 nil]];
 		
-		if ([[NSUserDefaults standardUserDefaults] boolForKey:kAutoCheckForUpdatesUserDefaultsKey])
-			[self.updater checkForUpdates:NO];
-		
+		if ([[NSUserDefaults standardUserDefaults] boolForKey:kAutoCheckForUpdatesUserDefaultsKey]) {
+			NSDate *lastCheckDate = [[NSUserDefaults standardUserDefaults] valueForKey:kLastAutoCheckDateUserDefaultsKey];
+			
+			if (lastCheckDate == nil || [[NSDate date] timeIntervalSinceDate:lastCheckDate] > kAutoCheckMinimumInterval) {
+				[self.updater checkForUpdates:NO];
+				[[NSUserDefaults standardUserDefaults] setValue:[NSDate date] forKey:kLastAutoCheckDateUserDefaultsKey];
+			}
+		}
+			
 		memset(&exportProgress, 0, sizeof(exportProgress));
 	}
 	
