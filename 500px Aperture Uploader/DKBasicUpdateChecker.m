@@ -115,7 +115,7 @@
 		else
 			informativeText = [NSString stringWithFormat:@"You have version %@ — the newest version is %@.", shortVersionString, newestShortVersionString];
 		
-		if ([[NSAlert alertWithMessageText:[NSString stringWithFormat:@"A new version of @% is available!", [myBundle.infoDictionary valueForKey:@"CFBundleName"]]
+		if ([[NSAlert alertWithMessageText:[NSString stringWithFormat:@"A new version of %@ is available!", [myBundle.infoDictionary valueForKey:@"CFBundleName"]]
 							 defaultButton:@"More Info…"
 						   alternateButton:@"Later"
 							   otherButton:@""
