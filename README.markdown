@@ -22,6 +22,10 @@ If you'd like to download the plugin without building, you'll find periodic snap
 
 To install the plugin, place it in `~/Library/Application Support/Aperture/Plug-Ins/Export`. This folder tree may well be missing on your Mac - if so, just create them. Note: The Library folder in your home folder is hidden by default on Lion - you can get to it by holding down the Option/Alt key and choosing "Library" from the Finder's "Go" menu.
 
+## "Plug-In Failed To Load" When Trying To Use The Plugin ##
+
+Make sure you're not running Aperture in 32-bit mode - this plugin is 64-bit only. To do this, find Aperture on your hard drive, select it, choose "Get Info" from Finder's "File" menu and make sure the "Open in 32-bit mode" checkbox is NOT checked. Quit and relaunch Aperture and you should be good to go, as long as you're also running Mac OS X 10.7 (Lion) or higher.
+
 ## Building ##
 
 1. Clone using `git clone --recursive git://github.com/iKenndac/500px-Aperture-Uploader.git` to make sure you get all the submodules too.
