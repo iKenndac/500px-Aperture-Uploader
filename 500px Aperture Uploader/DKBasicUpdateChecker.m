@@ -6,7 +6,7 @@
 //  For license information, see LICENSE.markdown
 //
 
-
+#import "FiveHundredPxApertureExporter.h"
 #import "DKBasicUpdateChecker.h"
 
 @interface DKBasicUpdateChecker ()
@@ -73,7 +73,7 @@
 	if (self.downloadedData == nil) {
 		[self presentError:[NSError errorWithDomain:@"com.dkbasicupdatechecker.nodata" 
 											   code:0 
-										   userInfo:[NSDictionary dictionaryWithObject:@"No update data received."
+										   userInfo:[NSDictionary dictionaryWithObject:DKLocalizedStringForClass(@"no update data received error title")
 																				forKey:NSLocalizedDescriptionKey]]];
 		return;
 	}
@@ -98,7 +98,7 @@
 	if (newestCFBundleVersion.integerValue == 0 || newestShortVersionString.length == 0 || moreInfoURLString.length == 0) {
 		[self presentError:[NSError errorWithDomain:@"com.dkbasicupdatechecker.invaliddata" 
 											   code:0 
-										   userInfo:[NSDictionary dictionaryWithObject:@"Invalid update data received."
+										   userInfo:[NSDictionary dictionaryWithObject:DKLocalizedStringForClass(@"invalid update data received error title")
 																				forKey:NSLocalizedDescriptionKey]]];
 		return;
 	}
@@ -111,24 +111,24 @@
 		
 		NSString *informativeText = nil;
 		if ([shortVersionString isEqualToString:newestShortVersionString]) 
-			informativeText = [NSString stringWithFormat:@"You have version %@ (%@) — the newest version is %@ (%@).", shortVersionString, cfBundleVersion, newestShortVersionString, newestCFBundleVersion];
+			informativeText = [NSString stringWithFormat:DKLocalizedStringForClass(@"new version with build id description"), shortVersionString, cfBundleVersion, newestShortVersionString, newestCFBundleVersion];
 		else
-			informativeText = [NSString stringWithFormat:@"You have version %@ — the newest version is %@.", shortVersionString, newestShortVersionString];
+			informativeText = [NSString stringWithFormat:DKLocalizedStringForClass(@"new version description"), shortVersionString, newestShortVersionString];
 		
-		if ([[NSAlert alertWithMessageText:[NSString stringWithFormat:@"A new version of %@ is available!", [myBundle.infoDictionary valueForKey:@"CFBundleName"]]
-							 defaultButton:@"More Info…"
-						   alternateButton:@"Later"
+		if ([[NSAlert alertWithMessageText:[NSString stringWithFormat:DKLocalizedStringForClass(@"new version available title"), [myBundle.infoDictionary valueForKey:@"CFBundleName"]]
+							 defaultButton:DKLocalizedStringForClass(@"more info title")
+						   alternateButton:DKLocalizedStringForClass(@"later title")
 							   otherButton:@""
 				 informativeTextWithFormat:informativeText] runModal] == NSAlertDefaultReturn) {
 			[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:moreInfoURLString]];
 		};
 		
 	} else if (self.shouldShowFailureUI)
-		[[NSAlert alertWithMessageText:@"You're up-to-date!"
-						 defaultButton:@"OK"
+		[[NSAlert alertWithMessageText:DKLocalizedStringForClass(@"up to date title")
+						 defaultButton:DKLocalizedStringForClass(@"ok title")
 					   alternateButton:@""
 						   otherButton:@""
-			 informativeTextWithFormat:[NSString stringWithFormat:@"Version %@ is the newest version available.", newestShortVersionString]] runModal];
+			 informativeTextWithFormat:[NSString stringWithFormat:DKLocalizedStringForClass(@"up to date description"), newestShortVersionString]] runModal];
 }
 
 -(void)presentError:(NSError *)error {
@@ -136,11 +136,11 @@
 	if (!self.shouldShowFailureUI)
 		return;
 	
-	[[NSAlert alertWithMessageText:@"An error occurred when checking for updates!"
-					 defaultButton:@"OK"
+	[[NSAlert alertWithMessageText:DKLocalizedStringForClass(@"update error title")
+					 defaultButton:DKLocalizedStringForClass(@"ok title")
 				   alternateButton:@""
 					   otherButton:@""
-		 informativeTextWithFormat:[NSString stringWithFormat:@"The error encountered was: %@", error.localizedDescription]] runModal];
+		 informativeTextWithFormat:[NSString stringWithFormat:DKLocalizedStringForClass(@"update error description"), error.localizedDescription]] runModal];
 }
 
 @end

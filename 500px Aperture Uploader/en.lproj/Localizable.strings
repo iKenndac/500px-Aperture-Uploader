@@ -1,0 +1,55 @@
+/* 
+  Localizable.strings
+  500px Aperture Uploader
+
+  Created by Daniel Kennett on 10/03/2012.
+  For license information, see LICENSE.markdown
+*/
+
+// General
+
+"ok title" = "OK";
+"cancel title" = "Cancel";
+"more info title" = "More Info…";
+"later title" = "Later";
+
+//UI 
+
+"version formatter" = "Version %@ (%@)";
+"logged in title" = "Logged in as %@.";
+"not logged in title" = "Not logged in.";
+"log out title" = "Log Out";
+"log in title" = "Log In…";
+"beginning export title" = "Beginning Export…";
+"exporting title" = "Exporting…";
+"waiting for auth title" = "Waiting for user authorization…";
+"authenticating title" = "Authenticating…";
+"auth cancelled title" = "Authentication cancelled.";
+
+// Growl
+
+"application name for growl" = "500px Aperture Uploader";
+"growl upload complete title" = "Finished 500px Upload";
+"growl upload complete description" = "Photos have been uploaded and are now queued for conversion on 500px.com.";
+
+// Export errors
+
+"unsupported image format error title" = "Unsupported image format in selected Version Preset";
+"unsupported image format error description" = "500px.com only supports uploading JPEG images.";
+"not logged in error title" = "Not logged in!";
+"not logged in error description" = "Please log in to 500px using the Log In button at the top of this window.";
+
+// Updates
+
+"new version available title" = "A new version of %@ is available!";
+"new version with build id description" = "You have version %@ (%@) — the newest version is %@ (%@).";
+"new version description" = "You have version %@ — the newest version is %@.";
+"up to date title" = "You're up-to-date!";
+"up to date description" = "Version %@ is the newest version available.";
+
+// Update Errors
+
+"update error title" = "An error occurred when checking for updates!";
+"update error description" = "The error encountered was: %@";
+"no update data received error title" = "No update data received.";
+"invalid update data received error title" = "Invalid update data received.";

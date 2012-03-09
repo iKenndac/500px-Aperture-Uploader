@@ -9,6 +9,7 @@
 // Note: This file is basically a copy+paste of the Instapaper 
 // demo project that comes with RSOAuthEngine.
 
+#import "FiveHundredPxApertureExporter.h"
 #import "FiveHundredPxOAuthEngine.h"
 #import "CJSONDeserializer.h"
 
@@ -156,7 +157,7 @@ static NSString * const k500pxUploadPhotoPath = @"v1/upload";
     // Store the Completion Block to call after Authenticated
     self.completionBlock = [block copy];
     
-    [self.delegate fiveHundredPx:self statusUpdate:@"Waiting for user authorization..."];
+    [self.delegate fiveHundredPx:self statusUpdate:DKLocalizedStringForClass(@"waiting for auth title")];
     [self.delegate fiveHundredPxNeedsAuthentication:self];
 }
 
@@ -210,7 +211,7 @@ static NSString * const k500pxUploadPhotoPath = @"v1/upload";
 			  self.completionBlock = nil;
 		  }];
 		 
-		 [self.delegate fiveHundredPx:self statusUpdate:@"Authenticating..."];
+		 [self.delegate fiveHundredPx:self statusUpdate:DKLocalizedStringForClass(@"authenticating title")];
 		 [self enqueueSignedOperation:op]; 
 		 
 	 } 
@@ -230,7 +231,7 @@ static NSString * const k500pxUploadPhotoPath = @"v1/upload";
 
 - (void)cancelAuthentication
 {
-    NSDictionary *ui = [NSDictionary dictionaryWithObjectsAndKeys:@"Authentication cancelled.", NSLocalizedDescriptionKey, nil];
+    NSDictionary *ui = [NSDictionary dictionaryWithObjectsAndKeys:DKLocalizedStringForClass(@"auth cancelled title"), NSLocalizedDescriptionKey, nil];
     NSError *error = [NSError errorWithDomain:@"org.danielkennett.500px.ErrorDomain" code:401 userInfo:ui];
     
     if (self.completionBlock) self.completionBlock(error);

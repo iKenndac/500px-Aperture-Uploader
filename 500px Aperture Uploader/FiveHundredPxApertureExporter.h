@@ -14,11 +14,18 @@
 #import <Growl/Growl.h>
 #import "DKBasicUpdateChecker.h"
 
+#define DKLocalizedStringForClass(key) \
+[[NSBundle bundleForClass:[self class]] localizedStringForKey:(key) value:@"" table:@"Localizable"]
+
 static NSString * const kAutoCheckForUpdatesUserDefaultsKey = @"CheckForUpdates";
 static NSString * const kLastAutoCheckDateUserDefaultsKey = @"LastUpdateCheck";
 static NSTimeInterval const kAutoCheckMinimumInterval = 60 * 60; // Only auto-check for updates once per hour.
 
 static NSString * const k500pxURLMetadataKey = @"500px URL";
+static NSString * const k500pxPhotoURLFormatter = @"http://500px.com/photo/%@";
+static NSString * const k500pxProfileURLFormatter = @"http://500px.com/%@";
+
+static NSString * const kGrowlNotificationNameUploadComplete = @"upload";
 
 @interface FiveHundredPxApertureExporter : NSViewController <ApertureExportPlugIn, FiveHundredPxEngineDelegate, GrowlApplicationBridgeDelegate>
 

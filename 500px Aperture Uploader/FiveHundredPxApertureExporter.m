@@ -9,8 +9,6 @@
 #import "FiveHundredPxApertureExporter.h"
 #import "FiveHundredPxExtraMetadata.h"
 
-#define kGrowlNotificationNameUploadComplete @"upload"
-
 @implementation FiveHundredPxApertureExporter {
 	ApertureExportProgress exportProgress;
 }
@@ -99,7 +97,7 @@ extern NSString *k500pxConsumerSecret;
 	[self.aboutCreditsView readRTFDFromFile:[myBundle pathForResource:@"Credits"
 															   ofType:@"rtf"]];
 	
-	self.aboutVersionView.stringValue = [NSString stringWithFormat:@"Version %@ (%@)",
+	self.aboutVersionView.stringValue = [NSString stringWithFormat:DKLocalizedStringForClass(@"version formatter"),
 										 [myBundle.infoDictionary valueForKey:@"CFBundleShortVersionString"],
 										 [myBundle.infoDictionary valueForKey:@"CFBundleVersion"]];
 	
@@ -131,9 +129,11 @@ extern NSString *k500pxConsumerSecret;
 -(NSString *)loginStatusText {
 	
 	if (self.isWorking) {
-		return @"Authorizing…";
+		return DKLocalizedStringForClass(@"authenticating title");
 	} else {
-		return self.engine.isAuthenticated ? [NSString stringWithFormat:@"Logged in as %@.", self.loggedInUserName] : @"Not Logged In.";
+		return self.engine.isAuthenticated ?
+		[NSString stringWithFormat:DKLocalizedStringForClass(@"logged in title"), self.loggedInUserName] 
+		: DKLocalizedStringForClass(@"not logged in title");
 	}
 }
 
@@ -150,7 +150,7 @@ extern NSString *k500pxConsumerSecret;
 }
 
 -(NSString *)logInOutButtonTitle {
-	return self.engine.isAuthenticated ? @"Log Out" : @"Log In…";
+	return self.engine.isAuthenticated ? DKLocalizedStringForClass(@"log out title") : DKLocalizedStringForClass(@"log in title");
 }
 
 #pragma mark -
@@ -264,22 +264,22 @@ extern NSString *k500pxConsumerSecret;
 		
 		if ([[self.exportManager.selectedExportPresetDictionary valueForKey:@"ImageFormat"] integerValue] != 0) {
 			
-			[[NSAlert alertWithMessageText:@"Unsupported image format in selected Version Preset"
-							 defaultButton:@"OK"
+			[[NSAlert alertWithMessageText:DKLocalizedStringForClass(@"unsupported image format error title")
+							 defaultButton:DKLocalizedStringForClass(@"ok title")
 						   alternateButton:@""
 							   otherButton:@""
-				 informativeTextWithFormat:@"500px.com only supports uploading JPEG images."] runModal];
+				 informativeTextWithFormat:DKLocalizedStringForClass(@"unsupported image format error description")] runModal];
 			
 			return;
 		}
 		
 		if (!self.engine.isAuthenticated) {
 			
-			[[NSAlert alertWithMessageText:@"Not logged in!"
-							 defaultButton:@"OK"
+			[[NSAlert alertWithMessageText:DKLocalizedStringForClass(@"not logged in error title")
+							 defaultButton:DKLocalizedStringForClass(@"ok title")
 						   alternateButton:@""
 							   otherButton:@""
-				 informativeTextWithFormat:@"Please log in to 500px using the Log In button at the top of this window."] runModal];
+				 informativeTextWithFormat:DKLocalizedStringForClass(@"not logged in error description")] runModal];
 			
 			return;
 		}
@@ -296,7 +296,7 @@ extern NSString *k500pxConsumerSecret;
 	[self lockProgress];
 	exportProgress.totalValue = [self.exportManager imageCount];
 	exportProgress.indeterminateProgress = YES;
-	exportProgress.message = (__bridge void *)NSLocalizedStringFromTableInBundle(@"beginning export", @"Localizable", [NSBundle bundleForClass:[self class]], @"Beginning Export...");
+	exportProgress.message = (__bridge void *)DKLocalizedStringForClass(@"beginning export title");
 	[self unlockProgress];
 }
 
@@ -312,7 +312,7 @@ extern NSString *k500pxConsumerSecret;
 -(BOOL)exportManagerShouldWriteImageData:(NSData *)imageData toRelativePath:(NSString *)path forImageAtIndex:(unsigned)index {
     // Update the progress
 	[self lockProgress];
-	exportProgress.message = (__bridge void *)NSLocalizedStringFromTableInBundle(@"exporting", @"Localizable", [NSBundle bundleForClass:[self class]], @"Exporting...");
+	exportProgress.message = (__bridge void *)DKLocalizedStringForClass(@"exporting title");
 	exportProgress.currentValue = index + 1;
 	[self unlockProgress];
 	
@@ -329,7 +329,7 @@ extern NSString *k500pxConsumerSecret;
 				 } else {
 					 // Write the id back to the image.
 					 NSString *photoId = [[[returnValue valueForKey:@"photo"] valueForKey:@"id"] stringValue];
-					 NSString *photoUrlString = [NSString stringWithFormat:@"http://500px.com/photo/%@", photoId];
+					 NSString *photoUrlString = [NSString stringWithFormat:k500pxPhotoURLFormatter, photoId];
 					 if (photoId.length > 0) {
 						 // Only write back if we got a valid id
 						 @synchronized(exportManager) {
@@ -365,13 +365,13 @@ extern NSString *k500pxConsumerSecret;
         
         
         
-        [GrowlApplicationBridge notifyWithTitle:NSLocalizedString(@"Finished 500px Upload", @"Growl Notification for upload compelete title")
-                                    description:NSLocalizedString(@"Photos have been queued for conversion", @"Growl Notification for upload complete description")
+        [GrowlApplicationBridge notifyWithTitle:DKLocalizedStringForClass(@"growl upload complete title")
+                                    description:DKLocalizedStringForClass(@"growl upload complete description")
                                notificationName:kGrowlNotificationNameUploadComplete 
                                        iconData:nil
                                        priority:0 
                                        isSticky:NO 
-                                   clickContext:[NSString stringWithFormat:@"http://500px.com/%@", self.engine.screenName]];
+                                   clickContext:[NSString stringWithFormat:k500pxProfileURLFormatter, self.engine.screenName]];
     }
 }
 
@@ -503,7 +503,7 @@ extern NSString *k500pxConsumerSecret;
 
 - (NSString *) applicationNameForGrowl
 {
-    return @"500px Aperture Uploader";
+    return DKLocalizedStringForClass(@"application name for growl");
 }
 
 - (void) growlNotificationWasClicked:(id)clickContext
