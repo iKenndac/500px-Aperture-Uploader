@@ -62,6 +62,8 @@ static NSString * const kGrowlNotificationNameUploadComplete = @"upload";
 - (IBAction)closePreferencesSheet:(id)sender;
 - (IBAction)checkForUpdates:(id)sender;
 - (IBAction)viewSelectedPhotoOn500px:(id)sender;
+- (IBAction)logCurrentExportPreset:(id)sender;
+- (IBAction)logCurrentImageProperties:(id)sender;
 
 @property (weak) IBOutlet NSTextField *loginSheetUsernameField;
 @property (weak) IBOutlet NSSecureTextField *loginSheetPasswordField;
@@ -74,6 +76,8 @@ static NSString * const kGrowlNotificationNameUploadComplete = @"upload";
 @property (unsafe_unretained) IBOutlet NSTextView *aboutCreditsView;
 @property (weak) IBOutlet NSTextField *aboutVersionView;
 @property (strong) IBOutlet NSWindow *preferencesWindow;
+@property (weak) IBOutlet NSButton *logImagePropertiesButton;
+@property (weak) IBOutlet NSButton *logCurrentPresetButton;
 
 
 @property (nonatomic, readonly, strong) NSString *loginStatusText;

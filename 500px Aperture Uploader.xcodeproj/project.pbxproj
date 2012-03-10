@@ -698,6 +698,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "500px Aperture Uploader/500px Aperture Uploader-Prefix.pch";
 				INFOPLIST_FILE = "500px Aperture Uploader/500px Aperture Uploader-Info.plist";
+				OTHER_CFLAGS = "-DDEBUG=1";
 				OTHER_LDFLAGS = (
 					"-framework",
 					Growl,
@@ -736,6 +737,7 @@
 				508014FA150B708700B2457E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		50AAF39B14EEC0F8009F3BFE /* Build configuration list for PBXProject "500px Aperture Uploader" */ = {
 			isa = XCConfigurationList;

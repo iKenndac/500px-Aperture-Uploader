@@ -32,6 +32,8 @@
 @synthesize engine;
 @synthesize metadataContainers;
 @synthesize updater;
+@synthesize logImagePropertiesButton;
+@synthesize logCurrentPresetButton;
 
 @synthesize working;
 
@@ -143,6 +145,13 @@ extern NSString *k500pxConsumerSecret;
 		[item setTag:[[category valueForKey:@"id"] integerValue]];
 		[[categoriesMenu menu] addItem:item];
 	}
+	
+#if !DEBUG
+	if (([NSEvent modifierFlags] & NSAlternateKeyMask) != NSAlternateKeyMask) {
+		[self.logImagePropertiesButton setHidden:YES];
+		[self.logCurrentPresetButton setHidden:YES];
+	}
+#endif
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
@@ -488,6 +497,15 @@ extern NSString *k500pxConsumerSecret;
 	DLog(@"%@", message);
 }
 
+#pragma mark -
+
+- (IBAction)logCurrentExportPreset:(id)sender {
+	NSLog(@"%@", self.exportManager.selectedExportPresetDictionary);
+}
+
+- (IBAction)logCurrentImageProperties:(id)sender {
+	NSLog(@"%@", [self.exportManager propertiesWithoutThumbnailForImageAtIndex:self.metadataArrayController.selectionIndex]);
+}
 
 - (IBAction)logInOut:(id)sender {
 	
