@@ -12,6 +12,12 @@
 "cancel title" = "Cancel";
 "more info title" = "More Info…";
 "later title" = "Later";
+"more information title" = "More Information";
+
+// 64-bit
+
+"64-bit only error title" = "The 500px Aperture Uploader cannot run in 32-bit mode.";
+"64-bit only error description" = "Please run Aperture in 64-bit mode. To do this, quit Aperture, choose \"Get Info…\" on it in Finder and uncheck the \"Open in 32-bit mode\" checkbox before launching it again.";
 
 //UI 
 

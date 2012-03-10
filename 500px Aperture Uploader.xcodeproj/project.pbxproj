@@ -34,6 +34,8 @@
 		5044FEE014EFD4970015F359 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5044FEDF14EFD4970015F359 /* SystemConfiguration.framework */; };
 		5044FEE314EFD6D30015F359 /* FiveHundredPxOAuthEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 5044FEE214EFD6D30015F359 /* FiveHundredPxOAuthEngine.m */; };
 		508014E9150B6B3400B2457E /* FiveHundredpxApertureExporter.icns in Resources */ = {isa = PBXBuildFile; fileRef = 508014E8150B6B3400B2457E /* FiveHundredpxApertureExporter.icns */; };
+		508014F0150B708700B2457E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50AAF3A414EEC0F8009F3BFE /* Cocoa.framework */; };
+		508014FD150B710100B2457E /* FiveHundredPx32BitDummyExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 508014FC150B710100B2457E /* FiveHundredPx32BitDummyExporter.m */; };
 		5089C33F150AC40D002CA4A1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5089C33D150AC40D002CA4A1 /* Localizable.strings */; };
 		5089C342150AC87A002CA4A1 /* PluginManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5089C341150AC87A002CA4A1 /* PluginManager.framework */; };
 		50AAF3A514EEC0F8009F3BFE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50AAF3A414EEC0F8009F3BFE /* Cocoa.framework */; };
@@ -45,6 +47,16 @@
 		5EDED56414F1CCAB0066D555 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EDED56314F1CCAB0066D555 /* Growl.framework */; };
 		5EDED56614F1CCBA0066D555 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5EDED56314F1CCAB0066D555 /* Growl.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		508014FE150B743A00B2457E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 50AAF39814EEC0F8009F3BFE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 508014EE150B708700B2457E;
+			remoteInfo = "32-Bit Dummy";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		5EDED56514F1CCB30066D555 /* CopyFiles */ = {
@@ -110,6 +122,9 @@
 		5044FEE114EFD6D30015F359 /* FiveHundredPxOAuthEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FiveHundredPxOAuthEngine.h; sourceTree = "<group>"; };
 		5044FEE214EFD6D30015F359 /* FiveHundredPxOAuthEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FiveHundredPxOAuthEngine.m; sourceTree = "<group>"; };
 		508014E8150B6B3400B2457E /* FiveHundredpxApertureExporter.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = FiveHundredpxApertureExporter.icns; sourceTree = SOURCE_ROOT; };
+		508014EF150B708700B2457E /* 32-Bit Dummy.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "32-Bit Dummy.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		508014FB150B710100B2457E /* FiveHundredPx32BitDummyExporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FiveHundredPx32BitDummyExporter.h; path = "500px Aperture Uploader/FiveHundredPx32BitDummyExporter.h"; sourceTree = SOURCE_ROOT; };
+		508014FC150B710100B2457E /* FiveHundredPx32BitDummyExporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FiveHundredPx32BitDummyExporter.m; path = "500px Aperture Uploader/FiveHundredPx32BitDummyExporter.m"; sourceTree = SOURCE_ROOT; };
 		5089C33E150AC40D002CA4A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5089C341150AC87A002CA4A1 /* PluginManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PluginManager.framework; path = ../../../../../Library/Frameworks/PluginManager.framework; sourceTree = "<group>"; };
 		50AAF3A114EEC0F8009F3BFE /* 500px Aperture Uploader.ApertureExport */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "500px Aperture Uploader.ApertureExport"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +147,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		508014EC150B708700B2457E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				508014F0150B708700B2457E /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		50AAF39E14EEC0F8009F3BFE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -264,6 +287,16 @@
 			path = Reachability;
 			sourceTree = "<group>";
 		};
+		508014F1150B708700B2457E /* 32-Bit Dummy */ = {
+			isa = PBXGroup;
+			children = (
+				508014FB150B710100B2457E /* FiveHundredPx32BitDummyExporter.h */,
+				508014FC150B710100B2457E /* FiveHundredPx32BitDummyExporter.m */,
+			);
+			name = "32-Bit Dummy";
+			path = "../32-Bit Dummy";
+			sourceTree = "<group>";
+		};
 		50AAF39614EEC0F8009F3BFE = {
 			isa = PBXGroup;
 			children = (
@@ -278,6 +311,7 @@
 			isa = PBXGroup;
 			children = (
 				50AAF3A114EEC0F8009F3BFE /* 500px Aperture Uploader.ApertureExport */,
+				508014EF150B708700B2457E /* 32-Bit Dummy.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -317,6 +351,7 @@
 				501EC00D14F0572D0046D0A9 /* FiveHundredPxExtraMetadata.h */,
 				501EC00E14F0572D0046D0A9 /* FiveHundredPxExtraMetadata.m */,
 				50E7FA3414F42D9F00E666D8 /* Updater */,
+				508014F1150B708700B2457E /* 32-Bit Dummy */,
 				5044FE7614EFD12B0015F359 /* External */,
 				50AAF3AB14EEC0F8009F3BFE /* Supporting Files */,
 			);
@@ -349,6 +384,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		508014EE150B708700B2457E /* 32-Bit Dummy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 508014F8150B708700B2457E /* Build configuration list for PBXNativeTarget "32-Bit Dummy" */;
+			buildPhases = (
+				508014EB150B708700B2457E /* Sources */,
+				508014EC150B708700B2457E /* Frameworks */,
+				508014ED150B708700B2457E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "32-Bit Dummy";
+			productName = "32-Bit Dummy";
+			productReference = 508014EF150B708700B2457E /* 32-Bit Dummy.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
 		50AAF3A014EEC0F8009F3BFE /* 500px Aperture Uploader */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50AAF3B314EEC0F8009F3BFE /* Build configuration list for PBXNativeTarget "500px Aperture Uploader" */;
@@ -359,10 +411,12 @@
 				50AAF39E14EEC0F8009F3BFE /* Frameworks */,
 				5EDED56F14F1D8CA0066D555 /* Run Script (Correct Growl install_name) */,
 				50E7F9DD14F41F0000E666D8 /* Run Script (Generate CFBundleVersion) */,
+				50801500150B74EB00B2457E /* Run Script (Lipo in 32-bit dummy) */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				508014FF150B743A00B2457E /* PBXTargetDependency */,
 			);
 			name = "500px Aperture Uploader";
 			productName = "500px Aperture Uploader";
@@ -391,11 +445,19 @@
 			projectRoot = "";
 			targets = (
 				50AAF3A014EEC0F8009F3BFE /* 500px Aperture Uploader */,
+				508014EE150B708700B2457E /* 32-Bit Dummy */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		508014ED150B708700B2457E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		50AAF39F14EEC0F8009F3BFE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -412,6 +474,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		50801500150B74EB00B2457E /* Run Script (Lipo in 32-bit dummy) */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script (Lipo in 32-bit dummy)";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "lipo \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${BUILT_PRODUCTS_DIR}/32-Bit Dummy.bundle/Contents/MacOS/32-Bit Dummy\" -create -output \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"";
+		};
 		50E7F9DD14F41F0000E666D8 /* Run Script (Generate CFBundleVersion) */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -444,6 +520,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		508014EB150B708700B2457E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				508014FD150B710100B2457E /* FiveHundredPx32BitDummyExporter.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		50AAF39D14EEC0F8009F3BFE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -476,6 +560,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		508014FF150B743A00B2457E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 508014EE150B708700B2457E /* 32-Bit Dummy */;
+			targetProxy = 508014FE150B743A00B2457E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		501EC00914F0555F0046D0A9 /* Categories.plist */ = {
@@ -521,6 +613,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		508014F9150B708700B2457E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.7;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		508014FA150B708700B2457E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.7;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 		50AAF3B114EEC0F8009F3BFE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -609,6 +729,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		508014F8150B708700B2457E /* Build configuration list for PBXNativeTarget "32-Bit Dummy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				508014F9150B708700B2457E /* Debug */,
+				508014FA150B708700B2457E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		50AAF39B14EEC0F8009F3BFE /* Build configuration list for PBXProject "500px Aperture Uploader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
