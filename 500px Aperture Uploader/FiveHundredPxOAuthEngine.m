@@ -12,6 +12,7 @@
 #import "FiveHundredPxApertureExporter.h"
 #import "FiveHundredPxOAuthEngine.h"
 #import "CJSONDeserializer.h"
+#import "Constants.h"
 
 @interface FiveHundredPxOAuthEngine ()
 
@@ -22,6 +23,8 @@
 @property (readwrite, nonatomic, strong) FiveHundredPxCompletionBlock completionBlock;
 @property (strong, readwrite, nonatomic) NSString *screenName;
 @property (readwrite, nonatomic, strong) MKNetworkEngine *fileUploadEngine;
+
+@property (readwrite, nonatomic, getter = isWorking) BOOL working;
 
 @end
 
@@ -188,6 +191,8 @@ static NSString * const k500pxUploadPhotoPath = @"v1/upload";
 		 
 		 [op onCompletion:^(MKNetworkOperation *completedOperation)
 		  {
+			  self.working = NO;
+			  
 			  // Fill the access token with the returned data
 			  [self fillTokenWithResponseBody:[completedOperation responseString] type:RSOAuthAccessToken];
 			  
@@ -203,6 +208,8 @@ static NSString * const k500pxUploadPhotoPath = @"v1/upload";
 		  } 
 				  onError:^(NSError *error)
 		  {
+			  self.working = NO;
+			  
 			  if (error.code != NSURLErrorNotConnectedToInternet && error.code != NSURLErrorNetworkConnectionLost) {
 				  [self resetOAuthToken];
 				  self.screenName = nil;
@@ -212,11 +219,13 @@ static NSString * const k500pxUploadPhotoPath = @"v1/upload";
 		  }];
 		 
 		 [self.delegate fiveHundredPx:self statusUpdate:DKLocalizedStringForClass(@"authenticating title")];
-		 [self enqueueSignedOperation:op]; 
+		 [self enqueueSignedOperation:op];
 		 
 	 } 
 		onError:^(NSError *error)
 	 {
+		 self.working = NO;
+		 
 		 if (error.code != NSURLErrorNotConnectedToInternet && error.code != NSURLErrorNetworkConnectionLost) {
 			 [self resetOAuthToken];
 			 self.screenName = nil;
@@ -226,6 +235,7 @@ static NSString * const k500pxUploadPhotoPath = @"v1/upload";
 	 }];
 	
 	[self enqueueSignedOperation:requestTokenOp];
+	self.working = YES;
     
 }
 
@@ -278,14 +288,17 @@ static NSString * const k500pxUploadPhotoPath = @"v1/upload";
                                                  ssl:YES];
     
     [op onCompletion:^(MKNetworkOperation *completedOperation) {
+		self.working = NO;
 		NSDictionary *dict = [[CJSONDeserializer deserializer] deserializeAsDictionary:completedOperation.responseData
 																				 error:nil];
         block(dict, nil);
     } onError:^(NSError *error) {
+		self.working = NO;
         block(nil, error);
     }];
     
     [self enqueueSignedOperation:op];
+	self.working = YES;
 }
 
 -(void)getPhotosForLoggedInUser:(FiveHundredPxCompletionWithValueBlock)block {

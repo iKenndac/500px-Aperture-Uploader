@@ -8,6 +8,7 @@
 
 #import "FiveHundredPxApertureExporter.h"
 #import "DKBasicUpdateChecker.h"
+#import "Constants.h"
 
 @interface DKBasicUpdateChecker ()
 

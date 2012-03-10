@@ -10,6 +10,7 @@
 #import "FiveHundredPxExtraMetadata.h"
 #import "ApertureExportPlugIn.h"
 #import <Quartz/Quartz.h>
+#import "Constants.h"
 
 @implementation FiveHundredPxExtraMetadata
 

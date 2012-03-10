@@ -6,14 +6,7 @@
 //  For license information, see LICENSE.markdown
 //
 
-
 #import <Foundation/Foundation.h>
-
-static NSString * const kDKBasicUpdateCheckerNewestBundleVersionKey = @"BundleVersion";
-static NSString * const kDKBasicUpdateCheckerNewestVersionStringKey = @"VersionString";
-static NSString * const kDKBasicUpdateCheckerMoreInfoURLKey = @"MoreInfoURL";
-
-static NSString * const kDKBasicUpdateCheckerUpdateFileURLInfoPlistKey = @"DKBUCUpdateFileUrl";
 
 @interface DKBasicUpdateChecker : NSObject <NSURLConnectionDelegate>
 

@@ -19,6 +19,8 @@ typedef void (^FiveHundredPxCompletionWithValueBlock)(NSDictionary *returnValue,
 @property (strong, readonly, nonatomic) NSString *screenName;
 @property (readonly, nonatomic, strong) MKNetworkEngine *fileUploadEngine;
 
+@property (readonly, nonatomic, getter = isWorking) BOOL working;
+
 - (id)initWithDelegate:(id <FiveHundredPxEngineDelegate>)delegate;
 - (void)authenticateWithUsername:(NSString *)username password:(NSString *)password;
 - (void)authenticateWithCompletionBlock:(FiveHundredPxCompletionBlock)completionBlock;
