@@ -486,7 +486,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "lipo \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${BUILT_PRODUCTS_DIR}/32-Bit Dummy.bundle/Contents/MacOS/32-Bit Dummy\" -create -output \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"";
+			shellScript = "hasi386=`lipo -info \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" | grep \"i386\"`\n\nif [ -z $hasi386 ]; then\n    echo \"Doesn't have i386\"\n    lipo \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${BUILT_PRODUCTS_DIR}/32-Bit Dummy.bundle/Contents/MacOS/32-Bit Dummy\" -create -output \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nfi";
 		};
 		50E7F9DD14F41F0000E666D8 /* Run Script (Generate CFBundleVersion) */ = {
 			isa = PBXShellScriptBuildPhase;
