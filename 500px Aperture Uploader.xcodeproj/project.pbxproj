@@ -33,6 +33,7 @@
 		5044FEDE14EFD4910015F359 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5044FEDD14EFD4910015F359 /* Security.framework */; };
 		5044FEE014EFD4970015F359 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5044FEDF14EFD4970015F359 /* SystemConfiguration.framework */; };
 		5044FEE314EFD6D30015F359 /* FiveHundredPxOAuthEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 5044FEE214EFD6D30015F359 /* FiveHundredPxOAuthEngine.m */; };
+		508014E9150B6B3400B2457E /* FiveHundredpxApertureExporter.icns in Resources */ = {isa = PBXBuildFile; fileRef = 508014E8150B6B3400B2457E /* FiveHundredpxApertureExporter.icns */; };
 		5089C33F150AC40D002CA4A1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5089C33D150AC40D002CA4A1 /* Localizable.strings */; };
 		5089C342150AC87A002CA4A1 /* PluginManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5089C341150AC87A002CA4A1 /* PluginManager.framework */; };
 		50AAF3A514EEC0F8009F3BFE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50AAF3A414EEC0F8009F3BFE /* Cocoa.framework */; };
@@ -108,6 +109,7 @@
 		5044FEDF14EFD4970015F359 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5044FEE114EFD6D30015F359 /* FiveHundredPxOAuthEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FiveHundredPxOAuthEngine.h; sourceTree = "<group>"; };
 		5044FEE214EFD6D30015F359 /* FiveHundredPxOAuthEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FiveHundredPxOAuthEngine.m; sourceTree = "<group>"; };
+		508014E8150B6B3400B2457E /* FiveHundredpxApertureExporter.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = FiveHundredpxApertureExporter.icns; sourceTree = SOURCE_ROOT; };
 		5089C33E150AC40D002CA4A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5089C341150AC87A002CA4A1 /* PluginManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PluginManager.framework; path = ../../../../../Library/Frameworks/PluginManager.framework; sourceTree = "<group>"; };
 		50AAF3A114EEC0F8009F3BFE /* 500px Aperture Uploader.ApertureExport */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "500px Aperture Uploader.ApertureExport"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -324,6 +326,7 @@
 		50AAF3AB14EEC0F8009F3BFE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				508014E8150B6B3400B2457E /* FiveHundredpxApertureExporter.icns */,
 				50AAF3AC14EEC0F8009F3BFE /* 500px Aperture Uploader-Info.plist */,
 				50AAF3AD14EEC0F8009F3BFE /* InfoPlist.strings */,
 				5089C33D150AC40D002CA4A1 /* Localizable.strings */,
@@ -402,6 +405,7 @@
 				501EC00B14F0555F0046D0A9 /* Categories.plist in Resources */,
 				50E7F9BB14F414DF00E666D8 /* Credits.rtf in Resources */,
 				5089C33F150AC40D002CA4A1 /* Localizable.strings in Resources */,
+				508014E9150B6B3400B2457E /* FiveHundredpxApertureExporter.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

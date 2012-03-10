@@ -91,8 +91,6 @@ extern NSString *k500pxConsumerSecret;
 
 	NSBundle *myBundle = [NSBundle bundleForClass:[self class]];
 	
-	self.aboutIconImageView.image = [[NSWorkspace sharedWorkspace] iconForFile:myBundle.bundlePath];
-	
 	[self.aboutCreditsView setEditable:NO];
 	[self.aboutCreditsView readRTFDFromFile:[myBundle pathForResource:@"Credits"
 															   ofType:@"rtf"]];
