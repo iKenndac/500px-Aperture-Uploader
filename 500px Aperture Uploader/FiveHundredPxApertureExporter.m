@@ -82,9 +82,34 @@ extern NSString *k500pxConsumerSecret;
 		}
 			
 		memset(&exportProgress, 0, sizeof(exportProgress));
+		
+		[self addObserver:self
+			   forKeyPath:@"metadataArrayController.selection"
+				  options:NSKeyValueObservingOptionInitial
+				  context:k500pxUpdateStoreSizeWarningKVOContext];
+		
+		[self addObserver:self
+			   forKeyPath:@"exportManager.selectedExportPresetDictionary"
+				  options:NSKeyValueObservingOptionInitial
+				  context:k500pxUpdateStoreSizeWarningKVOContext];
+		
+		// ^ The above property isn't KVO-compliant, so we poll it. UGH.
+		self.presetChangeCheckerTimer = [NSTimer timerWithTimeInterval:0.5
+																target:self
+															  selector:@selector(pollVersionPreset:)
+															  userInfo:nil
+															   repeats:YES];
+		[[NSRunLoop currentRunLoop] addTimer:self.presetChangeCheckerTimer
+									 forMode:NSRunLoopCommonModes];
 	}
 	
 	return self;
+}
+
+-(void)dealloc {
+	[self removeObserver:self forKeyPath:@"metadataArrayController.selection"];
+	[self removeObserver:self forKeyPath:@"exportManager.selectedExportPresetDictionary"];
+	[self.presetChangeCheckerTimer invalidate];
 }
 
 -(void)awakeFromNib {
@@ -120,6 +145,18 @@ extern NSString *k500pxConsumerSecret;
 	}
 }
 
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if (context == k500pxUpdateStoreSizeWarningKVOContext) {
+		self.selectedImageIsBigEnoughForStore = [self imageAtIndexIsBigEnoughForStore:self.metadataArrayController.selectionIndex];
+    } else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
+}
+
+-(void)pollVersionPreset:(NSTimer *)timer {
+	self.selectedImageIsBigEnoughForStore = [self imageAtIndexIsBigEnoughForStore:self.metadataArrayController.selectionIndex];
+}
+
 +(NSSet *)keyPathsForValuesAffectingLoginStatusText {
 	return [NSSet setWithObjects:@"working", @"engine.isAuthenticated", nil];
 }
@@ -149,6 +186,49 @@ extern NSString *k500pxConsumerSecret;
 
 -(NSString *)logInOutButtonTitle {
 	return self.engine.isAuthenticated ? DKLocalizedStringForClass(@"log out title") : DKLocalizedStringForClass(@"log in title");
+}
+
+-(BOOL)imageAtIndexIsBigEnoughForStore:(NSUInteger)index {
+	
+	NSDictionary *preset = self.exportManager.selectedExportPresetDictionary;
+	NSDictionary *image = [self.exportManager propertiesWithoutThumbnailForImageAtIndex:index];
+	
+	NSSize nativeSize = [[image valueForKey:kExportKeyImageSize] sizeValue];
+	NSInteger sizeMode = [[preset valueForKey:@"ExportSizeStyle"] integerValue];
+	NSUInteger longestSideAfterPreset = 0;
+	
+	if (sizeMode == 0 /* Pixels */) {
+		
+		NSNumber *widthInPixels = [preset valueForKey:@"DestinationPixelWidth"];
+		NSNumber *heightInPixels = [preset valueForKey:@"DestinationPixelHeight"];
+		longestSideAfterPreset = MAX([widthInPixels unsignedIntegerValue], [heightInPixels unsignedIntegerValue]);
+		
+	} else if (sizeMode == 1 /* Percent */) {
+		
+		NSNumber *percent = [preset valueForKey:@"PercentToSizeBy"];
+		double scaleFactor = [percent doubleValue] / 100.0;
+		longestSideAfterPreset = MAX(nativeSize.width * scaleFactor, nativeSize.height * scaleFactor);
+
+	} else if (sizeMode == 2 /* Original size */) {
+	
+		longestSideAfterPreset = MAX(nativeSize.width, nativeSize.height);
+		
+	} else if (sizeMode == 3 /* Fit in inches */) {
+		
+		double widthInIn = [[preset valueForKey:@"DestinationPhysicalWidth"] doubleValue];
+		double heightInIn = [[preset valueForKey:@"DestinationPhysicalHeight"] doubleValue];
+		double dpi = [[preset valueForKey:@"DestinationDPI"] doubleValue];
+		longestSideAfterPreset = MAX(widthInIn * dpi, heightInIn * dpi);
+		
+	} else if (sizeMode == 4 /* Fit in cm */) {
+		
+		double widthInCm = [[preset valueForKey:@"DestinationPhysicalWidthInCentimeters"] doubleValue];
+		double heightInCm = [[preset valueForKey:@"DestinationPhysicalHeightInCentimeters"] doubleValue];
+		double dpcm = [[preset valueForKey:@"DestinationDPI"] doubleValue] / 2.54;
+		longestSideAfterPreset = MAX(widthInCm * dpcm, heightInCm * dpcm);
+	}
+	
+	return longestSideAfterPreset >= k500pxMinimumSizeForStore;
 }
 
 #pragma mark -

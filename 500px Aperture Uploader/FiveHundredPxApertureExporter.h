@@ -25,6 +25,10 @@ static NSString * const k500pxURLMetadataKey = @"500px URL";
 static NSString * const k500pxPhotoURLFormatter = @"http://500px.com/photo/%@";
 static NSString * const k500pxProfileURLFormatter = @"http://500px.com/%@";
 
+static NSUInteger const k500pxMinimumSizeForStore = 3600;
+
+static void * const k500pxUpdateStoreSizeWarningKVOContext = @"BigPicturesAreAwesome";
+
 static NSString * const kGrowlNotificationNameUploadComplete = @"upload";
 
 @interface FiveHundredPxApertureExporter : NSViewController <ApertureExportPlugIn, FiveHundredPxEngineDelegate, GrowlApplicationBridgeDelegate>
@@ -37,11 +41,15 @@ static NSString * const kGrowlNotificationNameUploadComplete = @"upload";
 @property (nonatomic, readwrite, strong) NSLock *progressLock;
 @property (nonatomic, readwrite, strong) FiveHundredPxOAuthEngine *engine;
 @property (nonatomic, readwrite, strong) DKBasicUpdateChecker *updater;
+@property (nonatomic, readwrite, strong) NSTimer *presetChangeCheckerTimer;
 
 // --
 
 @property (nonatomic, readonly, copy) NSString *loggedInUserName;
 @property (readwrite, strong) NSArray *metadataContainers;
+@property (readwrite, nonatomic) BOOL selectedImageIsBigEnoughForStore;
+
+-(BOOL)imageAtIndexIsBigEnoughForStore:(NSUInteger)index;
 
 // -- UI
 
