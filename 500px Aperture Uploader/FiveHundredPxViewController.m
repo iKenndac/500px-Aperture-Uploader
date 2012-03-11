@@ -40,14 +40,11 @@
 				  context:nil];
 		
 		
-		// ^ The above property isn't KVO-compliant, so we poll it. UGH.
-		self.presetChangeCheckerTimer = [NSTimer timerWithTimeInterval:0.5
-																target:self
-															  selector:@selector(pollVersionPreset:)
-															  userInfo:nil
-															   repeats:YES];
-		[[NSRunLoop currentRunLoop] addTimer:self.presetChangeCheckerTimer
-									 forMode:NSRunLoopCommonModes];
+		// ^ The above property isn't KVO-compliant, so we look for ALL menu actions to get the preset menu changing. UGH.
+		[[NSNotificationCenter defaultCenter] addObserver:self
+												 selector:@selector(presetMenuMayHaveChanged:)
+													 name:NSMenuDidChangeItemNotification
+												   object:nil];
 
 	}
     
@@ -58,7 +55,6 @@
 	[self removeObserver:self forKeyPath:@"metadataArrayController.selection"];
 	[self removeObserver:self forKeyPath:@"exporter.exportManager.selectedExportPresetDictionary"];
 	[self removeObserver:self forKeyPath:@"exporter.metadataContainers"];
-	[self.presetChangeCheckerTimer invalidate];
 }
 
 #pragma mark - Properties
@@ -199,7 +195,7 @@
     }
 }
 
--(void)pollVersionPreset:(NSTimer *)timer {
+-(void)presetMenuMayHaveChanged:(NSNotification *)not {
 	self.selectedImageIsBigEnoughForStore = [self imageAtIndexIsBigEnoughForStore:self.metadataArrayController.selectionIndex];
 }
 

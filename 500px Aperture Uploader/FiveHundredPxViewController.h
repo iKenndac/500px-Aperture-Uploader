@@ -55,6 +55,5 @@
 
 @property (nonatomic, readonly, strong) NSString *loginStatusText;
 @property (nonatomic, readonly, strong) NSString *logInOutButtonTitle;
-@property (nonatomic, readwrite, strong) NSTimer *presetChangeCheckerTimer;
 
 @end
