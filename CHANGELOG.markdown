@@ -1,3 +1,24 @@
+## Version 0.5 - Release March 11th, 2012 ##
+
+You can download this release [here](https://github.com/downloads/iKenndac/500px-Aperture-Uploader/500px%20Aperture%20Uploader-Latest.zip). Installation instructions [here](https://github.com/iKenndac/500px-Aperture-Uploader/blob/master/README.markdown).
+
+#### New Features ####
+
+* Icon! Proving how bad I am at image editing.
+
+* When trying to run the plugin when Aperture is in 32-bit mode, instructions are given on how to switch that off.
+
+* If the combination of the selected image and Version Preset will give an image too small to sell on the 500px Store, the plugin will let you know.
+
+* The plugin now (optionally) generates a detailed upload log with links to each uploaded photo and/or a detailed description of any failures that occur. This can be controlled in the plugin's preferences.
+
+#### Bugs Fixed/Changes ####
+
+* Error reporting when logging in (or failing, at least) is much better.
+
+* The plugin now supports localisation in the standard Mac OS X way. If you know how to localise Mac stuff dig right in, otherwise if you'd like the plugin translated to your language get in contact and I can help you.
+
+
 ## Version 0.4 - Released February 21st, 2012 ##
 
 You can download this release [here](https://github.com/downloads/iKenndac/500px-Aperture-Uploader/500px%20Aperture%20Uploader-0.4.zip). Installation instructions [here](https://github.com/iKenndac/500px-Aperture-Uploader/blob/master/README.markdown).
