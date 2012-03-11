@@ -115,9 +115,9 @@
 	formatter.dateStyle = NSDateFormatterShortStyle;
 	formatter.timeStyle = NSDateFormatterShortStyle;
 	
-	return [[NSString stringWithFormat:DKLocalizedStringForClass(@"log filename template"),
-			 [formatter stringFromDate:date]] stringByReplacingOccurrencesOfString:@"/" withString:@"-"];
-	
+	return [[[NSString stringWithFormat:DKLocalizedStringForClass(@"log filename template"),
+			 [formatter stringFromDate:date]] stringByReplacingOccurrencesOfString:@"/" withString:@"-"]
+			stringByReplacingOccurrencesOfString:@":" withString:@"."];
 }
 
 -(NSString *)outputForLogEntry:(NSDictionary *)entry {
