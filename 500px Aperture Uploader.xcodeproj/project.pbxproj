@@ -10,6 +10,7 @@
 		501EC00B14F0555F0046D0A9 /* Categories.plist in Resources */ = {isa = PBXBuildFile; fileRef = 501EC00914F0555F0046D0A9 /* Categories.plist */; };
 		501EC00F14F0572D0046D0A9 /* FiveHundredPxExtraMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 501EC00E14F0572D0046D0A9 /* FiveHundredPxExtraMetadata.m */; };
 		501EC01114F05E7F0046D0A9 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 501EC01014F05E7F0046D0A9 /* Quartz.framework */; };
+		503FCF8D150CFC05005D93AC /* Warning.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503FCF8C150CFC05005D93AC /* Warning.icns */; };
 		5044FE7414EFD0080015F359 /* FiveHundredPxViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5044FE7214EFD0080015F359 /* FiveHundredPxViewController.xib */; };
 		5044FE8E14EFD1380015F359 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 5044FE7914EFD1380015F359 /* CDataScanner.m */; };
 		5044FE8F14EFD1380015F359 /* CFilteringJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5044FE7C14EFD1380015F359 /* CFilteringJSONSerializer.m */; };
@@ -77,6 +78,7 @@
 		501EC00D14F0572D0046D0A9 /* FiveHundredPxExtraMetadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FiveHundredPxExtraMetadata.h; sourceTree = "<group>"; };
 		501EC00E14F0572D0046D0A9 /* FiveHundredPxExtraMetadata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FiveHundredPxExtraMetadata.m; sourceTree = "<group>"; };
 		501EC01014F05E7F0046D0A9 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		503FCF8C150CFC05005D93AC /* Warning.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Warning.icns; path = Graphics/Warning.icns; sourceTree = SOURCE_ROOT; };
 		5044FE7314EFD0080015F359 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FiveHundredPxViewController.xib; sourceTree = "<group>"; };
 		5044FE7814EFD1380015F359 /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner.h; sourceTree = "<group>"; };
 		5044FE7914EFD1380015F359 /* CDataScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner.m; sourceTree = "<group>"; };
@@ -125,7 +127,7 @@
 		50774A02150C02E700B81672 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = "500px Aperture Uploader/Constants.h"; sourceTree = "<group>"; };
 		50774A05150C040D00B81672 /* FiveHundredPxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FiveHundredPxViewController.h; sourceTree = "<group>"; };
 		50774A06150C040D00B81672 /* FiveHundredPxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FiveHundredPxViewController.m; sourceTree = "<group>"; };
-		508014E8150B6B3400B2457E /* FiveHundredpxApertureExporter.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = FiveHundredpxApertureExporter.icns; sourceTree = SOURCE_ROOT; };
+		508014E8150B6B3400B2457E /* FiveHundredpxApertureExporter.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = FiveHundredpxApertureExporter.icns; path = Graphics/FiveHundredpxApertureExporter.icns; sourceTree = SOURCE_ROOT; };
 		508014EF150B708700B2457E /* 32-Bit Dummy.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "32-Bit Dummy.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		508014FB150B710100B2457E /* FiveHundredPx32BitDummyExporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FiveHundredPx32BitDummyExporter.h; path = "500px Aperture Uploader/FiveHundredPx32BitDummyExporter.h"; sourceTree = SOURCE_ROOT; };
 		508014FC150B710100B2457E /* FiveHundredPx32BitDummyExporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FiveHundredPx32BitDummyExporter.m; path = "500px Aperture Uploader/FiveHundredPx32BitDummyExporter.m"; sourceTree = SOURCE_ROOT; };
@@ -376,6 +378,7 @@
 		50AAF3AB14EEC0F8009F3BFE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				503FCF8C150CFC05005D93AC /* Warning.icns */,
 				508014E8150B6B3400B2457E /* FiveHundredpxApertureExporter.icns */,
 				50AAF3AC14EEC0F8009F3BFE /* 500px Aperture Uploader-Info.plist */,
 				50AAF3AD14EEC0F8009F3BFE /* InfoPlist.strings */,
@@ -483,6 +486,7 @@
 				50E7F9BB14F414DF00E666D8 /* Credits.rtf in Resources */,
 				5089C33F150AC40D002CA4A1 /* Localizable.strings in Resources */,
 				508014E9150B6B3400B2457E /* FiveHundredpxApertureExporter.icns in Resources */,
+				503FCF8D150CFC05005D93AC /* Warning.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
