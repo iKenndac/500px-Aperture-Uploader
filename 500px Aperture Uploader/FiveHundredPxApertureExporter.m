@@ -84,7 +84,7 @@ extern NSString *k500pxConsumerSecret;
 	
 	[self.engine getDetailsForLoggedInUser:^(NSDictionary *returnValue, NSError *error) {
 		if (error != nil) {
-			[self.viewController presentError:error];
+			[self.viewController presentLoginFailedError:error];
 		} 
 	}];
 }

@@ -96,7 +96,7 @@
 	return self.engine.isAuthenticated ? DKLocalizedStringForClass(@"log out title") : DKLocalizedStringForClass(@"log in title");
 }
 
-#pragma mark -
+#pragma mark - Internal Logic
 
 -(void)awakeFromNib {
 	
@@ -199,6 +199,21 @@
 	self.selectedImageIsBigEnoughForStore = [self imageAtIndexIsBigEnoughForStore:self.metadataArrayController.selectionIndex];
 }
 
+-(void)presentLoginFailedError:(NSError *)error {
+	NSString *description = error.code == 401 ? 
+	DKLocalizedStringForClass(@"cannot login error description") :
+	DKLocalizedStringForClass(@"cannot login auth failed description");
+	
+	
+	NSAlert *alert = [NSAlert alertWithMessageText:DKLocalizedStringForClass(@"cannot login error title")
+									 defaultButton:DKLocalizedStringForClass(@"ok title")
+								   alternateButton:@""
+									   otherButton:@""
+						 informativeTextWithFormat:description];
+	
+	[alert runModal];
+}
+
 #pragma mark - Actions
 
 - (IBAction)logCurrentExportPreset:(id)sender {
@@ -230,23 +245,24 @@
 
 - (IBAction)confirmLogInSheet:(id)sender {
 	
-	if (self.loginSheetPasswordField.stringValue.length == 0) {
-		NSBeep();
-		[self.loginSheetPasswordField becomeFirstResponder];
-		return;
-	}
-	
 	if (self.loginSheetUsernameField.stringValue.length == 0) {
 		NSBeep();
 		[self.loginSheetUsernameField becomeFirstResponder];
 		return;
 	}
 	
+	if (self.loginSheetPasswordField.stringValue.length == 0) {
+		NSBeep();
+		[self.loginSheetPasswordField becomeFirstResponder];
+		return;
+	}
+	
 	[self cancelLogInSheet:sender];
 	
 	[self.engine authenticateWithCompletionBlock:^(NSError *error) {
-		if (error != nil)
-			[self presentError:error];
+		if (error != nil) {
+			[self presentLoginFailedError:error];			
+		}
 	}];
 }
 

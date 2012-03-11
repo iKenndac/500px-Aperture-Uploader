@@ -31,6 +31,8 @@
 
 -(BOOL)imageAtIndexIsBigEnoughForStore:(NSUInteger)index;
 
+-(void)presentLoginFailedError:(NSError *)error;
+
 @property (weak) IBOutlet NSTextField *loginSheetUsernameField;
 @property (weak) IBOutlet NSSecureTextField *loginSheetPasswordField;
 @property (strong) IBOutlet NSWindow *loginSheet;

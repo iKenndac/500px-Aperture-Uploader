@@ -19,7 +19,13 @@
 "64-bit only error title" = "The 500px Aperture Uploader cannot run in 32-bit mode.";
 "64-bit only error description" = "Please run Aperture in 64-bit mode. To do this, quit Aperture, choose \"Get Info…\" on it in Finder and uncheck the \"Open in 32-bit mode\" checkbox before launching it again.";
 
-//UI 
+// Errors
+
+"cannot login error title" = "Cannot login to 500px.com";
+"cannot login error description" = "Make sure your internet connection is working. 500px.com may also be suffering connectivity problems.";
+"cannot login auth failed description" = "Your username or password was entered incorrectly. Please try again.";
+
+// UI 
 
 "version formatter" = "Version %@ (%@)";
 "logged in title" = "Logged in as %@.";

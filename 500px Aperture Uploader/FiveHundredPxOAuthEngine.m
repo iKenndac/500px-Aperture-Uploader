@@ -191,8 +191,6 @@ static NSString * const k500pxUploadPhotoPath = @"v1/upload";
 		 
 		 [op onCompletion:^(MKNetworkOperation *completedOperation)
 		  {
-			  self.working = NO;
-			  
 			  // Fill the access token with the returned data
 			  [self fillTokenWithResponseBody:[completedOperation responseString] type:RSOAuthAccessToken];
 			  
@@ -202,18 +200,19 @@ static NSString * const k500pxUploadPhotoPath = @"v1/upload";
 			  // Store the OAuth access token
 			  [self storeOAuthTokenInKeychain];
 			  
+			  self.working = NO;
+			  
 			  // Finished, return to previous method
 			  if (self.completionBlock) self.completionBlock(nil);
 			  self.completionBlock = nil;
 		  } 
 				  onError:^(NSError *error)
 		  {
-			  self.working = NO;
-			  
 			  if (error.code != NSURLErrorNotConnectedToInternet && error.code != NSURLErrorNetworkConnectionLost) {
 				  [self resetOAuthToken];
 				  self.screenName = nil;
 			  }
+			  self.working = NO;
 			  if (self.completionBlock) self.completionBlock(error);
 			  self.completionBlock = nil;
 		  }];
@@ -224,12 +223,11 @@ static NSString * const k500pxUploadPhotoPath = @"v1/upload";
 	 } 
 		onError:^(NSError *error)
 	 {
-		 self.working = NO;
-		 
 		 if (error.code != NSURLErrorNotConnectedToInternet && error.code != NSURLErrorNetworkConnectionLost) {
 			 [self resetOAuthToken];
 			 self.screenName = nil;
 		 }
+		 self.working = NO;
 		 if (self.completionBlock) self.completionBlock(error);
 		 self.completionBlock = nil;
 	 }];
