@@ -35,12 +35,13 @@ NSString *k500pxConsumerSecret;
 
 // Default hostname and paths
 static NSString * const k500pxHostname = @"api.500px.com";
+static NSString * const k500pxUploadHostname = @"upload.500px.com";
 static NSString * const k500pxGetAccessTokenPath = @"v1/oauth/access_token";
 static NSString * const k500pxGetRequestTokenPath = @"v1/oauth/request_token";
 static NSString * const k500pxGetPhotosPath = @"v1/photos";
 static NSString * const k500pxGetUserDetailsPath = @"v1/users";
 static NSString * const k500pxPostPhotoPath = @"v1/photos";
-static NSString * const k500pxUploadPhotoPath = @"v1/upload";
+static NSString * const k500pxUploadPhotoPath = @"api/v1/upload";
 
 #pragma mark - Initialization
 
@@ -55,7 +56,7 @@ static NSString * const k500pxUploadPhotoPath = @"v1/upload";
     
     if (self) {
         self.delegate = del;
-		self.fileUploadEngine = [[MKNetworkEngine alloc] initWithHostName:k500pxHostname
+		self.fileUploadEngine = [[MKNetworkEngine alloc] initWithHostName:k500pxUploadHostname
 													   customHeaderFields:nil];
         
         // Retrieve OAuth access token (if previously stored)
@@ -343,7 +344,7 @@ static NSString * const k500pxUploadPhotoPath = @"v1/upload";
 									  MKNetworkOperation *op = [self.fileUploadEngine operationWithPath:k500pxUploadPhotoPath
 																								 params:postParams
 																							 httpMethod:@"POST"
-																									ssl:YES];
+																									ssl:NO];
 									  [op addData:jpgData
 										   forKey:@"file"];
 									  
