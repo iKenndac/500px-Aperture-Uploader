@@ -48,12 +48,12 @@
 @synthesize userUrl;
 @synthesize logEntries;
 
--(void)addLogRowWithImageName:(NSString *)name status:(NSString *)status url:(NSURL *)url {
+-(void)addLogRowWithImageName:(NSString *)name status:(NSString *)status url:(NSString *)url {
 
 	NSDictionary *rowDict = [NSDictionary dictionaryWithObjectsAndKeys:
 							 name == nil ? @"" : name, kPhotoNameLogKey,
 							 status == nil ? @"" : status, kPhotoStatusLogKey,
-							 url == nil ? @"" : [url absoluteString], kPhotoURLLogKey,
+							 url == nil ? @"" : url, kPhotoURLLogKey,
 							 nil];
 	
 	self.logEntries = [self.logEntries arrayByAddingObject:rowDict];

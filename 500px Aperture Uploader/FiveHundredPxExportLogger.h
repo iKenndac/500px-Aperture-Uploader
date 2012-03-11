@@ -18,7 +18,7 @@
 @property (nonatomic, readwrite, copy) NSString *userName;
 @property (nonatomic, readwrite, copy) NSURL *userUrl;
 
--(void)addLogRowWithImageName:(NSString *)name status:(NSString *)status url:(NSURL *)url;
+-(void)addLogRowWithImageName:(NSString *)name status:(NSString *)status url:(NSString *)url;
 
 -(NSURL *)outputLog:(NSError **)error thenOpen:(BOOL)autoOpen;
 

@@ -248,8 +248,8 @@ extern NSString *k500pxConsumerSecret;
 				 if (error != nil) {
 					 self.hadErrorsDuringExport = YES;
 					 [self.logger addLogRowWithImageName:[[self.metadataContainers objectAtIndex:index] title]
-												  status:DKLocalizedStringForClass(@"log error status")
-													 url:[NSURL URLWithString:DKLocalizedStringForClass(@"log error URL")]]; 
+												  status:[NSString stringWithFormat:DKLocalizedStringForClass(@"log error status"), error]
+													 url:DKLocalizedStringForClass(@"log error URL")]; 
 					 DLog(@"%@", error);
 				 } else {
 					 self.hadSuccessesDuringExport = YES;
@@ -268,7 +268,7 @@ extern NSString *k500pxConsumerSecret;
 					 
 					 [self.logger addLogRowWithImageName:[[self.metadataContainers objectAtIndex:index] title]
 												  status:DKLocalizedStringForClass(@"log success status")
-													 url:[NSURL URLWithString:photoUrlString]];
+													 url:photoUrlString];
 				 }
 				 
 				 isRunning = NO;
