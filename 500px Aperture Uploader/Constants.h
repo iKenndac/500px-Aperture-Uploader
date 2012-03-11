@@ -34,3 +34,25 @@ static NSString * const kDKBasicUpdateCheckerNewestBundleVersionKey = @"BundleVe
 static NSString * const kDKBasicUpdateCheckerNewestVersionStringKey = @"VersionString";
 static NSString * const kDKBasicUpdateCheckerMoreInfoURLKey = @"MoreInfoURL";
 static NSString * const kDKBasicUpdateCheckerUpdateFileURLInfoPlistKey = @"DKBUCUpdateFileUrl";
+
+// Logging
+
+static NSString * const kCreateLogsUserDefaultsKey = @"CreateLogs";
+static NSString * const kAutoOpenLogsUserDefaultsKey = @"AutoOpenLogs";
+
+static NSString * const kLogsDirectoryName = @"500px Aperture Uploader";
+
+static NSString * const kLogEntrySourceName = @"log_chunk";
+static NSString * const kLogEntrySourceType = @"html";
+static NSString * const kLogSourceName = @"log_template";
+static NSString * const kLogSourceType = @"html";
+
+static NSString * const kPhotoNameLogKey = @"$PHOTO_NAME";
+static NSString * const kPhotoStatusLogKey = @"$PHOTO_STATUS";
+static NSString * const kPhotoURLLogKey = @"$PHOTO_URL";
+static NSString * const kUserProfileURLLogKey = @"$USER_PROFILE_URL";
+static NSString * const kUserNameLogKey = @"$USER_NAME";
+static NSString * const kUploadStartDateLogKey = @"$UPLOAD_START_DATE";
+static NSString * const kUploadEndDateLogKey = @"$UPLOAD_END_DATE";
+static NSString * const kOverallStatusLogKey = @"$OVERALL_UPLOAD_STATUS";
+static NSString * const kLogRowsLogKey = @"$LOG_ROWS";

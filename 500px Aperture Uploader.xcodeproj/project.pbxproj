@@ -11,6 +11,9 @@
 		501EC00F14F0572D0046D0A9 /* FiveHundredPxExtraMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 501EC00E14F0572D0046D0A9 /* FiveHundredPxExtraMetadata.m */; };
 		501EC01114F05E7F0046D0A9 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 501EC01014F05E7F0046D0A9 /* Quartz.framework */; };
 		503FCF8D150CFC05005D93AC /* Warning.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503FCF8C150CFC05005D93AC /* Warning.icns */; };
+		503FCF93150D088F005D93AC /* log_chunk.html in Resources */ = {isa = PBXBuildFile; fileRef = 503FCF8F150D088F005D93AC /* log_chunk.html */; };
+		503FCF94150D088F005D93AC /* log_template.html in Resources */ = {isa = PBXBuildFile; fileRef = 503FCF91150D088F005D93AC /* log_template.html */; };
+		503FCF97150D08C3005D93AC /* FiveHundredPxExportLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 503FCF96150D08C3005D93AC /* FiveHundredPxExportLogger.m */; };
 		5044FE7414EFD0080015F359 /* FiveHundredPxViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5044FE7214EFD0080015F359 /* FiveHundredPxViewController.xib */; };
 		5044FE8E14EFD1380015F359 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 5044FE7914EFD1380015F359 /* CDataScanner.m */; };
 		5044FE8F14EFD1380015F359 /* CFilteringJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5044FE7C14EFD1380015F359 /* CFilteringJSONSerializer.m */; };
@@ -79,6 +82,10 @@
 		501EC00E14F0572D0046D0A9 /* FiveHundredPxExtraMetadata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FiveHundredPxExtraMetadata.m; sourceTree = "<group>"; };
 		501EC01014F05E7F0046D0A9 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		503FCF8C150CFC05005D93AC /* Warning.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Warning.icns; path = Graphics/Warning.icns; sourceTree = SOURCE_ROOT; };
+		503FCF90150D088F005D93AC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = en; path = en.lproj/log_chunk.html; sourceTree = "<group>"; };
+		503FCF92150D088F005D93AC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = en; path = en.lproj/log_template.html; sourceTree = "<group>"; };
+		503FCF95150D08C3005D93AC /* FiveHundredPxExportLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FiveHundredPxExportLogger.h; sourceTree = "<group>"; };
+		503FCF96150D08C3005D93AC /* FiveHundredPxExportLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FiveHundredPxExportLogger.m; sourceTree = "<group>"; };
 		5044FE7314EFD0080015F359 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FiveHundredPxViewController.xib; sourceTree = "<group>"; };
 		5044FE7814EFD1380015F359 /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner.h; sourceTree = "<group>"; };
 		5044FE7914EFD1380015F359 /* CDataScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner.m; sourceTree = "<group>"; };
@@ -177,6 +184,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		503FCF8E150D0878005D93AC /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				503FCF95150D08C3005D93AC /* FiveHundredPxExportLogger.h */,
+				503FCF96150D08C3005D93AC /* FiveHundredPxExportLogger.m */,
+				503FCF8F150D088F005D93AC /* log_chunk.html */,
+				503FCF91150D088F005D93AC /* log_template.html */,
+			);
+			name = Logging;
+			sourceTree = "<group>";
+		};
 		5044FE7614EFD12B0015F359 /* External */ = {
 			isa = PBXGroup;
 			children = (
@@ -368,6 +386,7 @@
 				5044FEE214EFD6D30015F359 /* FiveHundredPxOAuthEngine.m */,
 				50774A08150C041000B81672 /* View Controller */,
 				50E7FA3414F42D9F00E666D8 /* Updater */,
+				503FCF8E150D0878005D93AC /* Logging */,
 				508014F1150B708700B2457E /* 32-Bit Dummy */,
 				5044FE7614EFD12B0015F359 /* External */,
 				50AAF3AB14EEC0F8009F3BFE /* Supporting Files */,
@@ -487,6 +506,8 @@
 				5089C33F150AC40D002CA4A1 /* Localizable.strings in Resources */,
 				508014E9150B6B3400B2457E /* FiveHundredpxApertureExporter.icns in Resources */,
 				503FCF8D150CFC05005D93AC /* Warning.icns in Resources */,
+				503FCF93150D088F005D93AC /* log_chunk.html in Resources */,
+				503FCF94150D088F005D93AC /* log_template.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,6 +597,7 @@
 				50CD016714F0733B004C2B5B /* OAuthKeys.c in Sources */,
 				50E7FA3814F42E0700E666D8 /* DKBasicUpdateChecker.m in Sources */,
 				50774A07150C040D00B81672 /* FiveHundredPxViewController.m in Sources */,
+				503FCF97150D08C3005D93AC /* FiveHundredPxExportLogger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,6 +618,22 @@
 				501EC00A14F0555F0046D0A9 /* en */,
 			);
 			name = Categories.plist;
+			sourceTree = "<group>";
+		};
+		503FCF8F150D088F005D93AC /* log_chunk.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				503FCF90150D088F005D93AC /* en */,
+			);
+			name = log_chunk.html;
+			sourceTree = "<group>";
+		};
+		503FCF91150D088F005D93AC /* log_template.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				503FCF92150D088F005D93AC /* en */,
+			);
+			name = log_template.html;
 			sourceTree = "<group>";
 		};
 		5044FE7214EFD0080015F359 /* FiveHundredPxViewController.xib */ = {

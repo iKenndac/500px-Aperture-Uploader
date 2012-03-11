@@ -28,6 +28,7 @@
 - (IBAction)viewSelectedPhotoOn500px:(id)sender;
 - (IBAction)logCurrentExportPreset:(id)sender;
 - (IBAction)logCurrentImageProperties:(id)sender;
+- (IBAction)openLogsDirectory:(id)sender;
 
 -(BOOL)imageAtIndexIsBigEnoughForStore:(NSUInteger)index;
 

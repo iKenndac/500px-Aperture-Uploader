@@ -25,6 +25,17 @@
 "cannot login error description" = "Make sure your internet connection is working. 500px.com may also be suffering connectivity problems.";
 "cannot login auth failed description" = "Your username or password was entered incorrectly. Please try again.";
 
+// Logging
+
+"log filename template" = "500px Aperture Export Log - %@.html" ;
+"log error status" = "Export error: %@.";
+"log error URL" = "javascript:alert(\"Upload%20failed%20-%20no%20URL.\")";
+"log success status" = "Uploaded successfully.";
+"log status all failed" = "All uploads failed.";
+"log status all succeeded" = "All uploads were successful.";
+"log status some failed" = "Some uploads failed.";
+"log status nothing happened" = "No uploads were attempted.";
+
 // UI 
 
 "version formatter" = "Version %@ (%@)";

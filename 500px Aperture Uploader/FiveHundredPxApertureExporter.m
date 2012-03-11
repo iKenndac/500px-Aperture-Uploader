@@ -20,6 +20,10 @@
 @synthesize engine;
 @synthesize metadataContainers;
 @synthesize updater;
+@synthesize viewController;
+@synthesize logger;
+@synthesize hadErrorsDuringExport;
+@synthesize hadSuccessesDuringExport;
 
 //---------------------------------------------------------
 // initWithAPIManager:
@@ -59,6 +63,8 @@ extern NSString *k500pxConsumerSecret;
 		
 		[[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:
 																 [NSNumber numberWithBool:YES], kAutoCheckForUpdatesUserDefaultsKey,
+																 [NSNumber numberWithBool:YES], kCreateLogsUserDefaultsKey,
+																 [NSNumber numberWithBool:YES], kAutoOpenLogsUserDefaultsKey,
 																 nil]];
 		
 		if ([[NSUserDefaults standardUserDefaults] boolForKey:kAutoCheckForUpdatesUserDefaultsKey]) {
@@ -193,9 +199,15 @@ extern NSString *k500pxConsumerSecret;
 			return;
 		}
 		
+		self.logger = [[FiveHundredPxExportLogger alloc] init];
+		self.logger.startDate = [NSDate date];
+		self.logger.userName = self.engine.screenName;
+		self.logger.userUrl = [NSURL URLWithString:[NSString stringWithFormat:k500pxProfileURLFormatter, self.engine.screenName]];
 		
+		self.hadErrorsDuringExport = NO;
+		self.hadSuccessesDuringExport = NO;
 		
-        [self.exportManager shouldBeginExport];
+		[self.exportManager shouldBeginExport];
     }
 }
 
@@ -234,8 +246,13 @@ extern NSString *k500pxConsumerSecret;
 		 uploadProgressBlock:^(double progress) { DLog(@"%1.2f", progress); } 
 			 completionBlock:^(NSDictionary *returnValue, NSError *error) {
 				 if (error != nil) {
+					 self.hadErrorsDuringExport = YES;
+					 [self.logger addLogRowWithImageName:[[self.metadataContainers objectAtIndex:index] title]
+												  status:DKLocalizedStringForClass(@"log error status")
+													 url:[NSURL URLWithString:DKLocalizedStringForClass(@"log error URL")]]; 
 					 DLog(@"%@", error);
 				 } else {
+					 self.hadSuccessesDuringExport = YES;
 					 // Write the id back to the image.
 					 NSString *photoId = [[[returnValue valueForKey:@"photo"] valueForKey:@"id"] stringValue];
 					 NSString *photoUrlString = [NSString stringWithFormat:k500pxPhotoURLFormatter, photoId];
@@ -248,6 +265,10 @@ extern NSString *k500pxConsumerSecret;
 							 DLog(@"Setting 500px URL in metadata: %@", photoUrlString);
 						 }
 					 }
+					 
+					 [self.logger addLogRowWithImageName:[[self.metadataContainers objectAtIndex:index] title]
+												  status:DKLocalizedStringForClass(@"log success status")
+													 url:[NSURL URLWithString:photoUrlString]];
 				 }
 				 
 				 isRunning = NO;
@@ -268,20 +289,41 @@ extern NSString *k500pxConsumerSecret;
 }
 
 -(void)exportManagerDidFinishExport {
+	
+	NSURL *logUrl = nil;
+	
+	if ([[NSUserDefaults standardUserDefaults] boolForKey:kCreateLogsUserDefaultsKey]) {
+		self.logger.endDate = [NSDate date];
+		
+		if (self.hadErrorsDuringExport && self.hadSuccessesDuringExport) {
+			self.logger.overallStatus = DKLocalizedStringForClass(@"log status some failed");
+		} else if (self.hadErrorsDuringExport) {
+			self.logger.overallStatus = DKLocalizedStringForClass(@"log status all failed");
+		} else if (self.hadSuccessesDuringExport) {
+			self.logger.overallStatus = DKLocalizedStringForClass(@"log status all succeeded");
+		} else {
+			// Nothing happened? Shouldn't really get here.
+			self.logger.overallStatus = DKLocalizedStringForClass(@"log status nothing happened");
+		}
+		
+		logUrl = [self.logger outputLog:nil
+							   thenOpen:[[NSUserDefaults standardUserDefaults] boolForKey:kAutoOpenLogsUserDefaultsKey]];
+	}
+	
     
     @synchronized(exportManager) {
         [self.exportManager shouldFinishExport];
         
-        
-        
+		NSString *urlToClick = logUrl == nil ? [NSString stringWithFormat:k500pxProfileURLFormatter, self.engine.screenName] : [logUrl absoluteString];
+		
         [GrowlApplicationBridge notifyWithTitle:DKLocalizedStringForClass(@"growl upload complete title")
                                     description:DKLocalizedStringForClass(@"growl upload complete description")
                                notificationName:kGrowlNotificationNameUploadComplete 
                                        iconData:nil
                                        priority:0 
                                        isSticky:NO 
-                                   clickContext:[NSString stringWithFormat:k500pxProfileURLFormatter, self.engine.screenName]];
-    }
+                                   clickContext:urlToClick];
+	}
 }
 
 -(void)exportManagerShouldCancelExport {

@@ -13,6 +13,7 @@
 #import <Growl/Growl.h>
 #import "DKBasicUpdateChecker.h"
 #import "FiveHundredPxViewController.h"
+#import "FiveHundredPxExportLogger.h"
 
 @class FiveHundredPxViewController;
 
@@ -24,6 +25,10 @@
 @property (nonatomic, readwrite, strong) FiveHundredPxOAuthEngine *engine;
 @property (nonatomic, readwrite, strong) DKBasicUpdateChecker *updater;
 @property (nonatomic, readwrite, strong) FiveHundredPxViewController *viewController;
+@property (nonatomic, readwrite, strong) FiveHundredPxExportLogger *logger;
+
+@property (nonatomic, readwrite) BOOL hadErrorsDuringExport;
+@property (nonatomic, readwrite) BOOL hadSuccessesDuringExport;
 
 // --
 

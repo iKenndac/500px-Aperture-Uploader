@@ -55,6 +55,7 @@
 	[self removeObserver:self forKeyPath:@"metadataArrayController.selection"];
 	[self removeObserver:self forKeyPath:@"exporter.exportManager.selectedExportPresetDictionary"];
 	[self removeObserver:self forKeyPath:@"exporter.metadataContainers"];
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:NSMenuDidChangeItemNotification object:nil];
 }
 
 #pragma mark - Properties
@@ -222,6 +223,14 @@
 
 - (IBAction)logCurrentImageProperties:(id)sender {
 	NSLog(@"%@", [self.exporter.exportManager propertiesWithoutThumbnailForImageAtIndex:self.metadataArrayController.selectionIndex]);
+}
+
+- (IBAction)openLogsDirectory:(id)sender {
+	
+	NSURL *logsDir = [FiveHundredPxExportLogger logsDirectory];
+	[[NSFileManager defaultManager] createDirectoryAtURL:logsDir withIntermediateDirectories:YES attributes:nil error:nil];
+	
+	[[NSWorkspace sharedWorkspace] openURL:logsDir];
 }
 
 - (IBAction)logInOut:(id)sender {
