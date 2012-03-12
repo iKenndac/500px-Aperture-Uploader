@@ -16,6 +16,8 @@
 @property (nonatomic, readwrite) BOOL shouldShowFailureUI;
 @property (nonatomic, readwrite, strong) NSMutableData *downloadedData;
 
+-(void)presentError:(NSError *)error;
+
 @end
 
 @implementation DKBasicUpdateChecker

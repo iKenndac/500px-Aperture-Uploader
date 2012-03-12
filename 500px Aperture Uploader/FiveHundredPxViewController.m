@@ -60,6 +60,9 @@
 
 #pragma mark - Properties
 
+@synthesize firstView;
+@synthesize lastView;
+@synthesize selectedImageIsBigEnoughForStore;
 @synthesize loginSheetUsernameField;
 @synthesize loginSheetPasswordField;
 @synthesize loginSheet;
@@ -73,6 +76,8 @@
 @synthesize preferencesWindow;
 @synthesize logImagePropertiesButton;
 @synthesize logCurrentPresetButton;
+@synthesize engine;
+@synthesize exporter;
 
 +(NSSet *)keyPathsForValuesAffectingLoginStatusText {
 	return [NSSet setWithObjects:@"engine.working", @"engine.isAuthenticated", nil];
@@ -144,7 +149,7 @@
 -(BOOL)imageAtIndexIsBigEnoughForStore:(NSUInteger)index {
 	
 	NSDictionary *preset = self.exporter.exportManager.selectedExportPresetDictionary;
-	NSDictionary *image = [self.exporter.exportManager propertiesWithoutThumbnailForImageAtIndex:index];
+	NSDictionary *image = [self.exporter.exportManager propertiesWithoutThumbnailForImageAtIndex:(unsigned)index];
 	
 	NSSize nativeSize = [[image valueForKey:kExportKeyImageSize] sizeValue];
 	NSInteger sizeMode = [[preset valueForKey:@"ExportSizeStyle"] integerValue];
@@ -222,7 +227,7 @@
 }
 
 - (IBAction)logCurrentImageProperties:(id)sender {
-	NSLog(@"%@", [self.exporter.exportManager propertiesWithoutThumbnailForImageAtIndex:self.metadataArrayController.selectionIndex]);
+	NSLog(@"%@", [self.exporter.exportManager propertiesWithoutThumbnailForImageAtIndex:(unsigned)self.metadataArrayController.selectionIndex]);
 }
 
 - (IBAction)openLogsDirectory:(id)sender {

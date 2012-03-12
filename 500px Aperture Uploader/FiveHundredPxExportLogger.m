@@ -13,6 +13,7 @@
 
 @property (nonatomic, readwrite, strong) NSArray *logEntries;
 
+-(NSString *)fileNameForLogAtDate:(NSDate *)date;
 -(NSString *)outputForLogEntry:(NSDictionary *)entry;
 -(NSString *)stringByReplacingKeysInSource:(NSString *)string withEntries:(NSDictionary *)entries;
 
