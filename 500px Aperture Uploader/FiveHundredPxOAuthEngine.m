@@ -70,6 +70,7 @@ static NSString * const k500pxUploadPhotoPath = @"api/v1/upload";
 @synthesize screenName;
 @synthesize delegate;
 @synthesize fileUploadEngine;
+@synthesize working;
 
 #pragma mark - OAuth Access Token store/retrieve
 
