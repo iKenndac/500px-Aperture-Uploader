@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  500px Aperture Uploader
+
+  Created by Daniel Kennett on 13/03/2012.
+  For license information, see LICENSE.markdown.
+*/
+
+"ok title" = "OK";
+
+"installation failed error title" = "Installation failed!";
+"installation failed error description" = "The installation failed with the following error: %@";
+
+"installation succeeded title" = "Installation successful!";
+"installation succeeded description" = "The 500px Aperture Uploader version %@ has been installed. Please quit and relaunch Aperture if it is running to use the plugin."; 
+
+"installer header" = "Click \"Install\" to install or update to version %@ of the 500px Aperture Uploader.";

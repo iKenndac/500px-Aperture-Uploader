@@ -49,6 +49,13 @@
 		50CD016714F0733B004C2B5B /* OAuthKeys.c in Sources */ = {isa = PBXBuildFile; fileRef = 50CD016614F0733B004C2B5B /* OAuthKeys.c */; };
 		50E7F9BB14F414DF00E666D8 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 50E7F9B914F414DF00E666D8 /* Credits.rtf */; };
 		50E7FA3814F42E0700E666D8 /* DKBasicUpdateChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E7FA3714F42E0700E666D8 /* DKBasicUpdateChecker.m */; };
+		50F7EA22150FC7A90027429F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50AAF3A414EEC0F8009F3BFE /* Cocoa.framework */; };
+		50F7EA28150FC7A90027429F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50F7EA26150FC7A90027429F /* InfoPlist.strings */; };
+		50F7EA2A150FC7A90027429F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F7EA29150FC7A90027429F /* main.m */; };
+		50F7EA31150FC7A90027429F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F7EA30150FC7A90027429F /* AppDelegate.m */; };
+		50F7EA34150FC7A90027429F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50F7EA32150FC7A90027429F /* MainMenu.xib */; };
+		50F7EA3A150FCC480027429F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50F7EA38150FCC480027429F /* Localizable.strings */; };
+		50F7EA3D150FCE0C0027429F /* 500px Aperture Uploader.ApertureExport in Resources */ = {isa = PBXBuildFile; fileRef = 50AAF3A114EEC0F8009F3BFE /* 500px Aperture Uploader.ApertureExport */; };
 		5EDED56414F1CCAB0066D555 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EDED56314F1CCAB0066D555 /* Growl.framework */; };
 		5EDED56614F1CCBA0066D555 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5EDED56314F1CCAB0066D555 /* Growl.framework */; };
 /* End PBXBuildFile section */
@@ -60,6 +67,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 508014EE150B708700B2457E;
 			remoteInfo = "32-Bit Dummy";
+		};
+		50F7EA3B150FCE030027429F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 50AAF39814EEC0F8009F3BFE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 50AAF3A014EEC0F8009F3BFE;
+			remoteInfo = "500px Aperture Uploader";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -156,6 +170,15 @@
 		50E7F9BA14F414DF00E666D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		50E7FA3614F42E0700E666D8 /* DKBasicUpdateChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKBasicUpdateChecker.h; sourceTree = "<group>"; };
 		50E7FA3714F42E0700E666D8 /* DKBasicUpdateChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKBasicUpdateChecker.m; sourceTree = "<group>"; };
+		50F7EA20150FC7A90027429F /* Install 500px Aperture Uploader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Install 500px Aperture Uploader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		50F7EA25150FC7A90027429F /* Installer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Installer-Info.plist"; sourceTree = "<group>"; };
+		50F7EA27150FC7A90027429F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		50F7EA29150FC7A90027429F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		50F7EA2B150FC7A90027429F /* Installer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Installer-Prefix.pch"; sourceTree = "<group>"; };
+		50F7EA2F150FC7A90027429F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		50F7EA30150FC7A90027429F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		50F7EA33150FC7A90027429F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		50F7EA39150FCC480027429F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5EDED56314F1CCAB0066D555 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -178,6 +201,14 @@
 				50AAF3A514EEC0F8009F3BFE /* Cocoa.framework in Frameworks */,
 				5EDED56414F1CCAB0066D555 /* Growl.framework in Frameworks */,
 				5089C342150AC87A002CA4A1 /* PluginManager.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50F7EA1D150FC7A90027429F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50F7EA22150FC7A90027429F /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,7 +367,8 @@
 			children = (
 				50774A02150C02E700B81672 /* Constants.h */,
 				50CD016614F0733B004C2B5B /* OAuthKeys.c */,
-				50AAF3AA14EEC0F8009F3BFE /* 500px Aperture Uploader */,
+				50AAF3AA14EEC0F8009F3BFE /* Plugin */,
+				50F7EA23150FC7A90027429F /* Installer */,
 				50AAF3A314EEC0F8009F3BFE /* Frameworks */,
 				50AAF3A214EEC0F8009F3BFE /* Products */,
 			);
@@ -347,6 +379,7 @@
 			children = (
 				50AAF3A114EEC0F8009F3BFE /* 500px Aperture Uploader.ApertureExport */,
 				508014EF150B708700B2457E /* 32-Bit Dummy.bundle */,
+				50F7EA20150FC7A90027429F /* Install 500px Aperture Uploader.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -375,7 +408,7 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		50AAF3AA14EEC0F8009F3BFE /* 500px Aperture Uploader */ = {
+		50AAF3AA14EEC0F8009F3BFE /* Plugin */ = {
 			isa = PBXGroup;
 			children = (
 				50AAF3BC14EEC1B0009F3BFE /* FiveHundredPxApertureExporter.h */,
@@ -389,12 +422,13 @@
 				503FCF8E150D0878005D93AC /* Logging */,
 				508014F1150B708700B2457E /* 32-Bit Dummy */,
 				5044FE7614EFD12B0015F359 /* External */,
-				50AAF3AB14EEC0F8009F3BFE /* Supporting Files */,
+				50AAF3AB14EEC0F8009F3BFE /* Plugin Supporting Files */,
 			);
+			name = Plugin;
 			path = "500px Aperture Uploader";
 			sourceTree = "<group>";
 		};
-		50AAF3AB14EEC0F8009F3BFE /* Supporting Files */ = {
+		50AAF3AB14EEC0F8009F3BFE /* Plugin Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				503FCF8C150CFC05005D93AC /* Warning.icns */,
@@ -406,7 +440,7 @@
 				501EC00914F0555F0046D0A9 /* Categories.plist */,
 				50E7F9B914F414DF00E666D8 /* Credits.rtf */,
 			);
-			name = "Supporting Files";
+			name = "Plugin Supporting Files";
 			sourceTree = "<group>";
 		};
 		50E7FA3414F42D9F00E666D8 /* Updater */ = {
@@ -416,6 +450,29 @@
 				50E7FA3714F42E0700E666D8 /* DKBasicUpdateChecker.m */,
 			);
 			name = Updater;
+			sourceTree = "<group>";
+		};
+		50F7EA23150FC7A90027429F /* Installer */ = {
+			isa = PBXGroup;
+			children = (
+				50F7EA2F150FC7A90027429F /* AppDelegate.h */,
+				50F7EA30150FC7A90027429F /* AppDelegate.m */,
+				50F7EA32150FC7A90027429F /* MainMenu.xib */,
+				50F7EA24150FC7A90027429F /* Installer Supporting Files */,
+			);
+			path = Installer;
+			sourceTree = "<group>";
+		};
+		50F7EA24150FC7A90027429F /* Installer Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				50F7EA25150FC7A90027429F /* Installer-Info.plist */,
+				50F7EA26150FC7A90027429F /* InfoPlist.strings */,
+				50F7EA29150FC7A90027429F /* main.m */,
+				50F7EA2B150FC7A90027429F /* Installer-Prefix.pch */,
+				50F7EA38150FCC480027429F /* Localizable.strings */,
+			);
+			name = "Installer Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -460,6 +517,24 @@
 			productReference = 50AAF3A114EEC0F8009F3BFE /* 500px Aperture Uploader.ApertureExport */;
 			productType = "com.apple.product-type.bundle";
 		};
+		50F7EA1F150FC7A90027429F /* Installer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50F7EA35150FC7A90027429F /* Build configuration list for PBXNativeTarget "Installer" */;
+			buildPhases = (
+				50F7EA1C150FC7A90027429F /* Sources */,
+				50F7EA1D150FC7A90027429F /* Frameworks */,
+				50F7EA1E150FC7A90027429F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				50F7EA3C150FCE030027429F /* PBXTargetDependency */,
+			);
+			name = Installer;
+			productName = Installer;
+			productReference = 50F7EA20150FC7A90027429F /* Install 500px Aperture Uploader.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -483,6 +558,7 @@
 			targets = (
 				50AAF3A014EEC0F8009F3BFE /* 500px Aperture Uploader */,
 				508014EE150B708700B2457E /* 32-Bit Dummy */,
+				50F7EA1F150FC7A90027429F /* Installer */,
 			);
 		};
 /* End PBXProject section */
@@ -508,6 +584,17 @@
 				503FCF8D150CFC05005D93AC /* Warning.icns in Resources */,
 				503FCF93150D088F005D93AC /* log_chunk.html in Resources */,
 				503FCF94150D088F005D93AC /* log_template.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50F7EA1E150FC7A90027429F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50F7EA3D150FCE0C0027429F /* 500px Aperture Uploader.ApertureExport in Resources */,
+				50F7EA28150FC7A90027429F /* InfoPlist.strings in Resources */,
+				50F7EA34150FC7A90027429F /* MainMenu.xib in Resources */,
+				50F7EA3A150FCC480027429F /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,6 +688,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		50F7EA1C150FC7A90027429F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50F7EA2A150FC7A90027429F /* main.m in Sources */,
+				50F7EA31150FC7A90027429F /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -608,6 +704,11 @@
 			isa = PBXTargetDependency;
 			target = 508014EE150B708700B2457E /* 32-Bit Dummy */;
 			targetProxy = 508014FE150B743A00B2457E /* PBXContainerItemProxy */;
+		};
+		50F7EA3C150FCE030027429F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 50AAF3A014EEC0F8009F3BFE /* 500px Aperture Uploader */;
+			targetProxy = 50F7EA3B150FCE030027429F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -666,6 +767,30 @@
 				50E7F9BA14F414DF00E666D8 /* en */,
 			);
 			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		50F7EA26150FC7A90027429F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50F7EA27150FC7A90027429F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		50F7EA32150FC7A90027429F /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50F7EA33150FC7A90027429F /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		50F7EA38150FCC480027429F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50F7EA39150FCC480027429F /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -785,6 +910,32 @@
 			};
 			name = Release;
 		};
+		50F7EA36150FC7A90027429F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Installer/Installer-Prefix.pch";
+				INFOPLIST_FILE = "Installer/Installer-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "Install 500px Aperture Uploader";
+				SDKROOT = macosx10.7;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		50F7EA37150FC7A90027429F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Installer/Installer-Prefix.pch";
+				INFOPLIST_FILE = "Installer/Installer-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "Install 500px Aperture Uploader";
+				SDKROOT = macosx10.7;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -814,6 +965,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		50F7EA35150FC7A90027429F /* Build configuration list for PBXNativeTarget "Installer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50F7EA36150FC7A90027429F /* Debug */,
+				50F7EA37150FC7A90027429F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
