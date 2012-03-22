@@ -20,7 +20,7 @@ This plugin requires Aperture 3.x and a Mac running Mac OS X 10.7 (Lion) or late
 
 If you'd like to download the plugin without building, you'll find periodic snapshot builds in the [Downloads section](https://github.com/iKenndac/500px-Aperture-Uploader/downloads) of the project's home on GitHub.
 
-To install the plugin, place it in `~/Library/Application Support/Aperture/Plug-Ins/Export`. This folder tree may well be missing on your Mac - if so, just create them. Note: The Library folder in your home folder is hidden by default on Lion - you can get to it by holding down the Option/Alt key and choosing "Library" from the Finder's "Go" menu.
+The snapshots are now distributed with an installer, so all you need to do is double-click the downloaded installer and push the "Install" button.
 
 ## "Plug-In Failed To Load" When Trying To Use The Plugin ##
 
