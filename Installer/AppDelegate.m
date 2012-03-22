@@ -27,14 +27,6 @@ static NSString * const kPluginFileName = @"500px Aperture Uploader.ApertureExpo
 	
 	NSURL *sourceUrl = [[NSBundle mainBundle] URLForResource:kPluginFileName withExtension:@""];
 	NSBundle *sourceBundle = [NSBundle bundleWithURL:sourceUrl];
-	NSString *iconName = [[sourceBundle infoDictionary] valueForKey:@"CFBundleIconFile"];
-	
-	NSImage *icon = [[NSImage alloc] initWithContentsOfURL:[sourceBundle URLForResource:iconName withExtension:@""]];
-	
-	if (icon != nil)
-		self.imageView.image = icon;
-	else
-		self.imageView.image = [NSImage imageNamed:NSImageNameApplicationIcon];
 	
 	self.headerTextField.stringValue = [NSString stringWithFormat:DKLocalizedStringForClass(@"installer header"),
 										[sourceBundle.infoDictionary valueForKey:@"CFBundleShortVersionString"]];

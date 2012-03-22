@@ -43,6 +43,7 @@
 		508014FD150B710100B2457E /* FiveHundredPx32BitDummyExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 508014FC150B710100B2457E /* FiveHundredPx32BitDummyExporter.m */; };
 		5089C33F150AC40D002CA4A1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5089C33D150AC40D002CA4A1 /* Localizable.strings */; };
 		5089C342150AC87A002CA4A1 /* PluginManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5089C341150AC87A002CA4A1 /* PluginManager.framework */; };
+		508F2801151BC3A900DE3487 /* Installer.icns in Resources */ = {isa = PBXBuildFile; fileRef = 508F2800151BC3A900DE3487 /* Installer.icns */; };
 		50AAF3A514EEC0F8009F3BFE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50AAF3A414EEC0F8009F3BFE /* Cocoa.framework */; };
 		50AAF3AF14EEC0F8009F3BFE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50AAF3AD14EEC0F8009F3BFE /* InfoPlist.strings */; };
 		50AAF3BE14EEC1B0009F3BFE /* FiveHundredPxApertureExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AAF3BD14EEC1B0009F3BFE /* FiveHundredPxApertureExporter.m */; };
@@ -154,6 +155,7 @@
 		508014FC150B710100B2457E /* FiveHundredPx32BitDummyExporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FiveHundredPx32BitDummyExporter.m; path = "500px Aperture Uploader/FiveHundredPx32BitDummyExporter.m"; sourceTree = SOURCE_ROOT; };
 		5089C33E150AC40D002CA4A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5089C341150AC87A002CA4A1 /* PluginManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PluginManager.framework; path = ../../../../../Library/Frameworks/PluginManager.framework; sourceTree = "<group>"; };
+		508F2800151BC3A900DE3487 /* Installer.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Installer.icns; path = Graphics/Installer.icns; sourceTree = SOURCE_ROOT; };
 		50AAF3A114EEC0F8009F3BFE /* 500px Aperture Uploader.ApertureExport */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "500px Aperture Uploader.ApertureExport"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50AAF3A414EEC0F8009F3BFE /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		50AAF3A714EEC0F8009F3BFE /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -357,6 +359,7 @@
 			children = (
 				508014FB150B710100B2457E /* FiveHundredPx32BitDummyExporter.h */,
 				508014FC150B710100B2457E /* FiveHundredPx32BitDummyExporter.m */,
+				508F2800151BC3A900DE3487 /* Installer.icns */,
 			);
 			name = "32-Bit Dummy";
 			path = "../32-Bit Dummy";
@@ -595,6 +598,7 @@
 				50F7EA28150FC7A90027429F /* InfoPlist.strings in Resources */,
 				50F7EA34150FC7A90027429F /* MainMenu.xib in Resources */,
 				50F7EA3A150FCC480027429F /* Localizable.strings in Resources */,
+				508F2801151BC3A900DE3487 /* Installer.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -973,6 +977,7 @@
 				50F7EA37150FC7A90027429F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
