@@ -8,7 +8,7 @@ You can download this release [here](https://github.com/downloads/iKenndac/500px
 
 #### Bugs Fixed/Changes ####
 
-* None.
+* Upload log now has the 500px queue warning (that it can take a while) in red italics and in a more prominent place in the hope people will see it.
 
 ## Version 0.5 - Released March 11th, 2012 ##
 
