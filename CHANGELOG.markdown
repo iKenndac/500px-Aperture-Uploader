@@ -1,4 +1,16 @@
-## Version 0.5 - Release March 11th, 2012 ##
+## Version 0.5.1 - Released April 18th, 2012 ##
+
+You can download this release [here](https://github.com/downloads/iKenndac/500px-Aperture-Uploader/500px%20Aperture%20Uploader-Latest.zip). Installation instructions [here](https://github.com/iKenndac/500px-Aperture-Uploader/blob/master/README.markdown).
+
+#### New Features ####
+
+* Added new photo categories: Transportation, Urban Exploration and Wedding.
+
+#### Bugs Fixed/Changes ####
+
+* None.
+
+## Version 0.5 - Released March 11th, 2012 ##
 
 You can download this release [here](https://github.com/downloads/iKenndac/500px-Aperture-Uploader/500px%20Aperture%20Uploader-Latest.zip). Installation instructions [here](https://github.com/iKenndac/500px-Aperture-Uploader/blob/master/README.markdown).
 

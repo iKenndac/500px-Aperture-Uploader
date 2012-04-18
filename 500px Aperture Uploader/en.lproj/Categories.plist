@@ -138,6 +138,12 @@
 		</dict>
 		<dict>
 			<key>name</key>
+			<string>Transportation</string>
+			<key>id</key>
+			<integer>26</integer>
+		</dict>
+		<dict>
+			<key>name</key>
 			<string>Travel</string>
 			<key>id</key>
 			<integer>13</integer>
@@ -147,6 +153,18 @@
 			<string>Underwater</string>
 			<key>id</key>
 			<integer>22</integer>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Urban Exploration</string>
+			<key>id</key>
+			<integer>27</integer>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Wedding</string>
+			<key>id</key>
+			<integer>25</integer>
 		</dict>
 	</array>
 </dict>
