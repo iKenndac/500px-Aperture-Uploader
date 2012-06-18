@@ -78,9 +78,42 @@ extern NSString *k500pxConsumerSecret;
 			
 		memset(&exportProgress, 0, sizeof(exportProgress));
 		
+		[self pruneLogsIfNeeded];
 	}
 	
 	return self;
+}
+
+-(void)pruneLogsIfNeeded {
+	
+	// Check logs
+	
+	NSURL *logsDir = [FiveHundredPxExportLogger logsDirectory];
+	if (![logsDir checkResourceIsReachableAndReturnError:nil])
+		return;
+
+	NSEnumerator *logEnumerator = [[NSFileManager defaultManager] enumeratorAtURL:logsDir
+													   includingPropertiesForKeys:[NSArray arrayWithObjects:NSURLCreationDateKey, NSURLNameKey, nil]
+																		  options:NSDirectoryEnumerationSkipsSubdirectoryDescendants |
+																					NSDirectoryEnumerationSkipsPackageDescendants |
+								   NSDirectoryEnumerationSkipsHiddenFiles
+																	 errorHandler:nil];
+	
+	for (NSURL *theURL in logEnumerator) {
+		
+		NSString *name = nil;
+		[theURL getResourceValue:&name forKey:NSURLNameKey error:nil];
+		if ([[name pathExtension] isEqualToString:[DKLocalizedStringForClass(@"log filename template") pathExtension]]) {
+			
+			NSDate *creationDate = nil;
+			[theURL getResourceValue:&creationDate forKey:NSURLCreationDateKey error:NULL];
+			if ([[NSDate date] timeIntervalSinceDate:creationDate] > kLogDeletionThreshold) {
+				
+				[[NSFileManager defaultManager] removeItemAtURL:theURL error:nil];
+			}
+		}
+	}
+	
 }
 
 #pragma mark -

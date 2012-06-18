@@ -37,6 +37,8 @@ static NSString * const kDKBasicUpdateCheckerUpdateFileURLInfoPlistKey = @"DKBUC
 
 // Logging
 
+static NSTimeInterval const kLogDeletionThreshold = 60 * 60 * 24 * 14; // 14 days
+
 static NSString * const kCreateLogsUserDefaultsKey = @"CreateLogs";
 static NSString * const kAutoOpenLogsUserDefaultsKey = @"AutoOpenLogs";
 
