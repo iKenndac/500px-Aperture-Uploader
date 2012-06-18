@@ -30,6 +30,20 @@
 		if (existingUrlString.length > 0)
 			self.existing500pxURL = [NSURL URLWithString:existingUrlString];
 		
+		if ([[NSUserDefaults standardUserDefaults] boolForKey:kAutofillTagsUserDefaultsKey]) {
+			
+			// An array of arrays.
+			NSArray *keywords = [self.imageProperties valueForKey:kExportKeyHierarchicalKeywords];
+			NSMutableArray *uniqueKeywords = [NSMutableArray arrayWithCapacity:keywords.count];
+			for (NSArray *keywordHeirarchy in keywords)
+				for (NSString *keyword in keywordHeirarchy)
+					if (![uniqueKeywords containsObject:keyword])
+						[uniqueKeywords addObject:keyword];
+			
+			if (uniqueKeywords.count > 0)
+				self.tags = [NSArray arrayWithArray:uniqueKeywords];
+		}
+		
 		DLog(@"%@", self.imageProperties);
 	}
 	return self;

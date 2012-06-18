@@ -76,6 +76,7 @@
 @synthesize preferencesWindow;
 @synthesize logImagePropertiesButton;
 @synthesize logCurrentPresetButton;
+@synthesize tagField;
 @synthesize engine;
 @synthesize exporter;
 
@@ -142,6 +143,8 @@
 		[self.logCurrentPresetButton setHidden:YES];
 	}
 #endif
+	
+	self.tagField.tokenizingCharacterSet = [NSCharacterSet characterSetWithCharactersInString:@","];
 	
 	[self.imageBrowser reloadData];
 }

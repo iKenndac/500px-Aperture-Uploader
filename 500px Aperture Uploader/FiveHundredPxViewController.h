@@ -47,6 +47,7 @@
 @property (strong) IBOutlet NSWindow *preferencesWindow;
 @property (weak) IBOutlet NSButton *logImagePropertiesButton;
 @property (weak) IBOutlet NSButton *logCurrentPresetButton;
+@property (weak) IBOutlet NSTokenField *tagField;
 
 @property (nonatomic, readwrite, strong) FiveHundredPxOAuthEngine *engine;
 @property (nonatomic, readwrite, weak) FiveHundredPxApertureExporter *exporter;

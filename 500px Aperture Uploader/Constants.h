@@ -24,6 +24,10 @@ static NSUInteger const k500pxMinimumSizeForStore = 3600;
 
 static NSString * const kGrowlNotificationNameUploadComplete = @"upload";
 
+// Tags
+
+static NSString * const kAutofillTagsUserDefaultsKey = @"AutofillTags";
+
 // Updates
 
 static NSString * const kAutoCheckForUpdatesUserDefaultsKey = @"CheckForUpdates";
