@@ -40,6 +40,7 @@
 @synthesize title;
 @synthesize imageDescription;
 @synthesize lens;
+@synthesize tags;
 @synthesize existing500pxURL;
 @synthesize imageProperties;
 

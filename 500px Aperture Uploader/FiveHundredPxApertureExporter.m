@@ -245,12 +245,14 @@ extern NSString *k500pxConsumerSecret;
 				withMetaData:metadata 
 		 uploadProgressBlock:^(double progress) { DLog(@"%1.2f", progress); } 
 			 completionBlock:^(NSDictionary *returnValue, NSError *error) {
+				 
 				 if (error != nil) {
 					 self.hadErrorsDuringExport = YES;
 					 [self.logger addLogRowWithImageName:[[self.metadataContainers objectAtIndex:index] title]
 												  status:[NSString stringWithFormat:DKLocalizedStringForClass(@"log error status"), error]
 													 url:DKLocalizedStringForClass(@"log error URL")]; 
 					 DLog(@"%@", error);
+					 isRunning = NO;
 				 } else {
 					 self.hadSuccessesDuringExport = YES;
 					 // Write the id back to the image.
@@ -264,16 +266,37 @@ extern NSString *k500pxConsumerSecret;
 															 toImageAtIndex:index];
 							 DLog(@"Setting 500px URL in metadata: %@", photoUrlString);
 						 }
-					 }
-					 
+				 
+				 // Now, set the tags
+				 NSArray *tags = [[self.metadataContainers objectAtIndex:index] tags];
+				 if (tags.count > 0) {
+					 DLog(@"Setting tags on 500px: %@", tags);
+					 [self.engine setTags:tags
+						   forPhotoWithId:photoId
+						  completionBlock:^(NSDictionary *tagsReturnValue, NSError *tagsError) {
+							  if (tagsError != nil) {
+								  self.hadErrorsDuringExport = YES;
+								  [self.logger addLogRowWithImageName:[[self.metadataContainers objectAtIndex:index] title]
+															   status:[NSString stringWithFormat:DKLocalizedStringForClass(@"log error status"), error]
+																  url:DKLocalizedStringForClass(@"log error URL")];
+							  } else {
+								  self.hadSuccessesDuringExport = YES;
+								  [self.logger addLogRowWithImageName:[[self.metadataContainers objectAtIndex:index] title]
+															   status:DKLocalizedStringForClass(@"log success status")
+																  url:photoUrlString];
+								  
+							  }
+							  isRunning = NO;
+						  }];
+				 } else {
 					 [self.logger addLogRowWithImageName:[[self.metadataContainers objectAtIndex:index] title]
 												  status:DKLocalizedStringForClass(@"log success status")
 													 url:photoUrlString];
+					 isRunning = NO;
 				 }
-				 
-				 isRunning = NO;
 			 }
-	 ];
+	 }
+	 }];
 	
 	while (isRunning)
 		[NSThread sleepForTimeInterval:0.1];

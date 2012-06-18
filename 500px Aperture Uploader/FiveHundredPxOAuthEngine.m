@@ -42,6 +42,7 @@ static NSString * const k500pxGetPhotosPath = @"v1/photos";
 static NSString * const k500pxGetUserDetailsPath = @"v1/users";
 static NSString * const k500pxPostPhotoPath = @"v1/photos";
 static NSString * const k500pxUploadPhotoPath = @"api/v1/upload";
+static NSString * const k500pxPostPhotoTagsPath = @"v1/photos/%@/tags";
 
 #pragma mark - Initialization
 
@@ -299,6 +300,18 @@ static NSString * const k500pxUploadPhotoPath = @"api/v1/upload";
     
     [self enqueueSignedOperation:op];
 	self.working = YES;
+}
+
+-(void)setTags:(NSArray *)tags forPhotoWithId:(NSString *)photoId completionBlock:(FiveHundredPxCompletionWithValueBlock)block {
+	
+	NSMutableDictionary *postParams = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+									   [tags componentsJoinedByString:@", "], @"tags",
+									   nil];
+	
+	[self performAuthenticatedRequestToPath:[NSString stringWithFormat:k500pxPostPhotoTagsPath, photoId]
+								 parameters:postParams
+									 method:@"POST"
+							  callbackBlock:block];
 }
 
 -(void)getPhotosForLoggedInUser:(FiveHundredPxCompletionWithValueBlock)block {

@@ -27,6 +27,7 @@ typedef void (^FiveHundredPxCompletionWithValueBlock)(NSDictionary *returnValue,
 - (void)cancelAuthentication;
 - (void)forgetStoredToken;
 
+-(void)setTags:(NSArray *)tags forPhotoWithId:(NSString *)photoId completionBlock:(FiveHundredPxCompletionWithValueBlock)block;
 -(void)getPhotosForLoggedInUser:(FiveHundredPxCompletionWithValueBlock)block;
 -(void)getDetailsForLoggedInUser:(FiveHundredPxCompletionWithValueBlock)block;
 -(void)uploadPhoto:(NSData *)jpgData withMetaData:(NSDictionary *)metaData uploadProgressBlock:(MKNKProgressBlock)progressBlock completionBlock:(FiveHundredPxCompletionWithValueBlock)block;
