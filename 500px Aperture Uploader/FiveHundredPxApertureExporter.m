@@ -344,10 +344,10 @@ extern NSString *k500pxConsumerSecret;
 
 -(void)attemptToSetTags:(NSArray *)tags forImageWithId:(NSString *)photoId attemptNumber:(NSUInteger)attempt completionBlock:(FiveHundredPxCompletionBlock)block {
 	
-	__weak id weakSelf = self;
+	__weak FiveHundredPxApertureExporter *weakSelf = self;
 	DLog(@"Setting tags, attempt number %lu", attempt);
 	
-	[self.engine setTags:tags forPhotoWithId:photoId completionBlock:^(NSDictionary *returnValue, NSError *error) {
+	[weakSelf.engine setTags:tags forPhotoWithId:photoId completionBlock:^(NSDictionary *returnValue, NSError *error) {
 		
 		if (error != nil) {
 			
