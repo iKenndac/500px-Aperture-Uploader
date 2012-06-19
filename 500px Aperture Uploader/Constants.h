@@ -27,6 +27,8 @@ static NSString * const kGrowlNotificationNameUploadComplete = @"upload";
 // Tags
 
 static NSString * const kAutofillTagsUserDefaultsKey = @"AutofillTags";
+static NSUInteger const kTagAttemptCount = 12;
+static NSTimeInterval const kTagAttemptDelay = 5.0;
 
 // Updates
 

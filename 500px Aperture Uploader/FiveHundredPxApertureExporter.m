@@ -303,30 +303,26 @@ extern NSString *k500pxConsumerSecret;
 						 
 						 // Now, set the tags
 						 NSArray *tags = [[self.metadataContainers objectAtIndex:index] tags];
-						 if (tags.count > 0) {
-							 DLog(@"Setting tags on 500px: %@", tags);
-							 [self.engine setTags:tags
-								   forPhotoWithId:photoId
-								  completionBlock:^(NSDictionary *tagsReturnValue, NSError *tagsError) {
-									  if (tagsError != nil) {
-										  self.hadErrorsDuringExport = YES;
-										  [self.logger addLogRowWithImageName:[[self.metadataContainers objectAtIndex:index] title]
-																	   status:[NSString stringWithFormat:DKLocalizedStringForClass(@"log error status"), tagsError]
-																		  url:DKLocalizedStringForClass(@"log error URL")];
-									  } else {
-										  self.hadSuccessesDuringExport = YES;
-										  [self.logger addLogRowWithImageName:[[self.metadataContainers objectAtIndex:index] title]
-																	   status:DKLocalizedStringForClass(@"log success status")
-																		  url:photoUrlString];
-										  
-									  }
-									  isRunning = NO;
-								  }];
-						 } else {
+						 
+						 if (tags.count == 0) {
 							 [self.logger addLogRowWithImageName:[[self.metadataContainers objectAtIndex:index] title]
 														  status:DKLocalizedStringForClass(@"log success status")
 															 url:photoUrlString];
 							 isRunning = NO;
+						 } else {
+							 [self attemptToSetTags:tags forImageWithId:photoId completionBlock:^(NSError *tagError) {
+								 
+								 if (tagError != nil) {
+									 [self.logger addLogRowWithImageName:[[self.metadataContainers objectAtIndex:index] title]
+																  status:DKLocalizedStringForClass(@"log tag timeout status")
+																	 url:photoUrlString];
+								 } else {
+									 [self.logger addLogRowWithImageName:[[self.metadataContainers objectAtIndex:index] title]
+																  status:DKLocalizedStringForClass(@"log success status")
+																	 url:photoUrlString];
+								 }
+								 isRunning = NO;
+							 }];
 						 }
 					 }
 				 }
@@ -340,6 +336,37 @@ extern NSString *k500pxConsumerSecret;
 	// Tell Aperture to write the file out if needed.
 	BOOL shouldAlsoWriteImageFileSomewhere = NO;
 	return shouldAlsoWriteImageFileSomewhere;
+}
+
+-(void)attemptToSetTags:(NSArray *)tags forImageWithId:(NSString *)photoId completionBlock:(FiveHundredPxCompletionBlock)block {
+	[self attemptToSetTags:tags forImageWithId:photoId attemptNumber:1 completionBlock:block];
+}
+
+-(void)attemptToSetTags:(NSArray *)tags forImageWithId:(NSString *)photoId attemptNumber:(NSUInteger)attempt completionBlock:(FiveHundredPxCompletionBlock)block {
+	
+	__weak id weakSelf = self;
+	DLog(@"Setting tags, attempt number %lu", attempt);
+	
+	[self.engine setTags:tags forPhotoWithId:photoId completionBlock:^(NSDictionary *returnValue, NSError *error) {
+		
+		if (error != nil) {
+			
+			if (attempt == kTagAttemptCount) {
+				if (block) block([NSError errorWithDomain:@"org.danielkennett.500px.ErrorDomain"
+													 code:4
+												 userInfo:[NSDictionary dictionaryWithObject:DKLocalizedStringForClass(@"tag timeout error")
+																					  forKey:NSLocalizedDescriptionKey]]);
+			} else {
+				double delayInSeconds = kTagAttemptDelay;
+				dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+				dispatch_after(popTime, dispatch_get_current_queue(), ^(void){
+					[weakSelf attemptToSetTags:tags forImageWithId:photoId attemptNumber:attempt + 1 completionBlock:block];
+				});
+			}
+		} else {
+			if (block) block(nil);
+		}
+	}];
 }
 
 -(void)exportManagerDidWriteImageDataToRelativePath:(NSString *)relativePath forImageAtIndex:(unsigned)index {

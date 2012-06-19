@@ -305,7 +305,7 @@ static NSString * const k500pxPostPhotoTagsPath = @"v1/photos/%@/tags";
 -(void)setTags:(NSArray *)tags forPhotoWithId:(NSString *)photoId completionBlock:(FiveHundredPxCompletionWithValueBlock)block {
 	
 	NSMutableDictionary *postParams = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-									   [tags componentsJoinedByString:@", "], @"tags",
+									   [tags componentsJoinedByString:@","], @"tags",
 									   nil];
 	
 	[self performAuthenticatedRequestToPath:[NSString stringWithFormat:k500pxPostPhotoTagsPath, photoId]

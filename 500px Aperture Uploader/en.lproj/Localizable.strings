@@ -24,6 +24,7 @@
 "cannot login error title" = "Cannot login to 500px.com";
 "cannot login error description" = "Make sure your internet connection is working. 500px.com may also be suffering connectivity problems.";
 "cannot login auth failed description" = "Your username or password was entered incorrectly. Please try again.";
+"tag timeout error" = "Timed out when trying to set tags. Please set them manually on 500px.com.";
 
 // Logging
 
@@ -35,6 +36,7 @@
 "log status all succeeded" = "All uploads were successful.";
 "log status some failed" = "Some uploads failed.";
 "log status nothing happened" = "No uploads were attempted.";
+"log tag timeout status" = "Upload succeeded but timed out setting tags. Please set tags manually on 500px.com instead.";
 
 // UI 
 
