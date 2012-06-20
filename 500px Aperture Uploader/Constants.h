@@ -13,6 +13,10 @@
 
 static void * const k500pxUpdateStoreSizeWarningKVOContext = @"BigPicturesAreAwesome";
 
+// Keychain
+
+static NSString * const k500pxKeychainServiceName = @"500px Aperture Uploader";
+
 // 500px Values
 
 static NSString * const k500pxURLMetadataKey = @"500px URL";
@@ -27,7 +31,7 @@ static NSString * const kGrowlNotificationNameUploadComplete = @"upload";
 // Tags
 
 static NSString * const kAutofillTagsUserDefaultsKey = @"AutofillTags";
-static NSUInteger const kTagAttemptCount = 12;
+static NSUInteger const kTagAttemptCount = 24;
 static NSTimeInterval const kTagAttemptDelay = 5.0;
 
 // Updates
