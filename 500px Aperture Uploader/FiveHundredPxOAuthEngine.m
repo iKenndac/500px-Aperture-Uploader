@@ -78,15 +78,18 @@ static NSString * const k500pxPostPhotoTagsPath = @"v1/photos/%@/tags";
 - (void)removeOAuthTokenFromKeychain
 {
     // Build the keychain query
-    NSMutableDictionary *keychainQuery = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+    NSMutableDictionary *deleteQueryDictionary = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                           (__bridge_transfer NSString *)kSecClassGenericPassword, (__bridge_transfer NSString *)kSecClass,
-                                          self.consumerKey, kSecAttrService,
+                                          k500pxKeychainServiceName, kSecAttrService,
                                           self.consumerKey, kSecAttrAccount,
-                                          kCFBooleanTrue, kSecReturnAttributes,
+										  kSecMatchLimitAll, kSecMatchLimit,
+										  kCFBooleanTrue, kSecReturnAttributes,
                                           nil];
-    
+
     // If there's a token stored for this user, delete it
-    SecItemDelete((__bridge_retained CFDictionaryRef) keychainQuery);
+    OSStatus status = SecItemDelete((__bridge_retained CFDictionaryRef) deleteQueryDictionary);
+	NSString *string = (__bridge_transfer NSString *)SecCopyErrorMessageString(status, NULL);
+	DLog(@"Attempted to remove keychain item: %@", string);
 }
 
 - (void)storeOAuthTokenInKeychain
@@ -94,7 +97,7 @@ static NSString * const k500pxPostPhotoTagsPath = @"v1/photos/%@/tags";
     // Build the keychain query
     NSMutableDictionary *keychainQuery = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                           (__bridge_transfer NSString *)kSecClassGenericPassword, (__bridge_transfer NSString *)kSecClass,
-                                          self.consumerKey, kSecAttrService,
+                                          k500pxKeychainServiceName, kSecAttrService,
                                           self.consumerKey, kSecAttrAccount,
                                           kCFBooleanTrue, kSecReturnAttributes,
                                           nil];
@@ -125,7 +128,7 @@ static NSString * const k500pxPostPhotoTagsPath = @"v1/photos/%@/tags";
     // Build the keychain query
     NSMutableDictionary *keychainQuery = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                           (__bridge_transfer NSString *)kSecClassGenericPassword, (__bridge_transfer NSString *)kSecClass,
-                                          self.consumerKey, kSecAttrService,
+                                          k500pxKeychainServiceName, kSecAttrService,
                                           self.consumerKey, kSecAttrAccount,
                                           kCFBooleanTrue, kSecReturnData,
                                           kSecMatchLimitOne, kSecMatchLimit,
