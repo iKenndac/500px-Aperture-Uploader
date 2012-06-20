@@ -32,6 +32,7 @@ static NSString * const kPluginFileName = @"500px Aperture Uploader.ApertureExpo
 										[sourceBundle.infoDictionary valueForKey:@"CFBundleShortVersionString"]];
 	
 	[self.window center];
+	[self.window makeKeyAndOrderFront:self];
 }
 
 - (IBAction)performInstallation:(id)sender {
