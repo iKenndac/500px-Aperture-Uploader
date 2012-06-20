@@ -1,4 +1,4 @@
-## Version 0.5 - Release June 20th, 2012 ##
+## Version 0.6 - Release June 20th, 2012 ##
 
 You can download this release [here](https://github.com/downloads/iKenndac/500px-Aperture-Uploader/500px%20Aperture%20Uploader-Latest.zip). Installation instructions [here](https://github.com/iKenndac/500px-Aperture-Uploader/blob/master/README.markdown).
 
