@@ -1,3 +1,17 @@
+## Version 0.5 - Release June 20th, 2012 ##
+
+You can download this release [here](https://github.com/downloads/iKenndac/500px-Aperture-Uploader/500px%20Aperture%20Uploader-Latest.zip). Installation instructions [here](https://github.com/iKenndac/500px-Aperture-Uploader/blob/master/README.markdown).
+
+#### New Features ####
+
+* Experimental tagging support. This is currently unreliable if 500px's processing queue gets backed up.
+
+#### Bugs Fixed/Changes ####
+
+* Fixed display issues with logs.
+
+* Logs older than two weeks are removed from the logs folder when the plugin is used. 
+
 ## Version 0.5.1 - Released April 18th, 2012 ##
 
 You can download this release [here](https://github.com/downloads/iKenndac/500px-Aperture-Uploader/500px%20Aperture%20Uploader-Latest.zip). Installation instructions [here](https://github.com/iKenndac/500px-Aperture-Uploader/blob/master/README.markdown).
