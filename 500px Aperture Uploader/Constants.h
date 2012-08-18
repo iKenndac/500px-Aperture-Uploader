@@ -30,14 +30,17 @@ static NSString * const kGrowlNotificationNameUploadComplete = @"upload";
 
 // Tags
 
-static NSString * const kAutofillTagsUserDefaultsKey = @"AutofillTags";
+static NSString * const kAutofillTagsUserDefaultsKey = @"FiveHundredPxAutofillTags";
+static NSString * const kAutoKeywordUserDefaultsKey = @"FiveHundredPxAutoKeyword";
+static NSString * const kIgnoreTagsUserDefaultsKey = @"FiveHundredPxIgnoreTags";
+
 static NSUInteger const kTagAttemptCount = 24;
 static NSTimeInterval const kTagAttemptDelay = 5.0;
 
 // Updates
 
-static NSString * const kAutoCheckForUpdatesUserDefaultsKey = @"CheckForUpdates";
-static NSString * const kLastAutoCheckDateUserDefaultsKey = @"LastUpdateCheck";
+static NSString * const kAutoCheckForUpdatesUserDefaultsKey = @"FiveHundredPxCheckForUpdates";
+static NSString * const kLastAutoCheckDateUserDefaultsKey = @"FiveHundredPxLastUpdateCheck";
 static NSTimeInterval const kAutoCheckMinimumInterval = 60 * 60; // Only auto-check for updates once per hour.
 
 static NSString * const kDKBasicUpdateCheckerNewestBundleVersionKey = @"BundleVersion";
@@ -49,8 +52,8 @@ static NSString * const kDKBasicUpdateCheckerUpdateFileURLInfoPlistKey = @"DKBUC
 
 static NSTimeInterval const kLogDeletionThreshold = 60 * 60 * 24 * 14; // 14 days
 
-static NSString * const kCreateLogsUserDefaultsKey = @"CreateLogs";
-static NSString * const kAutoOpenLogsUserDefaultsKey = @"AutoOpenLogs";
+static NSString * const kCreateLogsUserDefaultsKey = @"FiveHundredPxCreateLogs";
+static NSString * const kAutoOpenLogsUserDefaultsKey = @"FiveHundredPxAutoOpenLogs";
 
 static NSString * const kLogsDirectoryName = @"500px Aperture Uploader";
 

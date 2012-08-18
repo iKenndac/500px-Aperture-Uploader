@@ -61,11 +61,14 @@ extern NSString *k500pxConsumerSecret;
 		self.viewController = [[FiveHundredPxViewController alloc] initWithOAuthEngine:self.engine];
 		self.viewController.exporter = self;
 		
+        // If you're going to use Apertures prefs, better make the names unique
 		[[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:
 																 [NSNumber numberWithBool:YES], kAutoCheckForUpdatesUserDefaultsKey,
 																 [NSNumber numberWithBool:YES], kCreateLogsUserDefaultsKey,
 																 [NSNumber numberWithBool:YES], kAutoOpenLogsUserDefaultsKey,
 																 [NSNumber numberWithBool:YES], kAutofillTagsUserDefaultsKey,
+                                                                 [NSArray array], kAutoKeywordUserDefaultsKey,
+                                                                 [NSArray array], kIgnoreTagsUserDefaultsKey,
 																 nil]];
 		
 		if ([[NSUserDefaults standardUserDefaults] boolForKey:kAutoCheckForUpdatesUserDefaultsKey]) {
@@ -277,7 +280,7 @@ extern NSString *k500pxConsumerSecret;
 	// Do something with image...
 	[self.engine uploadPhoto:imageData
 				withMetaData:metadata 
-		 uploadProgressBlock:^(double progress) { DLog(@"%1.2f", progress); } 
+		 uploadProgressBlock:^(double progress) { DLog(@"%1.2f", progress); }
 			 completionBlock:^(NSDictionary *returnValue, NSError *error) {
 				 
 				 if (error != nil) {
@@ -300,9 +303,32 @@ extern NSString *k500pxConsumerSecret;
 															 toImageAtIndex:index];
 							 DLog(@"Setting 500px URL in metadata: %@", photoUrlString);
 						 }
+                         
+                         NSArray *extraKeywords = [[NSUserDefaults standardUserDefaults] arrayForKey:kAutoKeywordUserDefaultsKey];
+
+                         if (extraKeywords && [extraKeywords count] > 0) {
+                             // Only write back if we got a valid id
+                             @synchronized(exportManager) {
+                                [self.exportManager addKeywords:(NSArray *)extraKeywords toImageAtIndex:index];
+                                DLog(@"Setting 500px Keywords in metadata: %@", photoUrlString);
+                             }
+                         }
+
 						 
 						 // Now, set the tags
-						 NSArray *tags = [[self.metadataContainers objectAtIndex:index] tags];
+						 NSMutableArray *tags = [NSMutableArray arrayWithArray:
+                                                 [[self.metadataContainers objectAtIndex:index] tags]];
+                         
+                         // cull out tags we don't want there
+                         
+                         NSArray *killKeywords = [[NSUserDefaults standardUserDefaults] arrayForKey:kIgnoreTagsUserDefaultsKey];
+                         if (killKeywords && [killKeywords count]) {
+                             NSString *k;
+                             
+                             for (k in killKeywords) {
+                                 [tags removeObject:k];
+                             }
+                         }
 						 
 						 if (tags.count == 0) {
 							 [self.logger addLogRowWithImageName:[[self.metadataContainers objectAtIndex:index] title]
@@ -346,7 +372,7 @@ extern NSString *k500pxConsumerSecret;
 	
 	__weak FiveHundredPxApertureExporter *weakSelf = self;
 	DLog(@"Setting tags, attempt number %lu", attempt);
-	
+    
 	[weakSelf.engine setTags:tags forPhotoWithId:photoId completionBlock:^(NSDictionary *returnValue, NSError *error) {
 		
 		if (error != nil) {
