@@ -9,7 +9,7 @@
 
 
 #import <Foundation/Foundation.h>
-#import <PluginManager/PROAPIAccessing.h>
+#import "PROAPIAccessing.h"
 #import "ApertureExportManager.h"
 
 /*!
