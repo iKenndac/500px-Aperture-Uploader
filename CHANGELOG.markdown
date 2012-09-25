@@ -1,3 +1,18 @@
+## Version 0.7 - Released September 25th, 2012 ##
+
+#### New Features ####
+
+* Installer and plugin are signed with GateKeeper compatible certificates.
+
+* Added preference to ignore keywords when autofilling them (thanks to George Harker).
+
+* Added preference to set additional keywords on exported images (thanks to George Harker).
+
+#### Bugs Fixed/Changes ####
+
+* Fixed problem that caused the plugin to fail when used with Aperture 3.4.
+
+
 ## Version 0.6 - Release June 20th, 2012 ##
 
 You can download this release [here](https://github.com/downloads/iKenndac/500px-Aperture-Uploader/500px%20Aperture%20Uploader-Latest.zip). Installation instructions [here](https://github.com/iKenndac/500px-Aperture-Uploader/blob/master/README.markdown).
