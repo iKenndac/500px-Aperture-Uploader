@@ -1,5 +1,7 @@
 ## Version 0.7 - Released September 25th, 2012 ##
 
+You can download this release [here](https://github.com/downloads/iKenndac/500px-Aperture-Uploader/500px%20Aperture%20Uploader-Latest.zip). Installation instructions [here](https://github.com/iKenndac/500px-Aperture-Uploader/blob/master/README.markdown).
+
 #### New Features ####
 
 * Installer and plugin are signed with GateKeeper compatible certificates.
