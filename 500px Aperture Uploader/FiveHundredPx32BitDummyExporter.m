@@ -31,7 +31,7 @@ static NSString * const k32BitHelpURL = @"https://github.com/iKenndac/500px-Aper
 									 defaultButton:DKLocalizedStringForClass(@"ok title")
 								   alternateButton:DKLocalizedStringForClass(@"more information title")
 									   otherButton:@""
-						 informativeTextWithFormat:DKLocalizedStringForClass(@"64-bit only error description")];
+						 informativeTextWithFormat:@"%@", DKLocalizedStringForClass(@"64-bit only error description")];
 	
 	if ([alert runModal] == NSAlertAlternateReturn) {
 		[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:k32BitHelpURL]];

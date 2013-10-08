@@ -218,7 +218,7 @@
 									 defaultButton:DKLocalizedStringForClass(@"ok title")
 								   alternateButton:@""
 									   otherButton:@""
-						 informativeTextWithFormat:description];
+						 informativeTextWithFormat:@"%@", description];
 	
 	[alert runModal];
 }

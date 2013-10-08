@@ -122,7 +122,7 @@
 							 defaultButton:DKLocalizedStringForClass(@"more info title")
 						   alternateButton:DKLocalizedStringForClass(@"later title")
 							   otherButton:@""
-				 informativeTextWithFormat:informativeText] runModal] == NSAlertDefaultReturn) {
+				 informativeTextWithFormat:@"%@", informativeText] runModal] == NSAlertDefaultReturn) {
 			[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:moreInfoURLString]];
 		};
 		
@@ -131,7 +131,7 @@
 						 defaultButton:DKLocalizedStringForClass(@"ok title")
 					   alternateButton:@""
 						   otherButton:@""
-			 informativeTextWithFormat:[NSString stringWithFormat:DKLocalizedStringForClass(@"up to date description"), newestShortVersionString]] runModal];
+			 informativeTextWithFormat:@"%@", [NSString stringWithFormat:DKLocalizedStringForClass(@"up to date description"), newestShortVersionString]] runModal];
 }
 
 -(void)presentError:(NSError *)error {
@@ -143,7 +143,7 @@
 					 defaultButton:DKLocalizedStringForClass(@"ok title")
 				   alternateButton:@""
 					   otherButton:@""
-		 informativeTextWithFormat:[NSString stringWithFormat:DKLocalizedStringForClass(@"update error description"), error.localizedDescription]] runModal];
+		 informativeTextWithFormat:@"%@", [NSString stringWithFormat:DKLocalizedStringForClass(@"update error description"), error.localizedDescription]] runModal];
 }
 
 @end

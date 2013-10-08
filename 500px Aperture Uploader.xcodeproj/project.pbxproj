@@ -15,15 +15,6 @@
 		503FCF94150D088F005D93AC /* log_template.html in Resources */ = {isa = PBXBuildFile; fileRef = 503FCF91150D088F005D93AC /* log_template.html */; };
 		503FCF97150D08C3005D93AC /* FiveHundredPxExportLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 503FCF96150D08C3005D93AC /* FiveHundredPxExportLogger.m */; };
 		5044FE7414EFD0080015F359 /* FiveHundredPxViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5044FE7214EFD0080015F359 /* FiveHundredPxViewController.xib */; };
-		5044FE8E14EFD1380015F359 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 5044FE7914EFD1380015F359 /* CDataScanner.m */; };
-		5044FE8F14EFD1380015F359 /* CFilteringJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5044FE7C14EFD1380015F359 /* CFilteringJSONSerializer.m */; };
-		5044FE9014EFD1380015F359 /* CJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 5044FE7E14EFD1380015F359 /* CJSONSerialization.m */; };
-		5044FE9114EFD1380015F359 /* CJSONSerializedData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5044FE8014EFD1380015F359 /* CJSONSerializedData.m */; };
-		5044FE9214EFD1380015F359 /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5044FE8314EFD1380015F359 /* CDataScanner_Extensions.m */; };
-		5044FE9314EFD1380015F359 /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5044FE8514EFD1380015F359 /* NSDictionary_JSONExtensions.m */; };
-		5044FE9414EFD1380015F359 /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5044FE8814EFD1380015F359 /* CJSONDeserializer.m */; };
-		5044FE9514EFD1380015F359 /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 5044FE8A14EFD1380015F359 /* CJSONScanner.m */; };
-		5044FE9614EFD1380015F359 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5044FE8C14EFD1380015F359 /* CJSONSerializer.m */; };
 		5044FEBD14EFD3BD0015F359 /* RSOAuthEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 5044FEBC14EFD3BD0015F359 /* RSOAuthEngine.m */; };
 		5044FED414EFD3C60015F359 /* NSAlert+MKNetworkKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5044FEC114EFD3C60015F359 /* NSAlert+MKNetworkKitAdditions.m */; };
 		5044FED514EFD3C60015F359 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 5044FEC314EFD3C60015F359 /* NSData+Base64.m */; };
@@ -49,6 +40,9 @@
 		50CD016714F0733B004C2B5B /* OAuthKeys.c in Sources */ = {isa = PBXBuildFile; fileRef = 50CD016614F0733B004C2B5B /* OAuthKeys.c */; };
 		50E7F9BB14F414DF00E666D8 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 50E7F9B914F414DF00E666D8 /* Credits.rtf */; };
 		50E7FA3814F42E0700E666D8 /* DKBasicUpdateChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E7FA3714F42E0700E666D8 /* DKBasicUpdateChecker.m */; };
+		50F2B6D318044549003D21A7 /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F2B6CD18044549003D21A7 /* CJSONDeserializer.m */; };
+		50F2B6D418044549003D21A7 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F2B6CF18044549003D21A7 /* CJSONSerializer.m */; };
+		50F2B6D518044549003D21A7 /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F2B6D218044549003D21A7 /* NSDictionary_JSONExtensions.m */; };
 		50F7EA22150FC7A90027429F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50AAF3A414EEC0F8009F3BFE /* Cocoa.framework */; };
 		50F7EA28150FC7A90027429F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50F7EA26150FC7A90027429F /* InfoPlist.strings */; };
 		50F7EA2A150FC7A90027429F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F7EA29150FC7A90027429F /* main.m */; };
@@ -101,25 +95,6 @@
 		503FCF95150D08C3005D93AC /* FiveHundredPxExportLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FiveHundredPxExportLogger.h; sourceTree = "<group>"; };
 		503FCF96150D08C3005D93AC /* FiveHundredPxExportLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FiveHundredPxExportLogger.m; sourceTree = "<group>"; };
 		5044FE7314EFD0080015F359 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FiveHundredPxViewController.xib; sourceTree = "<group>"; };
-		5044FE7814EFD1380015F359 /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner.h; sourceTree = "<group>"; };
-		5044FE7914EFD1380015F359 /* CDataScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner.m; sourceTree = "<group>"; };
-		5044FE7B14EFD1380015F359 /* CFilteringJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFilteringJSONSerializer.h; sourceTree = "<group>"; };
-		5044FE7C14EFD1380015F359 /* CFilteringJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFilteringJSONSerializer.m; sourceTree = "<group>"; };
-		5044FE7D14EFD1380015F359 /* CJSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerialization.h; sourceTree = "<group>"; };
-		5044FE7E14EFD1380015F359 /* CJSONSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerialization.m; sourceTree = "<group>"; };
-		5044FE7F14EFD1380015F359 /* CJSONSerializedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializedData.h; sourceTree = "<group>"; };
-		5044FE8014EFD1380015F359 /* CJSONSerializedData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializedData.m; sourceTree = "<group>"; };
-		5044FE8214EFD1380015F359 /* CDataScanner_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner_Extensions.h; sourceTree = "<group>"; };
-		5044FE8314EFD1380015F359 /* CDataScanner_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner_Extensions.m; sourceTree = "<group>"; };
-		5044FE8414EFD1380015F359 /* NSDictionary_JSONExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionary_JSONExtensions.h; sourceTree = "<group>"; };
-		5044FE8514EFD1380015F359 /* NSDictionary_JSONExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_JSONExtensions.m; sourceTree = "<group>"; };
-		5044FE8714EFD1380015F359 /* CJSONDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONDeserializer.h; sourceTree = "<group>"; };
-		5044FE8814EFD1380015F359 /* CJSONDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONDeserializer.m; sourceTree = "<group>"; };
-		5044FE8914EFD1380015F359 /* CJSONScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONScanner.h; sourceTree = "<group>"; };
-		5044FE8A14EFD1380015F359 /* CJSONScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONScanner.m; sourceTree = "<group>"; };
-		5044FE8B14EFD1380015F359 /* CJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializer.h; sourceTree = "<group>"; };
-		5044FE8C14EFD1380015F359 /* CJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializer.m; sourceTree = "<group>"; };
-		5044FE8D14EFD1380015F359 /* JSONRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRepresentation.h; sourceTree = "<group>"; };
 		5044FEBB14EFD3BD0015F359 /* RSOAuthEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSOAuthEngine.h; sourceTree = "<group>"; };
 		5044FEBC14EFD3BD0015F359 /* RSOAuthEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSOAuthEngine.m; sourceTree = "<group>"; };
 		5044FEC014EFD3C60015F359 /* NSAlert+MKNetworkKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAlert+MKNetworkKitAdditions.h"; sourceTree = "<group>"; };
@@ -172,6 +147,13 @@
 		50E7F9BA14F414DF00E666D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		50E7FA3614F42E0700E666D8 /* DKBasicUpdateChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKBasicUpdateChecker.h; sourceTree = "<group>"; };
 		50E7FA3714F42E0700E666D8 /* DKBasicUpdateChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKBasicUpdateChecker.m; sourceTree = "<group>"; };
+		50F2B6CC18044549003D21A7 /* CJSONDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONDeserializer.h; sourceTree = "<group>"; };
+		50F2B6CD18044549003D21A7 /* CJSONDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONDeserializer.m; sourceTree = "<group>"; };
+		50F2B6CE18044549003D21A7 /* CJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializer.h; sourceTree = "<group>"; };
+		50F2B6CF18044549003D21A7 /* CJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializer.m; sourceTree = "<group>"; };
+		50F2B6D018044549003D21A7 /* JSONRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRepresentation.h; sourceTree = "<group>"; };
+		50F2B6D118044549003D21A7 /* NSDictionary_JSONExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionary_JSONExtensions.h; sourceTree = "<group>"; };
+		50F2B6D218044549003D21A7 /* NSDictionary_JSONExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_JSONExtensions.m; sourceTree = "<group>"; };
 		50F7EA20150FC7A90027429F /* Install 500px Aperture Uploader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Install 500px Aperture Uploader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50F7EA25150FC7A90027429F /* Installer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Installer-Info.plist"; sourceTree = "<group>"; };
 		50F7EA27150FC7A90027429F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -233,62 +215,11 @@
 				50754CDE160F2CBE0080B039 /* PROAPIAccessing.h */,
 				50AAF3C214EEC3F1009F3BFE /* ApertureExportManager.h */,
 				50AAF3C314EEC3F1009F3BFE /* ApertureExportPlugIn.h */,
-				5044FE7714EFD1380015F359 /* TouchJSON */,
+				50F2B6CB18044549003D21A7 /* TouchJSON */,
 				5044FEBA14EFD3BD0015F359 /* RSOAuthEngine */,
 				5044FEBE14EFD3C60015F359 /* MKNetworkKit */,
 			);
 			name = External;
-			sourceTree = "<group>";
-		};
-		5044FE7714EFD1380015F359 /* TouchJSON */ = {
-			isa = PBXGroup;
-			children = (
-				5044FE7814EFD1380015F359 /* CDataScanner.h */,
-				5044FE7914EFD1380015F359 /* CDataScanner.m */,
-				5044FE7A14EFD1380015F359 /* Experimental */,
-				5044FE8114EFD1380015F359 /* Extensions */,
-				5044FE8614EFD1380015F359 /* JSON */,
-			);
-			name = TouchJSON;
-			path = TouchJSON/Source;
-			sourceTree = SOURCE_ROOT;
-		};
-		5044FE7A14EFD1380015F359 /* Experimental */ = {
-			isa = PBXGroup;
-			children = (
-				5044FE7B14EFD1380015F359 /* CFilteringJSONSerializer.h */,
-				5044FE7C14EFD1380015F359 /* CFilteringJSONSerializer.m */,
-				5044FE7D14EFD1380015F359 /* CJSONSerialization.h */,
-				5044FE7E14EFD1380015F359 /* CJSONSerialization.m */,
-				5044FE7F14EFD1380015F359 /* CJSONSerializedData.h */,
-				5044FE8014EFD1380015F359 /* CJSONSerializedData.m */,
-			);
-			path = Experimental;
-			sourceTree = "<group>";
-		};
-		5044FE8114EFD1380015F359 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				5044FE8214EFD1380015F359 /* CDataScanner_Extensions.h */,
-				5044FE8314EFD1380015F359 /* CDataScanner_Extensions.m */,
-				5044FE8414EFD1380015F359 /* NSDictionary_JSONExtensions.h */,
-				5044FE8514EFD1380015F359 /* NSDictionary_JSONExtensions.m */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		5044FE8614EFD1380015F359 /* JSON */ = {
-			isa = PBXGroup;
-			children = (
-				5044FE8714EFD1380015F359 /* CJSONDeserializer.h */,
-				5044FE8814EFD1380015F359 /* CJSONDeserializer.m */,
-				5044FE8914EFD1380015F359 /* CJSONScanner.h */,
-				5044FE8A14EFD1380015F359 /* CJSONScanner.m */,
-				5044FE8B14EFD1380015F359 /* CJSONSerializer.h */,
-				5044FE8C14EFD1380015F359 /* CJSONSerializer.m */,
-				5044FE8D14EFD1380015F359 /* JSONRepresentation.h */,
-			);
-			path = JSON;
 			sourceTree = "<group>";
 		};
 		5044FEBA14EFD3BD0015F359 /* RSOAuthEngine */ = {
@@ -455,6 +386,21 @@
 			name = Updater;
 			sourceTree = "<group>";
 		};
+		50F2B6CB18044549003D21A7 /* TouchJSON */ = {
+			isa = PBXGroup;
+			children = (
+				50F2B6CC18044549003D21A7 /* CJSONDeserializer.h */,
+				50F2B6CD18044549003D21A7 /* CJSONDeserializer.m */,
+				50F2B6CE18044549003D21A7 /* CJSONSerializer.h */,
+				50F2B6CF18044549003D21A7 /* CJSONSerializer.m */,
+				50F2B6D018044549003D21A7 /* JSONRepresentation.h */,
+				50F2B6D118044549003D21A7 /* NSDictionary_JSONExtensions.h */,
+				50F2B6D218044549003D21A7 /* NSDictionary_JSONExtensions.m */,
+			);
+			name = TouchJSON;
+			path = TouchJSON/Source;
+			sourceTree = SOURCE_ROOT;
+		};
 		50F7EA23150FC7A90027429F /* Installer */ = {
 			isa = PBXGroup;
 			children = (
@@ -544,7 +490,7 @@
 		50AAF39814EEC0F8009F3BFE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Daniel Kennett";
 			};
 			buildConfigurationList = 50AAF39B14EEC0F8009F3BFE /* Build configuration list for PBXProject "500px Aperture Uploader" */;
@@ -663,21 +609,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50F2B6D518044549003D21A7 /* NSDictionary_JSONExtensions.m in Sources */,
 				50AAF3BE14EEC1B0009F3BFE /* FiveHundredPxApertureExporter.m in Sources */,
-				5044FE8E14EFD1380015F359 /* CDataScanner.m in Sources */,
-				5044FE8F14EFD1380015F359 /* CFilteringJSONSerializer.m in Sources */,
-				5044FE9014EFD1380015F359 /* CJSONSerialization.m in Sources */,
-				5044FE9114EFD1380015F359 /* CJSONSerializedData.m in Sources */,
-				5044FE9214EFD1380015F359 /* CDataScanner_Extensions.m in Sources */,
-				5044FE9314EFD1380015F359 /* NSDictionary_JSONExtensions.m in Sources */,
-				5044FE9414EFD1380015F359 /* CJSONDeserializer.m in Sources */,
-				5044FE9514EFD1380015F359 /* CJSONScanner.m in Sources */,
-				5044FE9614EFD1380015F359 /* CJSONSerializer.m in Sources */,
 				5044FEBD14EFD3BD0015F359 /* RSOAuthEngine.m in Sources */,
 				5044FED414EFD3C60015F359 /* NSAlert+MKNetworkKitAdditions.m in Sources */,
 				5044FED514EFD3C60015F359 /* NSData+Base64.m in Sources */,
 				5044FED614EFD3C60015F359 /* NSDate+RFC1123.m in Sources */,
 				5044FED714EFD3C60015F359 /* NSDictionary+RequestEncoding.m in Sources */,
+				50F2B6D318044549003D21A7 /* CJSONDeserializer.m in Sources */,
 				5044FED814EFD3C60015F359 /* NSString+MKNetworkKitAdditions.m in Sources */,
 				5044FED914EFD3C60015F359 /* UIAlertView+MKNetworkKitAdditions.m in Sources */,
 				5044FEDA14EFD3C60015F359 /* MKNetworkEngine.m in Sources */,
@@ -687,6 +626,7 @@
 				501EC00F14F0572D0046D0A9 /* FiveHundredPxExtraMetadata.m in Sources */,
 				50CD016714F0733B004C2B5B /* OAuthKeys.c in Sources */,
 				50E7FA3814F42E0700E666D8 /* DKBasicUpdateChecker.m in Sources */,
+				50F2B6D418044549003D21A7 /* CJSONSerializer.m in Sources */,
 				50774A07150C040D00B81672 /* FiveHundredPxViewController.m in Sources */,
 				503FCF97150D08C3005D93AC /* FiveHundredPxExportLogger.m in Sources */,
 			);
@@ -805,11 +745,11 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.7;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
 			};
@@ -820,11 +760,11 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.7;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
 			};
@@ -836,6 +776,12 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -850,12 +796,14 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx;
 				SKIP_INSTALL = NO;
 			};
 			name = Debug;
@@ -866,19 +814,27 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
-				COPY_PHASE_STRIP = YES;
+				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PROVISIONING_PROFILE = "";
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx;
 				SKIP_INSTALL = NO;
 			};
 			name = Release;
@@ -886,6 +842,7 @@
 		50AAF3B414EEC0F8009F3BFE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -907,6 +864,7 @@
 		50AAF3B514EEC0F8009F3BFE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -928,12 +886,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Installer/Installer-Prefix.pch";
 				INFOPLIST_FILE = "Installer/Installer-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "Install 500px Aperture Uploader";
-				SDKROOT = macosx10.7;
 				SKIP_INSTALL = NO;
 				WRAPPER_EXTENSION = app;
 			};
@@ -943,12 +901,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Installer/Installer-Prefix.pch";
 				INFOPLIST_FILE = "Installer/Installer-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "Install 500px Aperture Uploader";
-				SDKROOT = macosx10.7;
 				SKIP_INSTALL = NO;
 				WRAPPER_EXTENSION = app;
 			};

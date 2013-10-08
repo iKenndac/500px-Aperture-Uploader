@@ -88,8 +88,8 @@ static NSString * const k500pxPostPhotoTagsPath = @"v1/photos/%@/tags";
 
     // If there's a token stored for this user, delete it
     OSStatus status = SecItemDelete((__bridge_retained CFDictionaryRef) deleteQueryDictionary);
-	NSString *string = (__bridge_transfer NSString *)SecCopyErrorMessageString(status, NULL);
-	DLog(@"Attempted to remove keychain item: %@", string);
+	if (status != 0)
+		DLog(@"Attempted to remove keychain item: %@", (__bridge_transfer NSString *)SecCopyErrorMessageString(status, NULL));
 }
 
 - (void)storeOAuthTokenInKeychain

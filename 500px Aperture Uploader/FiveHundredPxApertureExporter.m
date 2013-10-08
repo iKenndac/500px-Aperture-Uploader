@@ -220,7 +220,7 @@ extern NSString *k500pxConsumerSecret;
 							 defaultButton:DKLocalizedStringForClass(@"ok title")
 						   alternateButton:@""
 							   otherButton:@""
-				 informativeTextWithFormat:DKLocalizedStringForClass(@"unsupported image format error description")] runModal];
+				 informativeTextWithFormat:@"%@", DKLocalizedStringForClass(@"unsupported image format error description")] runModal];
 			
 			return;
 		}
@@ -231,7 +231,7 @@ extern NSString *k500pxConsumerSecret;
 							 defaultButton:DKLocalizedStringForClass(@"ok title")
 						   alternateButton:@""
 							   otherButton:@""
-				 informativeTextWithFormat:DKLocalizedStringForClass(@"not logged in error description")] runModal];
+				 informativeTextWithFormat:@"%@", DKLocalizedStringForClass(@"not logged in error description")] runModal];
 			
 			return;
 		}
